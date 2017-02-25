@@ -1,0 +1,21 @@
+/* Class = "UITableViewSection"; headerTitle = "Accept Calls On:"; ObjectID = "IsX-Pe-emx"; */
+"IsX-Pe-emx.headerTitle" = "Принимать звонки:";
+
+/* Class = "UILabel"; text = "Both Phone and Multifon"; ObjectID = "RTH-Tf-gQM"; */
+"RTH-Tf-gQM.text" = "На мобильный и в МультиФон";
+
+/* Class = "UINavigationItem"; title = "Multifon Redirect"; ObjectID = "YfS-wy-c83"; */
+"YfS-wy-c83.title" = "МультиФон Редирект";
+
+/* Class = "UILabel"; text = "Phone Number"; ObjectID = "dPl-yS-H9B"; */
+"dPl-yS-H9B.text" = "Номер телефона";
+
+/* Class = "UILabel"; text = "Phone Only"; ObjectID = "e3d-5G-6rt"; */
+"e3d-5G-6rt.text" = "Только на мобильный";
+
+/* Class = "UILabel"; text = "Multifon Only"; ObjectID = "nUN-4e-ZCT"; */
+"nUN-4e-ZCT.text" = "Только в МультиФон";
+
+/* Class = "UILabel"; text = "Verified"; ObjectID = "r9W-pL-UJs"; */
+"r9W-pL-UJs.text" = "Проверен";
+

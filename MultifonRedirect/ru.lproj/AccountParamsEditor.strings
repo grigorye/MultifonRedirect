@@ -1,0 +1,15 @@
+/* No comment provided by engineer. */
+"alert.title" = "Вход с номером телефона";
+
+/* No comment provided by engineer. */
+"cancelButton.title" = "Отменить";
+
+/* No comment provided by engineer. */
+"loginButton.title" = "Войти";
+
+/* No comment provided by engineer. */
+"password.placeholder" = "Пароль";
+
+/* No comment provided by engineer. */
+"phoneNumber.placeholder" = "+7xxxxxxxxxx";
+
