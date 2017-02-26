@@ -24,33 +24,6 @@ enum RequestError: Error {
 	case unknownRoutingInQueryResponse(String)
 }
 
-enum DefaultsKey: String {
-	case accountNumber
-	case password
-}
-
-func string(for key: DefaultsKey) -> String? {
-	return UserDefaults.standard.string(forKey: key.rawValue)
-}
-
-func set(_ value: String?, for key: DefaultsKey) {
-	return UserDefaults.standard.set(value, forKey: key.rawValue)
-}
-
-func phoneNumberFromAccountNumber(_ accountNumber: String?) -> String? {
-	guard let accountNumber = accountNumber else {
-		return nil
-	}
-	return "+\(accountNumber)"
-}
-
-func accountNumberFromPhoneNumber(_ phoneNumber: String?) -> String? {
-	guard let phoneNumber = phoneNumber else {
-		return nil
-	}
-	return phoneNumber.substring(from: phoneNumber.index(after: phoneNumber.startIndex))
-}
-
 func loginFromAccountNumber(_ accountNumber: String) -> String {
 	return "\(accountNumber)@multifon.ru"
 }
@@ -101,41 +74,6 @@ class RoutingResponseParser: NSObject {
 			throw RequestError.unknownRoutingInQueryResponse(parsedRouting)
 		}
 		return routing
-	}
-
-}
-
-protocol SimpleElementTrackingXMLParserDelegate {
-
-	func parser(_ parser: XMLParser, didEndElementWithPath elementPath: String, characters: String)
-
-}
-
-class XMLParserDelegateForSimpleElementTracking: NSObject, XMLParserDelegate {
-
-	var delegate: SimpleElementTrackingXMLParserDelegate?
-	
-	var currentElementPath = ""
-	var currentElementCharacters = ""
-	var outerElementsCharacters: [String] = []
-	
-	func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
-		currentElementPath += ".\(elementName)"
-		outerElementsCharacters += [currentElementCharacters]
-		currentElementCharacters = ""
-	}
-	
-	func parser(_ parser: XMLParser, foundCharacters string: String) {
-		currentElementCharacters += string
-	}
-	
-	func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
-		//
-		delegate!.parser(parser, didEndElementWithPath: $(currentElementPath), characters: $(currentElementCharacters))
-		let suffix = ".\(elementName)"
-		assert(currentElementPath.hasSuffix(suffix))
-		currentElementPath = currentElementPath.substring(to: currentElementPath.index(currentElementPath.endIndex, offsetBy: -suffix.distance(from: suffix.startIndex, to: suffix.endIndex)))
-		currentElementCharacters = outerElementsCharacters.popLast()!
 	}
 
 }
