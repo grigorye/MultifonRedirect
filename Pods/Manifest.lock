@@ -1,0 +1,24 @@
+PODS:
+  - Crashlytics (3.8.4):
+    - Fabric (~> 1.6.3)
+  - Fabric (1.6.11)
+  - PhoneNumberKit (1.2.2):
+    - PhoneNumberKit/PhoneNumberKitCore (= 1.2.2)
+    - PhoneNumberKit/UIKit (= 1.2.2)
+  - PhoneNumberKit/PhoneNumberKitCore (1.2.2)
+  - PhoneNumberKit/UIKit (1.2.2):
+    - PhoneNumberKit/PhoneNumberKitCore
+
+DEPENDENCIES:
+  - Crashlytics
+  - Fabric
+  - PhoneNumberKit (~> 1.2)
+
+SPEC CHECKSUMS:
+  Crashlytics: 79e236942ca1e7fc641df1feb9a275360a78ab6a
+  Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
+  PhoneNumberKit: ffae8f18fb78c1425c7af973711b0b0fd4f4104f
+
+PODFILE CHECKSUM: 3b50f5ab3d7b20aa2e337aad0f918e46cc98769a
+
+COCOAPODS: 1.2.0
