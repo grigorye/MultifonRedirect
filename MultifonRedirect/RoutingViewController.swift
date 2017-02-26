@@ -12,6 +12,7 @@ class RoutingViewController: UITableViewController {
 
 	typealias L = RoutingViewLocalized
 	
+	@IBOutlet var versionCell: UITableViewCell!
 	@IBOutlet var editAccountCell: UITableViewCell!
 	@IBOutlet var accountNumberCell: UITableViewCell!
 	@IBOutlet var phoneOnlyRouteCell: UITableViewCell!
@@ -126,6 +127,8 @@ class RoutingViewController: UITableViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		accountNumberCell.detailTextLabel!.text = phoneNumberFromAccountNumber(accountNumber)
+		let versionString = Bundle.main.object(forInfoDictionaryKey: kCFBundleVersionKey as String)! as! String
+		versionCell.detailTextLabel!.text = versionString
 	}
 }
 
