@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C40909BD1E63684D006BBF04 /* PhoneNumberKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C40909BC1E63684D006BBF04 /* PhoneNumberKit.framework */; };
 		C40909BE1E63684D006BBF04 /* PhoneNumberKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C40909BC1E63684D006BBF04 /* PhoneNumberKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C40909C21E6376F7006BBF04 /* AccountDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40909C11E6376F7006BBF04 /* AccountDetailsViewController.swift */; };
 		C4C72B301E6359B8004E6BB0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C72B2F1E6359B8004E6BB0 /* Extensions.swift */; };
 		C4C72B321E635A8D004E6BB0 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C72B311E635A8D004E6BB0 /* UserDefaults.swift */; };
 		C4C72B341E635ADC004E6BB0 /* PhoneNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C72B331E635ADC004E6BB0 /* PhoneNumbers.swift */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		C40909BC1E63684D006BBF04 /* PhoneNumberKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PhoneNumberKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C40909C11E6376F7006BBF04 /* AccountDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountDetailsViewController.swift; sourceTree = "<group>"; };
 		C4C72B2F1E6359B8004E6BB0 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C4C72B311E635A8D004E6BB0 /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		C4C72B331E635ADC004E6BB0 /* PhoneNumbers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneNumbers.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				C4DF2A6B1E632FB70099A8DA /* GEShared.xcconfig */,
 				C4F359421E5D139400F2B779 /* AppDelegate.swift */,
 				C4F359441E5D139400F2B779 /* RoutingViewController.swift */,
+				C40909C11E6376F7006BBF04 /* AccountDetailsViewController.swift */,
 				C4D7FC5E1E620FC200C40FE8 /* RequestErrorPresentation.swift */,
 				C4D7FC5C1E61EF3B00C40FE8 /* ExternalDependencies.swift */,
 				C4D7FC581E61C10200C40FE8 /* Data.swift */,
@@ -239,6 +242,7 @@
 				C4D7FC5F1E620FC200C40FE8 /* RequestErrorPresentation.swift in Sources */,
 				C4C72B341E635ADC004E6BB0 /* PhoneNumbers.swift in Sources */,
 				C4F359451E5D139400F2B779 /* RoutingViewController.swift in Sources */,
+				C40909C21E6376F7006BBF04 /* AccountDetailsViewController.swift in Sources */,
 				C4C72B301E6359B8004E6BB0 /* Extensions.swift in Sources */,
 				C4F359431E5D139400F2B779 /* AppDelegate.swift in Sources */,
 				C4C72B321E635A8D004E6BB0 /* UserDefaults.swift in Sources */,
