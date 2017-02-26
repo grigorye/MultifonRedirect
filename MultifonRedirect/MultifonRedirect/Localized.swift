@@ -67,4 +67,37 @@ struct RoutingViewLocalized {
 		comment: ""
 	)
 
+	static let phoneNumberPlaceholder = NSLocalizedString(
+		"phoneNumber.placeholder",
+		tableName: "RoutingView",
+		value: "Not Set",
+		comment: ""
+	)
+	
+	private static let dateAgoComponentsFormatter: DateComponentsFormatter = {
+		$0.unitsStyle = .full
+		$0.allowsFractionalUnits = true
+		$0.maximumUnitCount = 1
+		$0.allowedUnits = [.minute, .year, .month, .weekOfMonth, .day, .hour]
+		return $0
+	} (DateComponentsFormatter())
+
+	static func updated(at date: Date?) -> String {
+		guard let date = date else {
+			return NSLocalizedString(
+				"never.updated.placeholder",
+				tableName: "RoutingView",
+				value: "Update Routing",
+				comment: ""
+			)
+		}
+		let format = NSLocalizedString(
+			"updated.ago",
+			tableName: "RoutingView",
+			value: "Updated %@ ago",
+			comment: ""
+		)
+		let ago = dateAgoComponentsFormatter.string(from: date, to: Date())!
+		return String.localizedStringWithFormat(format, ago)
+	}
 }
