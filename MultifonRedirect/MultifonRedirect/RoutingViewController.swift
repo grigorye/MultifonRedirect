@@ -8,6 +8,13 @@
 
 import UIKit
 
+@objc protocol AccountDetailsEditor {
+	
+	var accountNumber: String? { get set }
+	var password: String? { get set }
+
+}
+
 class RoutingViewController: UITableViewController {
 
 	typealias L = RoutingViewLocalized
@@ -106,6 +113,10 @@ class RoutingViewController: UITableViewController {
 			}
 		}
 	}
+	
+	//
+	// MARK: -
+	//
 
 	@IBAction func refresh(_ refreshControl: UIRefreshControl) {
 		guard let accountNumber = accountNumber, let password = password else {
@@ -124,6 +135,28 @@ class RoutingViewController: UITableViewController {
 		}
 	}
 	
+	@IBAction func unwindFromAccountDetails(_ segue: UIStoryboardSegue) {
+		switch segue.identifier! {
+		case "cancel": ()
+		case "save":
+			let accountDetailsEditor = segue.source as! AccountDetailsEditor
+			password = accountDetailsEditor.password
+			accountNumber = accountDetailsEditor.accountNumber
+			refreshControl?.sendActions(for: .valueChanged)
+		default: fatalError()
+		}
+	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		switch segue.identifier {
+		case "showAccountDetails"?:
+			let accountDetailsEditor = segue.destination as! AccountDetailsEditor
+			accountDetailsEditor.accountNumber = accountNumber
+			accountDetailsEditor.password = password
+		default: ()
+		}
+	}
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		accountNumberCell.detailTextLabel!.text = phoneNumberFromAccountNumber(accountNumber)
@@ -137,45 +170,10 @@ extension RoutingViewController {
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let cell = tableView.cellForRow(at: indexPath)!
 		switch cell {
-		case editAccountCell!:
-			DispatchQueue.main.async {
-				self.editAccount()
-			}
 		case phoneOnlyRouteCell, multifonOnlyRouteCell, phoneAndMultifonRouteCell:
 			changeRouting(from: cell)
 		default: ()
 		}
-	}
-
-}
-
-extension RoutingViewController {
-	
-	func editAccount() {
-		typealias L = AccountParamsEditorLocalized
-		let alert = UIAlertController(title: "", message: L.editAccountTitle, preferredStyle: .alert)
-		var phoneNumberTextField: UITextField! = nil
-		alert.addTextField { (textField) in
-			textField.keyboardType = .phonePad
-			textField.placeholder = L.phoneNumberPlaceholder
-			textField.text = phoneNumberFromAccountNumber(self.accountNumber)
-			phoneNumberTextField = textField
-		}
-		var passwordTextField: UITextField! = nil
-		alert.addTextField { (textField) in
-			textField.keyboardType = .default
-			textField.placeholder = L.passwordPlaceholder
-			textField.isSecureTextEntry = true
-			textField.text = self.password
-			passwordTextField = textField
-		}
-		alert.addAction(UIAlertAction(title: L.loginButtonTitle, style: .default, handler: { (action) in
-			self.password = passwordTextField.text
-			self.accountNumber = accountNumberFromPhoneNumber(phoneNumberTextField.text)
-			self.refreshControl?.sendActions(for: .valueChanged)
-		}))
-		alert.addAction(UIAlertAction(title: L.cancelButtonTitle, style: .cancel))
-		self.present(alert, animated: true)
 	}
 
 }
