@@ -19,12 +19,15 @@ class AccountDetailsViewController: UITableViewController, AccountDetailsEditor 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		configurePhoneNumberTextField(phoneNumberField)
+		phoneNumberField.becomeFirstResponder()
 	}
+	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		phoneNumberField.text = phoneNumberFromAccountNumber(accountNumber)!
 		passwordField.text = password
 	}
+	
 	override func viewWillDisappear(_ animated: Bool) {
 		super.viewWillDisappear(animated)
 		accountNumber = accountNumberFromPhoneNumber(phoneNumberField.text)
