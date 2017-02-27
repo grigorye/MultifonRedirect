@@ -16,7 +16,7 @@
 /* Class = "UINavigationItem"; title = "Multifon Account"; ObjectID = "dP3-Xs-DWk"; */
 "dP3-Xs-DWk.title" = "Аккаунт МультиФон";
 
-/* Class = "UILabel"; text = "Phone Number"; ObjectID = "dPl-yS-H9B"; */
+/* Class = "UILabel"; text = "Phone"; ObjectID = "dPl-yS-H9B"; */
 "dPl-yS-H9B.text" = "Номер телефона";
 
 /* Class = "UILabel"; text = "Phone Only"; ObjectID = "e3d-5G-6rt"; */
@@ -30,7 +30,4 @@
 
 /* Class = "UILabel"; text = "Version"; ObjectID = "oHA-pC-WIl"; */
 "oHA-pC-WIl.text" = "Версия";
-
-/* Class = "UILabel"; text = "Verified"; ObjectID = "r9W-pL-UJs"; */
-"r9W-pL-UJs.text" = "Проверен";
 
