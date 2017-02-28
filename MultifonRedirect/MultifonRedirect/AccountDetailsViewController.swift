@@ -18,7 +18,6 @@ class AccountDetailsViewController: UITableViewController, AccountDetailsEditor 
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		configurePhoneNumberTextField(phoneNumberField)
 		phoneNumberField.becomeFirstResponder()
 	}
 	
@@ -28,9 +27,10 @@ class AccountDetailsViewController: UITableViewController, AccountDetailsEditor 
 		passwordField.text = password
 	}
 	
-	override func viewWillDisappear(_ animated: Bool) {
-		super.viewWillDisappear(animated)
-		accountNumber = accountNumberFromPhoneNumber(phoneNumberField.text)
-		password = passwordField.text
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == "save" {
+			accountNumber = accountNumberFromPhoneNumber(phoneNumberField.text)
+			password = passwordField.text
+		}
 	}
 }
