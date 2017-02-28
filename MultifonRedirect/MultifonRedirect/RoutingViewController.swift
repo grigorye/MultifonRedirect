@@ -82,8 +82,20 @@ class RoutingViewController: UITableViewController {
 		}
 	}
 
+	var scheduledForViewDidAppear = [() -> ()]()
+	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		for i in scheduledForViewDidAppear { i() }
+		scheduledForViewDidAppear = []
+	}
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		scheduledForViewDidAppear += [{
+			self.refreshControl?.sendActions(for: .valueChanged)
+			()
+		}]
 		updateAccountStatusView()
 		let versionString = Bundle.main.object(forInfoDictionaryKey: kCFBundleVersionKey as String)! as! String
 		versionCell.detailTextLabel!.text = versionString
