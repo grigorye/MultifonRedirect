@@ -1,8 +1,8 @@
 /* No comment provided by engineer. */
-"accountNotFound" = "Коммуникационная ошибка.";
+"routeChangeIsNotAllowed" = "Изменение маршрутизации не разрешено.";
 
 /* No comment provided by engineer. */
-"routeChangeIsNotAllowed" = "Изменение маршрутизации не разрешено.";
+"unexpectedServerResponse" = "Коммуникационная ошибка.";
 
 /* No comment provided by engineer. */
 "wrongPassword" = "Неправильный пароль.";
