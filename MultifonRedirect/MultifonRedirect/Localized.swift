@@ -11,7 +11,7 @@ import Foundation
 struct RequestErrorLocalized {
 
 	static let unexpectedServerResponse = NSLocalizedString(
-		"accountNotFound",
+		"unexpectedServerResponse",
 		tableName: "RequestError",
 		value: "Unexpected server response.",
 		comment: ""
