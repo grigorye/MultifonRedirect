@@ -99,6 +99,7 @@ extension RoutingViewController {
 			let accountDetailsEditor = segue.source as! AccountDetailsEditor
 			password = accountDetailsEditor.password
 			accountNumber = accountDetailsEditor.accountNumber
+			updateAccountStatusView()
 			refreshControl?.sendActions(for: .valueChanged)
 		default: fatalError()
 		}
@@ -140,9 +141,13 @@ extension RoutingViewController {
 	// MARK: -
 	//
 
+	func updateLastUpdatedDateView() {
+		refreshControl!.attributedTitle = NSAttributedString(string: L.updated(at: lastUpdateDate))
+	}
+	
 	func updateAccountStatusView() {
 		accountNumberCell.detailTextLabel!.text = phoneNumberFromAccountNumber(accountNumber) ?? L.phoneNumberPlaceholder
-		refreshControl!.attributedTitle = NSAttributedString(string: L.updated(at: lastUpdateDate))
+		self.updateLastUpdatedDateView()
 	}
 	
 	func present(_ error: Error, forFailureDescription failureDescription: String) {
@@ -183,7 +188,7 @@ extension RoutingViewController {
 	// MARK: -
 	//
 
-	func proceedWithRefresh(for refreshControl: UIRefreshControl, _ error: Error?, _ updatedRouting: Routing?) {
+	func proceedWithRefresh(_ error: Error?, _ updatedRouting: Routing?) {
 		guard let updatedRouting = updatedRouting, nil == error else {
 			updateAccountStatusView()
 			present(error!, forFailureDescription: L.couldNotUpdateRoutingTitle)
@@ -191,7 +196,6 @@ extension RoutingViewController {
 		}
 		routing = updatedRouting
 		lastUpdateDate = Date()
-		refreshControl.endRefreshing()
 	}
 	
 	@IBAction func refresh(_ refreshControl: UIRefreshControl) {
@@ -201,7 +205,8 @@ extension RoutingViewController {
 		}
 		query(accountNumber: accountNumber, password: password) { (error, updatedRouting) in
 			DispatchQueue.main.async {
-				self.proceedWithRefresh(for: refreshControl, error, updatedRouting)
+				self.proceedWithRefresh(error, updatedRouting)
+				refreshControl.endRefreshing()
 			}
 		}
 	}
