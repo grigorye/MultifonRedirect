@@ -28,14 +28,14 @@ platform :ios do
   end
 
   lane :developer do
-    gym
+    gym(scheme: "MultifonRedirect")
   end
 
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
   lane :beta do
     # match(type: "appstore") # more information: https://codesigning.guide
-    gym # Build your app - more options available
+    gym(scheme: "MultifonRedirect")
     pilot
 
     # sh "your_script.sh"
@@ -46,7 +46,7 @@ platform :ios do
   lane :release do
     # match(type: "appstore")
     # snapshot
-    gym # Build your app - more options available
+    gym(scheme: "MultifonRedirect")
     deliver(force: true)
     # frameit
   end
