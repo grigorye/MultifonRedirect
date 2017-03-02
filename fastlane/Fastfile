@@ -19,12 +19,16 @@ platform :ios do
   before_all do
     # ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
     cocoapods
-    
+    setup_jenkins
   end
 
   desc "Runs all the tests"
   lane :test do
     scan
+  end
+
+  lane :developer do
+    gym
   end
 
   desc "Submit a new Beta Build to Apple TestFlight"
