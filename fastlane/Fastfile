@@ -27,15 +27,26 @@ platform :ios do
     scan
   end
 
-  lane :developer do
-    gym(scheme: "MultifonRedirect", output_name: "MultifonRedirect-" + number_of_commits.to_s)
+  private_lane :build_and_archive do |options|
+  	product_name = "MultifonRedirect"
+  	versioned_product_name = product_name + "-" + number_of_commits.to_s
+    gym(
+      scheme: product_name,
+      output_name: versioned_product_name,
+      archive_path: versioned_product_name,
+      clean: true
+    )
+  end
+  
+  lane :developer do |options|
+  	build_and_archive
   end
 
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
-  lane :beta do
+  lane :beta do |options|
     # match(type: "appstore") # more information: https://codesigning.guide
-    gym(scheme: "MultifonRedirect")
+  	build_and_archive(options)
     pilot
 
     # sh "your_script.sh"
@@ -43,10 +54,10 @@ platform :ios do
   end
 
   desc "Deploy a new version to the App Store"
-  lane :release do
+  lane :release do |options|
     # match(type: "appstore")
     # snapshot
-    gym(scheme: "MultifonRedirect")
+  	build_and_archive(options)
     deliver(force: true)
     # frameit
   end
