@@ -173,6 +173,7 @@
 				C4F3593D1E5D139400F2B779 /* Resources */,
 				C4DF2A6C1E6330A20099A8DA /* Embed Source Version into Bundle */,
 				C40909BF1E63684D006BBF04 /* Embed Frameworks */,
+				C43F80B11E6B3ED600349011 /* Integrate Fabric */,
 			);
 			buildRules = (
 			);
@@ -236,6 +237,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		C43F80B11E6B3ED600349011 /* Integrate Fabric */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Integrate Fabric";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = "/bin/sh -e";
+			shellScript = "\"${GE_XCODE_BUILD_PHASES:?}\"/IntegrateFabric\n";
+		};
 		C4DF2A6C1E6330A20099A8DA /* Embed Source Version into Bundle */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
