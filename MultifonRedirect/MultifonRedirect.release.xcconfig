@@ -1,0 +1,10 @@
+//
+//  MultifonRedirect.release.xcconfig
+//  MultifonRedirect
+//
+//  Created by Grigory Entin on 04.03.17.
+//  Copyright © 2017 Grigory Entin. All rights reserved.
+//
+
+#include "../Pods/Target Support Files/Pods-iOS/Pods-iOS.release.xcconfig"
+#include "MultifonRedirect-app.xcconfig"
