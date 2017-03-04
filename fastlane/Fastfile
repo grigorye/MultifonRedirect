@@ -16,10 +16,18 @@ fastlane_version "2.18.3"
 default_platform :ios
 
 platform :ios do
+
+  product_name = "MultifonRedirect"
+  env_build_dir = ENV["BUILD_DIR"]
+  build_dir = env_build_dir ? env_build_dir : "build"
+  versioned_product_name = product_name + "-" + number_of_commits.to_s
+  archive_path = build_dir + "/" + versioned_product_name
+  derived_data_path = build_dir + "/DerivedData"
+
   before_all do
     # ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
     # cocoapods
-    setup_jenkins(derived_data_path: "../build/DerivedData", output_directory: "../build")
+    setup_jenkins(derived_data_path: derived_data_path, output_directory: build_dir, force: true)
   end
 
   desc "Runs all the tests"
@@ -28,12 +36,10 @@ platform :ios do
   end
 
   private_lane :build_and_archive do |options|
-  	product_name = "MultifonRedirect"
-  	versioned_product_name = product_name + "-" + number_of_commits.to_s
     gym(
       scheme: product_name,
       output_name: versioned_product_name,
-      archive_path: versioned_product_name,
+      archive_path: archive_path,
       clean: true
     )
   end
