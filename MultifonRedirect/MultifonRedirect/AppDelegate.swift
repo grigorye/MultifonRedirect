@@ -8,6 +8,11 @@
 
 import UIKit
 
+let versionIsClean: Bool = {
+	let version = Bundle.main.infoDictionary!["CFBundleVersion"] as! String
+	return nil == version.rangeOfCharacter(from: CharacterSet.decimalDigits.inverted)
+}()
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -43,7 +48,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	override init() {
 		super.init()
-		_ = initializeFabric()
+		if versionIsClean {
+			_ = initializeFabric()
+		}
 	}
 }
 
