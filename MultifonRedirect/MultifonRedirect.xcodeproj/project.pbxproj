@@ -12,7 +12,6 @@
 		C40909C21E6376F7006BBF04 /* AccountDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40909C11E6376F7006BBF04 /* AccountDetailsViewController.swift */; };
 		C43F80A71E6B276100349011 /* Fabric.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43F80A61E6B276100349011 /* Fabric.swift */; };
 		C43F80AF1E6B3C1200349011 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C43F80AA1E6B286700349011 /* Fabric.framework */; };
-		C43F80B01E6B3C1200349011 /* Fabric.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C43F80AA1E6B286700349011 /* Fabric.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C47456641E64F71F003C7656 /* MultifonNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47456631E64F71F003C7656 /* MultifonNumberTextField.swift */; };
 		C4C72B301E6359B8004E6BB0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C72B2F1E6359B8004E6BB0 /* Extensions.swift */; };
 		C4C72B321E635A8D004E6BB0 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C72B311E635A8D004E6BB0 /* UserDefaults.swift */; };
@@ -41,7 +40,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				C40909BE1E63684D006BBF04 /* PhoneNumberKit.framework in Embed Frameworks */,
-				C43F80B01E6B3C1200349011 /* Fabric.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
