@@ -36,23 +36,25 @@ platform :ios do
   end
 
   private_lane :build_and_archive do |options|
+    export_method = options[:export_method]
     gym(
       scheme: product_name,
       output_name: versioned_product_name,
       archive_path: archive_path,
-      clean: true
+      clean: true,
+      export_method: export_method
     )
   end
   
   lane :developer do |options|
-  	build_and_archive
+  	build_and_archive(export_method: "development")
   end
 
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
   lane :beta do |options|
     # match(type: "appstore") # more information: https://codesigning.guide
-  	build_and_archive(options)
+  	build_and_archive(export_method: "app-store")
     pilot
 
     # sh "your_script.sh"
@@ -63,7 +65,7 @@ platform :ios do
   lane :release do |options|
     # match(type: "appstore")
     # snapshot
-  	build_and_archive(options)
+  	build_and_archive(export_method: "app-store")
     deliver(force: true)
     # frameit
   end
