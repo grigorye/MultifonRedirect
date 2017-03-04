@@ -6,4 +6,6 @@
 //  Copyright © 2017 Grigory Entin. All rights reserved.
 //
 
+CRASHLYTICS_ENABLED = YES
+
 PODS_ROOT = $(SRCROOT)/../Pods
