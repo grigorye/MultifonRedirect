@@ -39,6 +39,11 @@ Runs all the tests
 fastlane ios developer
 ```
 
+### ios fabric
+```
+fastlane ios fabric
+```
+
 ### ios beta
 ```
 fastlane ios beta
