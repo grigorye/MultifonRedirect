@@ -28,6 +28,7 @@ platform :ios do
     # ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
     # cocoapods
     setup_jenkins(derived_data_path: derived_data_path, output_directory: build_dir, force: true)
+    skip_docs
   end
 
   desc "Runs all the tests"
@@ -48,6 +49,14 @@ platform :ios do
     )
   end
   
+  lane :icon do |options|
+  	appicon(
+      appicon_image_file: "AppIcon.png",
+      appicon_path: "MultifonRedirect/MultifonRedirect/Assets.xcassets",
+      appicon_devices: [:iphone, :ipad]
+    )
+  end
+
   lane :developer do |options|
   	build_and_archive(export_method: "development")
   end
