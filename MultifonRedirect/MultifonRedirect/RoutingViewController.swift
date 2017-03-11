@@ -92,6 +92,7 @@ class RoutingViewController: UITableViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		self.routing = nil
 		scheduledForViewDidAppear += [{
 			self.refreshControl?.sendActions(for: .valueChanged)
 			()
