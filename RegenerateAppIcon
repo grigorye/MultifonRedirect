@@ -1,0 +1,6 @@
+#! /bin/sh -xe
+
+for i in 20 29 40 58 60 76 80 87 120 152 167 180
+do
+	svg2png -w $i AppIcon.svg > MultifonRedirect/MultifonRedirect/Assets.xcassets/AppIcon.appiconset/AppIcon-${i}x${i}.png
+done
