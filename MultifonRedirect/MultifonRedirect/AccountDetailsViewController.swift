@@ -10,9 +10,10 @@ import UIKit.UITableViewController
 
 class AccountDetailsViewController: UITableViewController, AccountDetailsEditor {
 
-	var accountNumber: String?
-	var password: String?
+	typealias L = AccountDetailsViewLocalized
 
+	var routingController: RoutingController?
+	
 	@IBOutlet var phoneNumberField: UITextField!
 	@IBOutlet var passwordField: UITextField!
 	
@@ -21,16 +22,33 @@ class AccountDetailsViewController: UITableViewController, AccountDetailsEditor 
 		phoneNumberField.becomeFirstResponder()
 	}
 	
-	override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
-		phoneNumberField.text = phoneNumberFromAccountNumber(accountNumber)!
-		passwordField.text = password
-	}
-	
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if segue.identifier == "save" {
-			accountNumber = accountNumberFromPhoneNumber(phoneNumberField.text)
-			password = passwordField.text
+}
+
+extension AccountDetailsViewController {
+
+	@IBAction func save() {
+		guard view.endEditing(false) else {
+			return
+		}
+		let accountNumber = accountNumberFromPhoneNumber(phoneNumberField.text)!
+		let password = passwordField.text!
+		let routingController = RoutingController(accountNumber: accountNumber, password: password)
+		view.isUserInteractionEnabled = false
+		routingController.query { (error) in
+			DispatchQueue.main.async {
+				self.view.isUserInteractionEnabled = true
+				guard nil == error else {
+					self.present(error!, forFailureDescription: L.couldNotLoginToAccountRoutingTitle)
+					return
+				}
+				self.routingController = routingController
+				self.performSegue(withIdentifier: "loggedIn", sender: self)
+			}
 		}
 	}
+	
+	@IBAction func cancel() {
+		performSegue(withIdentifier: "cancel", sender: self)
+	}
+
 }
