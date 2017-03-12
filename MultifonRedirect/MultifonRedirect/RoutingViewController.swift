@@ -35,7 +35,10 @@ class RoutingViewController: UITableViewController {
 		guard let accountNumber = savedAccountNumber, let password = savedPassword else {
 			return nil
 		}
-		return RoutingController(accountNumber: accountNumber, password: password)
+		return RoutingController(accountNumber: accountNumber, password: password) … {
+			$0.lastRouting = savedLastRouting
+			$0.lastUpdateDate = savedLastUpdateDate
+		}
 	}()
 
 	var routingController: RoutingController! {
@@ -98,7 +101,6 @@ class RoutingViewController: UITableViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		accountNumberCellLabel.textColor = view.tintColor
-		routing = nil
 		scheduledForViewDidAppear += [{
 			self.triggerRefersh()
 		}]
@@ -112,6 +114,7 @@ class RoutingViewController: UITableViewController {
 				()
 			}]
 		}
+		routing = routingController?.lastRouting
 		updateAccountStatusView()
 		let versionString = Bundle.main.object(forInfoDictionaryKey: kCFBundleVersionKey as String)! as! String
 		versionCell.detailTextLabel!.text = versionString
