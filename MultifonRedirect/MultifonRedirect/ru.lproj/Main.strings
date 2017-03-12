@@ -1,9 +1,6 @@
 /* Class = "UILabel"; text = "Multifon Only"; ObjectID = "5gI-Jg-EiA"; */
 "5gI-Jg-EiA.text" = "Только на МультиФон";
 
-/* Class = "UIBarButtonItem"; title = "Redirect"; ObjectID = "GpO-Us-Nns"; */
-"GpO-Us-Nns.title" = "Редирект";
-
 /* Class = "UITableViewSection"; headerTitle = "Accept Calls On:"; ObjectID = "IsX-Pe-emx"; */
 "IsX-Pe-emx.headerTitle" = "Принимать звонки";
 
@@ -16,8 +13,8 @@
 /* Class = "UILabel"; text = "Both Phone and Multifon"; ObjectID = "XC5-yR-SAu"; */
 "XC5-yR-SAu.text" = "На телефон и МультиФон";
 
-/* Class = "UINavigationItem"; title = "Multifon Redirect"; ObjectID = "YfS-wy-c83"; */
-"YfS-wy-c83.title" = "МультиФон редирект";
+/* Class = "UINavigationItem"; title = "M-Redirect"; ObjectID = "YfS-wy-c83"; */
+"YfS-wy-c83.title" = "M-Редирект";
 
 /* Class = "UILabel"; text = "Sign In"; ObjectID = "bMR-qh-gdZ"; */
 "bMR-qh-gdZ.text" = "Войти";
