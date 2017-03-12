@@ -12,6 +12,7 @@ enum DefaultsKey: String {
 	case accountNumber
 	case password
 	case lastUpdateDate
+	case lastRouting
 }
 
 private let defaults = UserDefaults.standard
