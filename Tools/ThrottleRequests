@@ -1,0 +1,4 @@
+#! /bin/sh -xe
+
+sudo dnctl pipe 1 config bw 100Kbit/s delay 1500ms
+echo "dummynet out proto tcp from any to sm.megafon.ru pipe 1" | sudo pfctl -f -
