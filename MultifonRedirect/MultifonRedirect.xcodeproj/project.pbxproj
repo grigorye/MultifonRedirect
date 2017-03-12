@@ -19,6 +19,8 @@
 		C4C5CEC31E7561DB0089DC2F /* RouteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C5CEC21E7561DB0089DC2F /* RouteTableViewCell.swift */; };
 		C4C5CEC61E757B040089DC2F /* AccountDetails.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4C5CEC81E757B040089DC2F /* AccountDetails.strings */; };
 		C4C5CECB1E757B050089DC2F /* RoutingViewAccountAlert.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4C5CECD1E757B050089DC2F /* RoutingViewAccountAlert.strings */; };
+		C4C5CED51E758EFE0089DC2F /* MultifonRedirectFastlaneSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C5CED41E758EFE0089DC2F /* MultifonRedirectFastlaneSnapshot.swift */; };
+		C4C5CEDD1E75904A0089DC2F /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C5CEDC1E7590490089DC2F /* SnapshotHelper.swift */; };
 		C4C72B301E6359B8004E6BB0 /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C72B2F1E6359B8004E6BB0 /* FoundationExtensions.swift */; };
 		C4C72B321E635A8D004E6BB0 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C72B311E635A8D004E6BB0 /* UserDefaults.swift */; };
 		C4C72B341E635ADC004E6BB0 /* PhoneNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C72B331E635ADC004E6BB0 /* PhoneNumbers.swift */; };
@@ -37,6 +39,16 @@
 		C4F3594A1E5D139500F2B779 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4F359491E5D139500F2B779 /* Assets.xcassets */; };
 		C4F3594D1E5D139500F2B779 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4F3594B1E5D139500F2B779 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C4C5CED71E758EFE0089DC2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C4F359371E5D139400F2B779 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C4F3593E1E5D139400F2B779;
+			remoteInfo = MultifonRedirect;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		C40909BF1E63684D006BBF04 /* Embed Frameworks */ = {
@@ -67,6 +79,10 @@
 		C4C5CEC21E7561DB0089DC2F /* RouteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteTableViewCell.swift; sourceTree = "<group>"; };
 		C4C5CEC71E757B040089DC2F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/AccountDetails.strings; sourceTree = "<group>"; };
 		C4C5CECC1E757B050089DC2F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/RoutingViewAccountAlert.strings; sourceTree = "<group>"; };
+		C4C5CED21E758EFE0089DC2F /* MultifonRedirectFastlaneSnapshot.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultifonRedirectFastlaneSnapshot.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4C5CED41E758EFE0089DC2F /* MultifonRedirectFastlaneSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultifonRedirectFastlaneSnapshot.swift; sourceTree = "<group>"; };
+		C4C5CED61E758EFE0089DC2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4C5CEDC1E7590490089DC2F /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = ../../fastlane/SnapshotHelper.swift; sourceTree = "<group>"; };
 		C4C72B2F1E6359B8004E6BB0 /* FoundationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationExtensions.swift; sourceTree = "<group>"; };
 		C4C72B311E635A8D004E6BB0 /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		C4C72B331E635ADC004E6BB0 /* PhoneNumbers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneNumbers.swift; sourceTree = "<group>"; };
@@ -92,6 +108,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C4C5CECF1E758EFE0089DC2F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C4F3593C1E5D139400F2B779 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -114,6 +137,27 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		C4637A3C1E75A9D000E5BD25 /* XCConfigs */ = {
+			isa = PBXGroup;
+			children = (
+				C43F80AE1E6B3B4400349011 /* MultifonRedirect-app.xcconfig */,
+				C43F80AC1E6B37D300349011 /* MultifonRedirect.debug.xcconfig */,
+				C43F80AD1E6B37D300349011 /* MultifonRedirect.release.xcconfig */,
+				C4DF2A6B1E632FB70099A8DA /* GEShared.xcconfig */,
+			);
+			name = XCConfigs;
+			sourceTree = "<group>";
+		};
+		C4C5CED31E758EFE0089DC2F /* MultifonRedirectFastlaneSnapshot */ = {
+			isa = PBXGroup;
+			children = (
+				C4C5CED41E758EFE0089DC2F /* MultifonRedirectFastlaneSnapshot.swift */,
+				C4C5CEDC1E7590490089DC2F /* SnapshotHelper.swift */,
+				C4C5CED61E758EFE0089DC2F /* Info.plist */,
+			);
+			path = MultifonRedirectFastlaneSnapshot;
+			sourceTree = "<group>";
+		};
 		C4D7FC7B1E621A3300C40FE8 /* Strings */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				C4F359411E5D139400F2B779 /* MultifonRedirect */,
+				C4C5CED31E758EFE0089DC2F /* MultifonRedirectFastlaneSnapshot */,
 				C4F359401E5D139400F2B779 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -138,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				C4F3593F1E5D139400F2B779 /* MultifonRedirect.app */,
+				C4C5CED21E758EFE0089DC2F /* MultifonRedirectFastlaneSnapshot.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -147,10 +193,6 @@
 			children = (
 				C4C5CECD1E757B050089DC2F /* RoutingViewAccountAlert.strings */,
 				C4C5CEC81E757B040089DC2F /* AccountDetails.strings */,
-				C43F80AE1E6B3B4400349011 /* MultifonRedirect-app.xcconfig */,
-				C43F80AC1E6B37D300349011 /* MultifonRedirect.debug.xcconfig */,
-				C43F80AD1E6B37D300349011 /* MultifonRedirect.release.xcconfig */,
-				C4DF2A6B1E632FB70099A8DA /* GEShared.xcconfig */,
 				C4F359421E5D139400F2B779 /* AppDelegate.swift */,
 				C43F80A61E6B276100349011 /* Fabric.swift */,
 				C4F359441E5D139400F2B779 /* RoutingViewController.swift */,
@@ -172,6 +214,7 @@
 				C4D7FC7B1E621A3300C40FE8 /* Strings */,
 				C4F3594B1E5D139500F2B779 /* LaunchScreen.storyboard */,
 				C4F3594E1E5D139500F2B779 /* Info.plist */,
+				C4637A3C1E75A9D000E5BD25 /* XCConfigs */,
 				C40909C01E636876006BBF04 /* Frameworks */,
 			);
 			path = MultifonRedirect;
@@ -180,6 +223,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C4C5CED11E758EFE0089DC2F /* MultifonRedirectFastlaneSnapshot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4C5CED91E758EFE0089DC2F /* Build configuration list for PBXNativeTarget "MultifonRedirectFastlaneSnapshot" */;
+			buildPhases = (
+				C4C5CECE1E758EFE0089DC2F /* Sources */,
+				C4C5CECF1E758EFE0089DC2F /* Frameworks */,
+				C4C5CED01E758EFE0089DC2F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C4C5CED81E758EFE0089DC2F /* PBXTargetDependency */,
+			);
+			name = MultifonRedirectFastlaneSnapshot;
+			productName = MultifonRedirectFastlaneSnapshot;
+			productReference = C4C5CED21E758EFE0089DC2F /* MultifonRedirectFastlaneSnapshot.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		C4F3593E1E5D139400F2B779 /* MultifonRedirect */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C4F359511E5D139500F2B779 /* Build configuration list for PBXNativeTarget "MultifonRedirect" */;
@@ -206,10 +267,15 @@
 		C4F359371E5D139400F2B779 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Grigory Entin";
 				TargetAttributes = {
+					C4C5CED11E758EFE0089DC2F = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = C4F3593E1E5D139400F2B779;
+					};
 					C4F3593E1E5D139400F2B779 = {
 						CreatedOnToolsVersion = 8.3;
 						ProvisioningStyle = Automatic;
@@ -230,11 +296,19 @@
 			projectRoot = "";
 			targets = (
 				C4F3593E1E5D139400F2B779 /* MultifonRedirect */,
+				C4C5CED11E758EFE0089DC2F /* MultifonRedirectFastlaneSnapshot */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C4C5CED01E758EFE0089DC2F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C4F3593D1E5D139400F2B779 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -286,6 +360,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C4C5CECE1E758EFE0089DC2F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4C5CED51E758EFE0089DC2F /* MultifonRedirectFastlaneSnapshot.swift in Sources */,
+				C4C5CEDD1E75904A0089DC2F /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C4F3593B1E5D139400F2B779 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -310,6 +393,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C4C5CED81E758EFE0089DC2F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C4F3593E1E5D139400F2B779 /* MultifonRedirect */;
+			targetProxy = C4C5CED71E758EFE0089DC2F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C4C5CEC81E757B040089DC2F /* AccountDetails.strings */ = {
@@ -389,6 +480,115 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C4C5CEDA1E758EFE0089DC2F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 465NA5BW7E;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = MultifonRedirectFastlaneSnapshot/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.grigorye.MultifonRedirectFastlaneSnapshot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "";
+				TEST_TARGET_NAME = MultifonRedirect;
+			};
+			name = Debug;
+		};
+		C4C5CEDB1E758EFE0089DC2F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 465NA5BW7E;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = MultifonRedirectFastlaneSnapshot/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.grigorye.MultifonRedirectFastlaneSnapshot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "";
+				TEST_TARGET_NAME = MultifonRedirect;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		C4F3594F1E5D139500F2B779 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C4DF2A6B1E632FB70099A8DA /* GEShared.xcconfig */;
@@ -440,6 +640,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C4C5CED91E758EFE0089DC2F /* Build configuration list for PBXNativeTarget "MultifonRedirectFastlaneSnapshot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4C5CEDA1E758EFE0089DC2F /* Debug */,
+				C4C5CEDB1E758EFE0089DC2F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C4F3593A1E5D139400F2B779 /* Build configuration list for PBXProject "MultifonRedirect" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
