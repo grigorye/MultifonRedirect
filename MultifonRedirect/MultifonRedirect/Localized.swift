@@ -40,6 +40,31 @@ struct RequestErrorLocalized {
 
 }
 
+struct RoutingViewAccountAlertLocalized {
+
+	static let title = NSLocalizedString(
+		"title",
+		tableName: "RoutingViewAccountAlert",
+		value: "Account",
+		comment: ""
+	)
+	
+	static let logOutTitle = NSLocalizedString(
+		"logout.title",
+		tableName: "RoutingViewAccountAlert",
+		value: "Sign Out",
+		comment: ""
+	)
+	
+	static let cancelTitle = NSLocalizedString(
+		"cancel.title",
+		tableName: "RoutingViewAccountAlert",
+		value: "Cancel",
+		comment: ""
+	)
+
+}
+
 struct RoutingViewErrorAlertLocalized {
 
 	static let okButtonTitle = NSLocalizedString(
@@ -49,6 +74,17 @@ struct RoutingViewErrorAlertLocalized {
 		comment: ""
 	)
 
+}
+
+struct AccountDetailsViewLocalized {
+
+	static let couldNotLoginToAccountRoutingTitle = NSLocalizedString(
+		"couldNotConnectToAccount.title",
+		tableName: "AccountDetails",
+		value: "Could not sign in to account",
+		comment: ""
+	)
+	
 }
 
 struct RoutingViewLocalized {
@@ -67,12 +103,21 @@ struct RoutingViewLocalized {
 		comment: ""
 	)
 
-	static let phoneNumberPlaceholder = NSLocalizedString(
-		"phoneNumber.placeholder",
+	static let logInTitle = NSLocalizedString(
+		"login.title",
 		tableName: "RoutingView",
-		value: "Not Set",
+		value: "Sign In",
 		comment: ""
 	)
+	static func accountTitle(for phoneNumber: String) -> String {
+		let format = NSLocalizedString(
+			"accountTitle.for",
+			tableName: "RoutingView",
+			value: "%@",
+			comment: ""
+		)
+		return String.localizedStringWithFormat(format, phoneNumber)
+	}
 	
 	private static let dateAgoComponentsFormatter: DateComponentsFormatter = {
 		$0.unitsStyle = .full
