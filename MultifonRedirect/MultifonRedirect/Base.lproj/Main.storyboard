@@ -166,7 +166,7 @@
                         <sections>
                             <tableViewSection id="JT5-vS-bGy">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="phoneNumber" id="Vw6-Tw-hVP" customClass="PhoneNumberCell" customModule="MultifonRedirect" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="phoneNumber" id="Vw6-Tw-hVP">
                                         <rect key="frame" x="0.0" y="35" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="Vw6-Tw-hVP" id="Ndy-fv-9F8">
@@ -189,11 +189,8 @@
                                                 <constraint firstItem="iQF-UX-wEf" firstAttribute="leading" secondItem="Ndy-fv-9F8" secondAttribute="leadingMargin" id="juA-6u-h8X"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="phoneNumberField" destination="iQF-UX-wEf" id="AqT-YH-eav"/>
-                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="password" id="e4m-Ge-KIf" customClass="PasswordCell" customModule="MultifonRedirect" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="password" id="e4m-Ge-KIf">
                                         <rect key="frame" x="0.0" y="79" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="e4m-Ge-KIf" id="LDO-hq-n26">
@@ -213,9 +210,6 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="KCs-Z2-Xmk" secondAttribute="trailing" id="qNj-2q-Vfl"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="passwordField" destination="KCs-Z2-Xmk" id="VXQ-pe-FdR"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
