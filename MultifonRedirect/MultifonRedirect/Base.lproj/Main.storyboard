@@ -130,34 +130,6 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection id="Ppr-il-W89">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" textLabel="oHA-pC-WIl" detailTextLabel="Ky3-3F-nvP" style="IBUITableViewCellStyleValue1" id="2jG-yO-qEm">
-                                        <rect key="frame" x="0.0" y="303" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2jG-yO-qEm" id="ev6-d0-jbp">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Version" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oHA-pC-WIl">
-                                                    <rect key="frame" x="15" y="12" width="57" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" id="Ky3-3F-nvP">
-                                                    <rect key="frame" x="352" y="12" width="8" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="5Df-qF-ew0" id="s6S-4Z-3Kd"/>
@@ -180,7 +152,6 @@
                         <outlet property="multifonOnlyRouteCell" destination="Egv-Lu-qDB" id="9Yc-Ae-bPK"/>
                         <outlet property="phoneAndMultifonRouteCell" destination="hVo-9I-9bn" id="XAk-44-0Nf"/>
                         <outlet property="phoneOnlyRouteCell" destination="hVd-ud-92a" id="6za-cT-03w"/>
-                        <outlet property="versionCell" destination="2jG-yO-qEm" id="YMh-4s-JM2"/>
                         <segue destination="fSB-yy-Q91" kind="showDetail" identifier="showAccountDetails" action="showViewController:sender:" id="WmS-tz-NgN"/>
                     </connections>
                 </tableViewController>

@@ -7,9 +7,6 @@
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "KCs-Z2-Xmk"; */
 "KCs-Z2-Xmk.placeholder" = "Пароль";
 
-/* Class = "UILabel"; text = "1"; ObjectID = "Ky3-3F-nvP"; */
-"Ky3-3F-nvP.text" = "1";
-
 /* Class = "UILabel"; text = "Both Phone and Multifon"; ObjectID = "XC5-yR-SAu"; */
 "XC5-yR-SAu.text" = "На телефон и МультиФон";
 
@@ -27,7 +24,4 @@
 
 /* Class = "UITextField"; placeholder = "Phone"; ObjectID = "iQF-UX-wEf"; */
 "iQF-UX-wEf.placeholder" = "Телефон";
-
-/* Class = "UILabel"; text = "Version"; ObjectID = "oHA-pC-WIl"; */
-"oHA-pC-WIl.text" = "Версия";
 

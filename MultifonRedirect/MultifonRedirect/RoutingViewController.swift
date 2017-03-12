@@ -17,8 +17,6 @@ protocol AccountDetailsEditor {
 class RoutingViewController: UITableViewController {
 
 	typealias L = RoutingViewLocalized
-	
-	@IBOutlet var versionCell: UITableViewCell!
 
 	@IBOutlet var accountNumberCell: UITableViewCell!
 	@IBOutlet var accountNumberCellLabel: UILabel!
@@ -116,8 +114,6 @@ class RoutingViewController: UITableViewController {
 		}
 		routing = routingController?.lastRouting
 		updateAccountStatusView()
-		let versionString = Bundle.main.object(forInfoDictionaryKey: kCFBundleVersionKey as String)! as! String
-		versionCell.detailTextLabel!.text = versionString
 	}
 	
 	var scheduledForDeinit = [() -> ()]()
