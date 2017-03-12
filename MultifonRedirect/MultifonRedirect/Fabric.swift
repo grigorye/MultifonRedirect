@@ -10,6 +10,7 @@ import Foundation
 import Fabric
 import Crashlytics
 
-func initializeFabric() {
+let fabricInitializer: Void = {
+	Fabric.sharedSDK().debug = true
 	Fabric.with([Crashlytics()])
-}
+}()

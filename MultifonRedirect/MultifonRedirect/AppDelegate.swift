@@ -48,8 +48,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	override init() {
 		super.init()
-		if versionIsClean {
-			_ = initializeFabric()
+		if $(versionIsClean) {
+			_ = fabricInitializer
 		}
 	}
 }
