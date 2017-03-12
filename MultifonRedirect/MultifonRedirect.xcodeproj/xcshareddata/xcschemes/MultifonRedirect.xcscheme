@@ -28,6 +28,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C4C5CED11E758EFE0089DC2F"
+               BuildableName = "MultifonRedirectFastlaneSnapshot.xctest"
+               BlueprintName = "MultifonRedirectFastlaneSnapshot"
+               ReferencedContainer = "container:MultifonRedirect.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
