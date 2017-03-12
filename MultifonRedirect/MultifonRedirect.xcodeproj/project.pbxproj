@@ -17,6 +17,8 @@
 		C4C5CEBD1E7464020089DC2F /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C5CEBC1E7464020089DC2F /* UIKitExtensions.swift */; };
 		C4C5CEC11E74C4C70089DC2F /* PersistentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C5CEC01E74C4C70089DC2F /* PersistentData.swift */; };
 		C4C5CEC31E7561DB0089DC2F /* RouteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C5CEC21E7561DB0089DC2F /* RouteTableViewCell.swift */; };
+		C4C5CEC61E757B040089DC2F /* AccountDetails.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4C5CEC81E757B040089DC2F /* AccountDetails.strings */; };
+		C4C5CECB1E757B050089DC2F /* RoutingViewAccountAlert.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4C5CECD1E757B050089DC2F /* RoutingViewAccountAlert.strings */; };
 		C4C72B301E6359B8004E6BB0 /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C72B2F1E6359B8004E6BB0 /* FoundationExtensions.swift */; };
 		C4C72B321E635A8D004E6BB0 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C72B311E635A8D004E6BB0 /* UserDefaults.swift */; };
 		C4C72B341E635ADC004E6BB0 /* PhoneNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C72B331E635ADC004E6BB0 /* PhoneNumbers.swift */; };
@@ -63,6 +65,8 @@
 		C4C5CEBC1E7464020089DC2F /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
 		C4C5CEC01E74C4C70089DC2F /* PersistentData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentData.swift; sourceTree = "<group>"; };
 		C4C5CEC21E7561DB0089DC2F /* RouteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteTableViewCell.swift; sourceTree = "<group>"; };
+		C4C5CEC71E757B040089DC2F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/AccountDetails.strings; sourceTree = "<group>"; };
+		C4C5CECC1E757B050089DC2F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/RoutingViewAccountAlert.strings; sourceTree = "<group>"; };
 		C4C72B2F1E6359B8004E6BB0 /* FoundationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationExtensions.swift; sourceTree = "<group>"; };
 		C4C72B311E635A8D004E6BB0 /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		C4C72B331E635ADC004E6BB0 /* PhoneNumbers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneNumbers.swift; sourceTree = "<group>"; };
@@ -141,6 +145,8 @@
 		C4F359411E5D139400F2B779 /* MultifonRedirect */ = {
 			isa = PBXGroup;
 			children = (
+				C4C5CECD1E757B050089DC2F /* RoutingViewAccountAlert.strings */,
+				C4C5CEC81E757B040089DC2F /* AccountDetails.strings */,
 				C43F80AE1E6B3B4400349011 /* MultifonRedirect-app.xcconfig */,
 				C43F80AC1E6B37D300349011 /* MultifonRedirect.debug.xcconfig */,
 				C43F80AD1E6B37D300349011 /* MultifonRedirect.release.xcconfig */,
@@ -235,6 +241,8 @@
 			files = (
 				C4D7FC6D1E6216FC00C40FE8 /* RoutingViewErrorAlert.strings in Resources */,
 				C4D7FC721E6216FD00C40FE8 /* InfoPlist.strings in Resources */,
+				C4C5CEC61E757B040089DC2F /* AccountDetails.strings in Resources */,
+				C4C5CECB1E757B050089DC2F /* RoutingViewAccountAlert.strings in Resources */,
 				C4F3594D1E5D139500F2B779 /* LaunchScreen.storyboard in Resources */,
 				C4F3594A1E5D139500F2B779 /* Assets.xcassets in Resources */,
 				C4F359481E5D139500F2B779 /* Main.storyboard in Resources */,
@@ -304,6 +312,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		C4C5CEC81E757B040089DC2F /* AccountDetails.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C4C5CEC71E757B040089DC2F /* ru */,
+			);
+			name = AccountDetails.strings;
+			sourceTree = "<group>";
+		};
+		C4C5CECD1E757B050089DC2F /* RoutingViewAccountAlert.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C4C5CECC1E757B050089DC2F /* ru */,
+			);
+			name = RoutingViewAccountAlert.strings;
+			sourceTree = "<group>";
+		};
 		C4D7FC641E6216FC00C40FE8 /* AccountParamsEditor.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

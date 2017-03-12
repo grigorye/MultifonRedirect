@@ -1,14 +1,17 @@
 /* No comment provided by engineer. */
+"accountTitle.for" = "%@";
+
+/* No comment provided by engineer. */
 "couldNotChangeRouting.title" = "Не удалось изменить маршрутизацию";
 
 /* No comment provided by engineer. */
 "couldNotUpdateRouting.title" = "Не удалось получить информацию о маршрутизации";
 
 /* No comment provided by engineer. */
-"never.updated.placeholder" = "Обновить информацию о маршрутизации";
+"login.title" = "Войти";
 
 /* No comment provided by engineer. */
-"phoneNumber.placeholder" = "Не задан";
+"never.updated.placeholder" = "Обновить информацию о маршрутизации";
 
 /* No comment provided by engineer. */
 "updated.ago" = "Обновлено %@ назад";

@@ -1,5 +1,11 @@
+/* Class = "UILabel"; text = "Multifon Only"; ObjectID = "5gI-Jg-EiA"; */
+"5gI-Jg-EiA.text" = "Только на МультиФон";
+
+/* Class = "UIBarButtonItem"; title = "Redirect"; ObjectID = "GpO-Us-Nns"; */
+"GpO-Us-Nns.title" = "Редирект";
+
 /* Class = "UITableViewSection"; headerTitle = "Accept Calls On:"; ObjectID = "IsX-Pe-emx"; */
-"IsX-Pe-emx.headerTitle" = "Принимать звонки:";
+"IsX-Pe-emx.headerTitle" = "Принимать звонки";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "KCs-Z2-Xmk"; */
 "KCs-Z2-Xmk.placeholder" = "Пароль";
@@ -7,26 +13,23 @@
 /* Class = "UILabel"; text = "1"; ObjectID = "Ky3-3F-nvP"; */
 "Ky3-3F-nvP.text" = "1";
 
-/* Class = "UILabel"; text = "Both Phone and Multifon"; ObjectID = "RTH-Tf-gQM"; */
-"RTH-Tf-gQM.text" = "На мобильный и в МультиФон";
+/* Class = "UILabel"; text = "Both Phone and Multifon"; ObjectID = "XC5-yR-SAu"; */
+"XC5-yR-SAu.text" = "На телефон и МультиФон";
 
 /* Class = "UINavigationItem"; title = "Multifon Redirect"; ObjectID = "YfS-wy-c83"; */
 "YfS-wy-c83.title" = "МультиФон Редирект";
 
-/* Class = "UINavigationItem"; title = "Multifon Account"; ObjectID = "dP3-Xs-DWk"; */
-"dP3-Xs-DWk.title" = "Аккаунт МультиФон";
+/* Class = "UILabel"; text = "Sign In"; ObjectID = "bMR-qh-gdZ"; */
+"bMR-qh-gdZ.text" = "Войти";
 
-/* Class = "UILabel"; text = "Phone"; ObjectID = "dPl-yS-H9B"; */
-"dPl-yS-H9B.text" = "Номер телефона";
+/* Class = "UINavigationItem"; title = "Account"; ObjectID = "dP3-Xs-DWk"; */
+"dP3-Xs-DWk.title" = "Учетная запись";
 
-/* Class = "UILabel"; text = "Phone Only"; ObjectID = "e3d-5G-6rt"; */
-"e3d-5G-6rt.text" = "Только на мобильный";
+/* Class = "UILabel"; text = "Phone Only"; ObjectID = "dy7-IU-ANf"; */
+"dy7-IU-ANf.text" = "Только на телефон";
 
 /* Class = "UITextField"; placeholder = "Phone"; ObjectID = "iQF-UX-wEf"; */
 "iQF-UX-wEf.placeholder" = "Телефон";
-
-/* Class = "UILabel"; text = "Multifon Only"; ObjectID = "nUN-4e-ZCT"; */
-"nUN-4e-ZCT.text" = "Только в МультиФон";
 
 /* Class = "UILabel"; text = "Version"; ObjectID = "oHA-pC-WIl"; */
 "oHA-pC-WIl.text" = "Версия";
