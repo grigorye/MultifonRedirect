@@ -13,6 +13,7 @@
 		C43F80A71E6B276100349011 /* Fabric.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43F80A61E6B276100349011 /* Fabric.swift */; };
 		C43F80AF1E6B3C1200349011 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C43F80AA1E6B286700349011 /* Fabric.framework */; };
 		C4637A3F1E7601F000E5BD25 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4637A411E7601F000E5BD25 /* InfoPlist.strings */; };
+		C4637A431E7605EF00E5BD25 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C4637A421E7605EF00E5BD25 /* Settings.bundle */; };
 		C47456641E64F71F003C7656 /* MultifonNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47456631E64F71F003C7656 /* MultifonNumberTextField.swift */; };
 		C4C5CEBB1E744FF00089DC2F /* RoutingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C5CEBA1E744FF00089DC2F /* RoutingController.swift */; };
 		C4C5CEBD1E7464020089DC2F /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C5CEBC1E7464020089DC2F /* UIKitExtensions.swift */; };
@@ -74,6 +75,7 @@
 		C43F80AD1E6B37D300349011 /* MultifonRedirect.release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = MultifonRedirect.release.xcconfig; sourceTree = SOURCE_ROOT; };
 		C43F80AE1E6B3B4400349011 /* MultifonRedirect-app.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "MultifonRedirect-app.xcconfig"; sourceTree = SOURCE_ROOT; };
 		C4637A401E7601F000E5BD25 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C4637A421E7605EF00E5BD25 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		C47456631E64F71F003C7656 /* MultifonNumberTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultifonNumberTextField.swift; sourceTree = "<group>"; };
 		C4C5CEBA1E744FF00089DC2F /* RoutingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutingController.swift; sourceTree = "<group>"; };
 		C4C5CEBC1E7464020089DC2F /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				C4D7FC7B1E621A3300C40FE8 /* Strings */,
 				C4F3594B1E5D139500F2B779 /* LaunchScreen.storyboard */,
 				C4F3594E1E5D139500F2B779 /* Info.plist */,
+				C4637A421E7605EF00E5BD25 /* Settings.bundle */,
 				C4637A3C1E75A9D000E5BD25 /* XCConfigs */,
 				C40909C01E636876006BBF04 /* Frameworks */,
 			);
@@ -326,6 +329,7 @@
 				C4F359481E5D139500F2B779 /* Main.storyboard in Resources */,
 				C4D7FC621E6216FC00C40FE8 /* AccountParamsEditor.strings in Resources */,
 				C4D7FC781E6216FD00C40FE8 /* RoutingView.strings in Resources */,
+				C4637A431E7605EF00E5BD25 /* Settings.bundle in Resources */,
 				C4D7FC681E6216FC00C40FE8 /* RequestError.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
