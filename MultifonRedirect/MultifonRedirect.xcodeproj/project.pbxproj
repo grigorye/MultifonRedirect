@@ -16,6 +16,7 @@
 		C4C5CEBB1E744FF00089DC2F /* RoutingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C5CEBA1E744FF00089DC2F /* RoutingController.swift */; };
 		C4C5CEBD1E7464020089DC2F /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C5CEBC1E7464020089DC2F /* UIKitExtensions.swift */; };
 		C4C5CEC11E74C4C70089DC2F /* PersistentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C5CEC01E74C4C70089DC2F /* PersistentData.swift */; };
+		C4C5CEC31E7561DB0089DC2F /* RouteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C5CEC21E7561DB0089DC2F /* RouteTableViewCell.swift */; };
 		C4C72B301E6359B8004E6BB0 /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C72B2F1E6359B8004E6BB0 /* FoundationExtensions.swift */; };
 		C4C72B321E635A8D004E6BB0 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C72B311E635A8D004E6BB0 /* UserDefaults.swift */; };
 		C4C72B341E635ADC004E6BB0 /* PhoneNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C72B331E635ADC004E6BB0 /* PhoneNumbers.swift */; };
@@ -61,6 +62,7 @@
 		C4C5CEBA1E744FF00089DC2F /* RoutingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutingController.swift; sourceTree = "<group>"; };
 		C4C5CEBC1E7464020089DC2F /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
 		C4C5CEC01E74C4C70089DC2F /* PersistentData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentData.swift; sourceTree = "<group>"; };
+		C4C5CEC21E7561DB0089DC2F /* RouteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteTableViewCell.swift; sourceTree = "<group>"; };
 		C4C72B2F1E6359B8004E6BB0 /* FoundationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoundationExtensions.swift; sourceTree = "<group>"; };
 		C4C72B311E635A8D004E6BB0 /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		C4C72B331E635ADC004E6BB0 /* PhoneNumbers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneNumbers.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				C4C5CEC01E74C4C70089DC2F /* PersistentData.swift */,
 				C4C5CEBA1E744FF00089DC2F /* RoutingController.swift */,
 				C40909C11E6376F7006BBF04 /* AccountDetailsViewController.swift */,
+				C4C5CEC21E7561DB0089DC2F /* RouteTableViewCell.swift */,
 				C4D7FC5E1E620FC200C40FE8 /* RequestErrorPresentation.swift */,
 				C4D7FC5C1E61EF3B00C40FE8 /* ExternalDependencies.swift */,
 				C4D7FC581E61C10200C40FE8 /* Data.swift */,
@@ -288,6 +291,7 @@
 				C4F359431E5D139400F2B779 /* AppDelegate.swift in Sources */,
 				C4C72B321E635A8D004E6BB0 /* UserDefaults.swift in Sources */,
 				C4C5CEBB1E744FF00089DC2F /* RoutingController.swift in Sources */,
+				C4C5CEC31E7561DB0089DC2F /* RouteTableViewCell.swift in Sources */,
 				C4D7FC5D1E61EF3B00C40FE8 /* ExternalDependencies.swift in Sources */,
 				C4C5CEC11E74C4C70089DC2F /* PersistentData.swift in Sources */,
 				C4D7FC5B1E61EEB500C40FE8 /* Localized.swift in Sources */,

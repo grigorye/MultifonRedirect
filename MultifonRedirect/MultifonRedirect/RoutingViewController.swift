@@ -58,9 +58,9 @@ class RoutingViewController: UITableViewController {
 
 	var routing: Routing? {
 		didSet {
-			let checkmarkedCell = cell(for: routing)
+			let cellForActiveRouting = cell(for: routing)
 			for cell in routeCells {
-				cell.accessoryType = checkmarkedCell == cell ? .checkmark : .none
+				(cell as! RouteActivationAwareCell).setRouteActivationState(cellForActiveRouting == cell ? .active : .inactive)
 			}
 		}
 	}
@@ -214,7 +214,7 @@ extension RoutingViewController {
 		let newRouting = routing(for: cell)
 		let oldRouting = routing
 		routing = nil
-		cell.accessoryType = .detailButton
+		(cell as! RouteActivationAwareCell).setRouteActivationState(.activating)
 		let routingController = self.routingController!
 		routingController.change(routing: newRouting) { (error) in
 			DispatchQueue.main.async {

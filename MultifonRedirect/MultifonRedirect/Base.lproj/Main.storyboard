@@ -44,56 +44,89 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Accept Calls On:" id="IsX-Pe-emx">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="e3d-5G-6rt" style="IBUITableViewCellStyleDefault" id="hVd-ud-92a">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="hVd-ud-92a" customClass="RouteTableViewCell" customModule="MultifonRedirect" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="136" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hVd-ud-92a" id="4FE-q5-gHb">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="hVd-ud-92a" id="4FE-q5-gHb">
                                             <rect key="frame" x="0.0" y="0.0" width="336" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Phone Only" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="e3d-5G-6rt">
-                                                    <rect key="frame" x="15" y="0.0" width="321" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="tSC-FW-Agz">
+                                                    <rect key="frame" x="308" y="12" width="20" height="20"/>
+                                                </activityIndicatorView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Only" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dy7-IU-ANf">
+                                                    <rect key="frame" x="15" y="11" width="89" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="dy7-IU-ANf" firstAttribute="centerY" secondItem="4FE-q5-gHb" secondAttribute="centerY" id="5vf-2Z-kse"/>
+                                                <constraint firstItem="tSC-FW-Agz" firstAttribute="centerY" secondItem="dy7-IU-ANf" secondAttribute="centerY" id="Ep7-sL-q8P"/>
+                                                <constraint firstItem="tSC-FW-Agz" firstAttribute="trailing" secondItem="4FE-q5-gHb" secondAttribute="trailingMargin" id="OsN-sd-oEC"/>
+                                                <constraint firstItem="dy7-IU-ANf" firstAttribute="leading" secondItem="4FE-q5-gHb" secondAttribute="leadingMargin" id="Qvu-Pz-7Kj"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="activityIndicatorView" destination="tSC-FW-Agz" id="Og2-Rt-Iit"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="nUN-4e-ZCT" style="IBUITableViewCellStyleDefault" id="jCD-19-AZE">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Egv-Lu-qDB" customClass="RouteTableViewCell" customModule="MultifonRedirect" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="180" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jCD-19-AZE" id="zje-ce-5aO">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="Egv-Lu-qDB" id="JK6-Op-aXE">
+                                            <rect key="frame" x="0.0" y="0.0" width="336" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Multifon Only" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nUN-4e-ZCT">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="md2-wL-Odr">
+                                                    <rect key="frame" x="308" y="12" width="20" height="20"/>
+                                                </activityIndicatorView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Multifon Only" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gI-Jg-EiA">
+                                                    <rect key="frame" x="15" y="11" width="102" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="5gI-Jg-EiA" firstAttribute="centerY" secondItem="JK6-Op-aXE" secondAttribute="centerY" id="Ytl-X1-mSd"/>
+                                                <constraint firstItem="md2-wL-Odr" firstAttribute="centerY" secondItem="5gI-Jg-EiA" secondAttribute="centerY" id="cey-dA-0Kz"/>
+                                                <constraint firstItem="5gI-Jg-EiA" firstAttribute="leading" secondItem="JK6-Op-aXE" secondAttribute="leadingMargin" id="s6W-Nd-Ujb"/>
+                                                <constraint firstItem="md2-wL-Odr" firstAttribute="trailing" secondItem="JK6-Op-aXE" secondAttribute="trailingMargin" id="tTN-FP-Idm"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="activityIndicatorView" destination="md2-wL-Odr" id="PVM-o5-smP"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="RTH-Tf-gQM" style="IBUITableViewCellStyleDefault" id="dQ6-kN-idM">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="hVo-9I-9bn" customClass="RouteTableViewCell" customModule="MultifonRedirect" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="224" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dQ6-kN-idM" id="38p-DN-kzS">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="hVo-9I-9bn" id="OcQ-ah-fv1">
+                                            <rect key="frame" x="0.0" y="0.0" width="336" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Both Phone and Multifon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RTH-Tf-gQM">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="9ID-Ui-yR1">
+                                                    <rect key="frame" x="308" y="12" width="20" height="20"/>
+                                                </activityIndicatorView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Both Phone and Multifon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XC5-yR-SAu">
+                                                    <rect key="frame" x="15" y="11" width="189" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="XC5-yR-SAu" firstAttribute="leading" secondItem="OcQ-ah-fv1" secondAttribute="leadingMargin" id="QPa-fA-RXY"/>
+                                                <constraint firstItem="9ID-Ui-yR1" firstAttribute="trailing" secondItem="OcQ-ah-fv1" secondAttribute="trailingMargin" id="Rhj-oz-JNd"/>
+                                                <constraint firstItem="9ID-Ui-yR1" firstAttribute="centerY" secondItem="XC5-yR-SAu" secondAttribute="centerY" id="d2a-Uz-cpn"/>
+                                                <constraint firstItem="XC5-yR-SAu" firstAttribute="centerY" secondItem="OcQ-ah-fv1" secondAttribute="centerY" id="fmR-Aj-v4X"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="activityIndicatorView" destination="9ID-Ui-yR1" id="ACG-5Y-Wpb"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -144,8 +177,8 @@
                     <connections>
                         <outlet property="accountNumberCell" destination="QVa-hZ-sUG" id="G0R-bv-eU9"/>
                         <outlet property="accountNumberCellLabel" destination="bMR-qh-gdZ" id="H93-9p-YeA"/>
-                        <outlet property="multifonOnlyRouteCell" destination="jCD-19-AZE" id="qbz-gh-m0m"/>
-                        <outlet property="phoneAndMultifonRouteCell" destination="dQ6-kN-idM" id="0x5-M5-C8y"/>
+                        <outlet property="multifonOnlyRouteCell" destination="Egv-Lu-qDB" id="9Yc-Ae-bPK"/>
+                        <outlet property="phoneAndMultifonRouteCell" destination="hVo-9I-9bn" id="XAk-44-0Nf"/>
                         <outlet property="phoneOnlyRouteCell" destination="hVd-ud-92a" id="6za-cT-03w"/>
                         <outlet property="versionCell" destination="2jG-yO-qEm" id="YMh-4s-JM2"/>
                         <segue destination="fSB-yy-Q91" kind="showDetail" identifier="showAccountDetails" action="showViewController:sender:" id="WmS-tz-NgN"/>
