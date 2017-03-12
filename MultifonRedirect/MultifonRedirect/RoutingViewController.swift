@@ -8,10 +8,9 @@
 
 import UIKit
 
-@objc protocol AccountDetailsEditor {
+protocol AccountDetailsEditor {
 	
-	var accountNumber: String? { get set }
-	var password: String? { get set }
+	var routingController: RoutingController? { get set }
 
 }
 
@@ -20,30 +19,43 @@ class RoutingViewController: UITableViewController {
 	typealias L = RoutingViewLocalized
 	
 	@IBOutlet var versionCell: UITableViewCell!
-	@IBOutlet var editAccountCell: UITableViewCell!
+
 	@IBOutlet var accountNumberCell: UITableViewCell!
+	@IBOutlet var accountNumberCellLabel: UILabel!
+
 	@IBOutlet var phoneOnlyRouteCell: UITableViewCell!
 	@IBOutlet var multifonOnlyRouteCell: UITableViewCell!
 	@IBOutlet var phoneAndMultifonRouteCell: UITableViewCell!
 	
-	var accountNumber: String? {
-		get {
-			return string(for: .accountNumber)
-		}
-		set {
-			set(newValue, for: .accountNumber)
-		}
+	var loggedIn: Bool {
+		return nil != routingController
 	}
 	
-	var password: String? {
-		get {
-			return string(for: .password)
+	lazy var routingControllerImp: RoutingController! = {
+		guard let accountNumber = savedAccountNumber, let password = savedPassword else {
+			return nil
 		}
+		return RoutingController(accountNumber: accountNumber, password: password)
+	}()
+
+	var routingController: RoutingController! {
 		set {
-			set(newValue, for: .password)
+			routingControllerImp = newValue
+			if let routingController = newValue {
+				savedAccountNumber = routingController.accountNumber
+				savedPassword = routingController.password
+			} else {
+				savedAccountNumber = nil
+				savedPassword = nil
+			}
+			updateRouting(from: routingController)
+			updateAccountStatusView()
+		}
+		get {
+			return routingControllerImp
 		}
 	}
-	
+
 	var routing: Routing? {
 		didSet {
 			let checkmarkedCell = cell(for: routing)
@@ -53,31 +65,24 @@ class RoutingViewController: UITableViewController {
 		}
 	}
 	
-	var lastUpdateDate: Date? {
-		get {
-			return date(for: .lastUpdateDate)
-		}
-		set {
-			set(newValue, for: .lastUpdateDate)
-			updateAccountStatusView()
-		}
-	}
-	
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		switch segue.identifier {
-		case "showAccountDetails"?:
-			let accountDetailsEditor = segue.destination as! AccountDetailsEditor
-			accountDetailsEditor.accountNumber = accountNumber
-			accountDetailsEditor.password = password
-		default: ()
-		}
-	}
-	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let cell = tableView.cellForRow(at: indexPath)!
 		switch cell {
 		case phoneOnlyRouteCell, multifonOnlyRouteCell, phoneAndMultifonRouteCell:
 			changeRouting(from: cell)
+		case accountNumberCell:
+			tableView.deselectRow(at: indexPath, animated: true)
+			if loggedIn {
+				typealias L = RoutingViewAccountAlertLocalized
+				let alert = UIAlertController(title: L.title, message: phoneNumberFromAccountNumber(routingController.accountNumber), preferredStyle: .alert)
+				alert.addAction(UIAlertAction(title: L.logOutTitle, style: .default) { _ in
+					self.logout()
+				})
+				alert.addAction(UIAlertAction(title: L.cancelTitle, style: .cancel))
+				present(alert, animated: true)
+			} else {
+				performSegue(withIdentifier: "showAccountDetails", sender: self)
+			}
 		default: ()
 		}
 	}
@@ -92,14 +97,30 @@ class RoutingViewController: UITableViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		self.routing = nil
+		accountNumberCellLabel.textColor = view.tintColor
+		routing = nil
 		scheduledForViewDidAppear += [{
-			self.refreshControl?.sendActions(for: .valueChanged)
-			()
+			self.triggerRefersh()
 		}]
+		do {
+			let notificationCenter = NotificationCenter.default
+			let observer = notificationCenter.addObserver(forName: .UIApplicationWillEnterForeground, object: nil, queue: nil) { [unowned self] (_) in
+				self.triggerRefersh()
+			}
+			scheduledForDeinit += [{
+				notificationCenter.removeObserver(observer)
+				()
+			}]
+		}
 		updateAccountStatusView()
 		let versionString = Bundle.main.object(forInfoDictionaryKey: kCFBundleVersionKey as String)! as! String
 		versionCell.detailTextLabel!.text = versionString
+	}
+	
+	var scheduledForDeinit = [() -> ()]()
+	deinit {
+		for i in scheduledForViewDidAppear { i() }
+		scheduledForDeinit = []
 	}
 }
 
@@ -108,12 +129,9 @@ extension RoutingViewController {
 	@IBAction func unwindFromAccountDetails(_ segue: UIStoryboardSegue) {
 		switch segue.identifier! {
 		case "cancel": ()
-		case "save":
+		case "loggedIn":
 			let accountDetailsEditor = segue.source as! AccountDetailsEditor
-			password = accountDetailsEditor.password
-			accountNumber = accountDetailsEditor.accountNumber
-			updateAccountStatusView()
-			refreshControl?.sendActions(for: .valueChanged)
+			routingController = accountDetailsEditor.routingController!
 		default: fatalError()
 		}
 	}
@@ -138,7 +156,7 @@ extension RoutingViewController {
 		case phoneOnlyRouteCell: return .phoneOnly
 		case multifonOnlyRouteCell: return .multifonOnly
 		case phoneAndMultifonRouteCell: return .phoneAndMultifon
-		default: abort()
+		default: fatalError()
 		}
 	}
 	
@@ -154,35 +172,42 @@ extension RoutingViewController {
 	// MARK: -
 	//
 
-	func updateLastUpdatedDateView() {
-		refreshControl!.attributedTitle = NSAttributedString(string: L.updated(at: lastUpdateDate))
-	}
-	
 	func updateAccountStatusView() {
-		accountNumberCell.detailTextLabel!.text = phoneNumberFromAccountNumber(accountNumber) ?? L.phoneNumberPlaceholder
-		self.updateLastUpdatedDateView()
-	}
-	
-	func present(_ error: Error, forFailureDescription failureDescription: String) {
-		let alert = UIAlertController(title: failureDescription, message: ($(error) as NSError).localizedDescription, preferredStyle: .alert)
-		typealias L = RoutingViewErrorAlertLocalized
-		alert.addAction(UIAlertAction(title: L.okButtonTitle, style: .cancel))
-		present(alert, animated: true)
+		accountNumberCellLabel.text = loggedIn ? L.accountTitle(for: phoneNumberFromAccountNumber(routingController.accountNumber)!) : L.logInTitle
+		refreshControl!.attributedTitle = !loggedIn ? nil : NSAttributedString(string: L.updated(at: routingController.lastUpdateDate))
+		for cell in routeCells {
+			cell.textLabel!.isEnabled = loggedIn
+		}
 	}
 	
 	//
 	// MARK: -
 	//
 
-	func proceedWithChangeRouting(_ error: Error?, oldRouting: Routing?, newRouting: Routing) {
+	func logout() {
+		self.routingController = nil
+	}
+	
+	func updateRouting(from routingController: RoutingController?) {
+		guard let routingController = routingController else {
+			routing = nil
+			savedLastRouting = nil
+			savedLastUpdateDate = nil
+			return
+		}
+		routing = routingController.lastRouting!
+		savedLastRouting = routingController.lastRouting!
+		savedLastUpdateDate = routingController.lastUpdateDate!
+	}
+	
+	func proceedWithChangeRouting(_ error: Error?, through routingController: RoutingController, from oldRouting: Routing?) {
 		guard nil == error else {
 			routing = oldRouting
 			updateAccountStatusView()
 			present(error!, forFailureDescription: L.couldNotChangeRoutingTitle)
 			return
 		}
-		routing = newRouting
-		lastUpdateDate = Date()
+		updateRouting(from: routingController)
 	}
 	
 	func changeRouting(from cell: UITableViewCell) {
@@ -190,38 +215,43 @@ extension RoutingViewController {
 		let oldRouting = routing
 		routing = nil
 		cell.accessoryType = .detailButton
-		change(accountNumber: accountNumber!, password: password!, routing: newRouting) { (error) in
+		let routingController = self.routingController!
+		routingController.change(routing: newRouting) { (error) in
 			DispatchQueue.main.async {
-				self.proceedWithChangeRouting(error, oldRouting: oldRouting, newRouting: newRouting)
+				self.proceedWithChangeRouting(error, through: routingController, from: oldRouting)
 			}
 		}
+	}
+	
+	func triggerRefersh() {
+		self.refreshControl?.sendActions(for: .valueChanged)
 	}
 
 	//
 	// MARK: -
 	//
 
-	func proceedWithRefresh(_ error: Error?, _ updatedRouting: Routing?) {
-		guard let updatedRouting = updatedRouting, nil == error else {
+	func proceedWithRefresh(_ error: Error?, through routingController: RoutingController) {
+		guard nil == error else {
 			updateAccountStatusView()
 			present(error!, forFailureDescription: L.couldNotUpdateRoutingTitle)
 			return
 		}
-		routing = updatedRouting
-		lastUpdateDate = Date()
+		updateRouting(from: routingController)
 	}
 	
 	@IBAction func refresh(_ refreshControl: UIRefreshControl) {
-		guard let accountNumber = accountNumber, let password = password else {
+		guard let routingController = routingController else {
 			refreshControl.endRefreshing()
 			return
 		}
-		query(accountNumber: accountNumber, password: password) { (error, updatedRouting) in
+		routingController.query { (error) in
 			DispatchQueue.main.async {
-				self.proceedWithRefresh(error, updatedRouting)
+				self.proceedWithRefresh(error, through: routingController)
 				refreshControl.endRefreshing()
 			}
 		}
 	}
 
 }
+
