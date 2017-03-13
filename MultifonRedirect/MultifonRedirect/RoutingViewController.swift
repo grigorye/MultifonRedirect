@@ -88,6 +88,29 @@ class RoutingViewController: UITableViewController {
 		}
 	}
 
+	//
+	// MARK: -
+	//
+	
+	var didUpdateRefreshControlForCurrentDrag = false
+	
+	func updateRefreshControl() {
+		refreshControl!.attributedTitle = !loggedIn ? nil : NSAttributedString(string: L.updated(at: routingController.lastUpdateDate))
+	}
+	
+	override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+		updateRefreshControl()
+		didUpdateRefreshControlForCurrentDrag = true
+	}
+	
+	override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+		didUpdateRefreshControlForCurrentDrag = false
+	}
+	
+	//
+	// MARK: -
+	//
+	
 	var scheduledForViewDidAppear = [() -> ()]()
 	
 	override func viewDidAppear(_ animated: Bool) {
@@ -173,7 +196,6 @@ extension RoutingViewController {
 
 	func updateAccountStatusView() {
 		accountNumberCellLabel.text = loggedIn ? L.accountTitle(for: phoneNumberFromAccountNumber(routingController.accountNumber)!) : L.logInTitle
-		refreshControl!.attributedTitle = !loggedIn ? nil : NSAttributedString(string: L.updated(at: routingController.lastUpdateDate))
 		for cell in routeCells {
 			cell.textLabel!.isEnabled = loggedIn
 		}
@@ -253,4 +275,3 @@ extension RoutingViewController {
 	}
 
 }
-
