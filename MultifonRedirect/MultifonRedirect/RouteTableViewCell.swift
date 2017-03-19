@@ -23,6 +23,7 @@ protocol RouteActivationAwareCell {
 class RouteTableViewCell : UITableViewCell, RouteActivationAwareCell {
 
 	@IBOutlet var activityIndicatorView: UIActivityIndicatorView!
+	@IBOutlet var titleLabel: UILabel!
 
 	func setRouteActivationState(_ activationState: ActivationState) {
 		switch activationState {
@@ -37,6 +38,13 @@ class RouteTableViewCell : UITableViewCell, RouteActivationAwareCell {
 			accessoryType = .none
 		}
 	}
+	
+	var enabled: Bool = false {
+		didSet {
+			titleLabel!.isEnabled = enabled
+		}
+	}
+	
 }
 
 class SimpleRouteTableViewCell : UITableViewCell, RouteActivationAwareCell {
