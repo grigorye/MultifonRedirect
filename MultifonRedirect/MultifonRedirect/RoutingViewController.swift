@@ -70,6 +70,9 @@ class RoutingViewController: UITableViewController {
 		let cell = tableView.cellForRow(at: indexPath)!
 		switch cell {
 		case phoneOnlyRouteCell, multifonOnlyRouteCell, phoneAndMultifonRouteCell:
+			guard loggedIn else {
+				return
+			}
 			setRouting(from: cell)
 		case accountNumberCell:
 			tableView.deselectRow(at: indexPath, animated: true)
