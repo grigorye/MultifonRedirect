@@ -70,6 +70,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="activityIndicatorView" destination="tSC-FW-Agz" id="Og2-Rt-Iit"/>
+                                            <outlet property="titleLabel" destination="dy7-IU-ANf" id="CgH-Ux-ubU"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Egv-Lu-qDB" customClass="RouteTableViewCell" customModule="MultifonRedirect" customModuleProvider="target">
@@ -98,6 +99,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="activityIndicatorView" destination="md2-wL-Odr" id="PVM-o5-smP"/>
+                                            <outlet property="titleLabel" destination="5gI-Jg-EiA" id="3zH-1a-dy0"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="hVo-9I-9bn" customClass="RouteTableViewCell" customModule="MultifonRedirect" customModuleProvider="target">
@@ -126,6 +128,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="activityIndicatorView" destination="9ID-Ui-yR1" id="ACG-5Y-Wpb"/>
+                                            <outlet property="titleLabel" destination="XC5-yR-SAu" id="jWV-3o-zWM"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -267,4 +270,5 @@
             <point key="canvasLocation" x="48.799999999999997" y="43.628185907046479"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.0" green="0.59119051694869995" blue="0.36870884895324707" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
