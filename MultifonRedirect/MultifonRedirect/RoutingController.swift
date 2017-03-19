@@ -104,51 +104,63 @@ class RoutingController {
 		self.password = password
 	}
 	
+	// MARK: -
+	
+	private func proceedWithQuery(data: Data?, response: URLResponse?, error: Error?, completionHandler: @escaping (Error?) -> ()) {
+		if let error = error {
+			completionHandler(RequestError.urlSessionFailure(error: error))
+			return
+		}
+		let httpResponse = (response as! HTTPURLResponse)
+		guard httpResponse.statusCode == 200 else {
+			completionHandler(RequestError.badHTTPStatus(response: httpResponse))
+			return
+		}
+		do {
+			let routing = try routingFrom(queryResponseData: data!)
+			lastRouting = routing
+			lastUpdateDate = Date()
+			completionHandler(nil)
+		}
+		catch {
+			completionHandler(error)
+		}
+	}
+	
 	func query(completionHandler: @escaping (Error?) -> ()) {
 		let session = URLSession(configuration: .default)
 		let login = loginFromAccountNumber(accountNumber)
 		let url = URL(string: "https://sm.megafon.ru/sm/client/routing?login=\(login)&password=\(password)")!
-		let task = session.dataTask(with: $(url), completionHandler: { (data, response, error) in
-			if let error = error {
-				completionHandler(RequestError.urlSessionFailure(error: $(error)))
-				return
-			}
-			let httpResponse = (response as! HTTPURLResponse)
-			guard httpResponse.statusCode == 200 else {
-				completionHandler(RequestError.badHTTPStatus(response: $(httpResponse)))
-				return
-			}
-			do {
-				let routing = try routingFrom(queryResponseData: data!)
-				self.lastRouting = routing
-				self.lastUpdateDate = Date()
-				completionHandler(nil)
-			}
-			catch {
-				completionHandler(error)
-			}
-		})
+		let task = session.dataTask(with: url) { (data, response, error) in
+			self.proceedWithQuery(data: data, response: response, error: error, completionHandler: completionHandler)
+		}
 		task.resume()
 	}
 
-	func change(routing: Routing, completionHandler: @escaping (RequestError?) -> ()) {
+	// MARK: -
+
+	private func proceedWithSet(_ routing: Routing, data: Data?, response: URLResponse?, error: Error?, completionHandler: @escaping (RequestError?) -> ()) {
+		if let error = error {
+			completionHandler(.urlSessionFailure(error: error))
+			return
+		}
+		let httpResponse = (response as! HTTPURLResponse)
+		guard httpResponse.statusCode == 200 else {
+			completionHandler(.badHTTPStatus(response: httpResponse))
+			return
+		}
+		lastRouting = routing
+		lastUpdateDate = Date()
+		completionHandler(nil)
+	}
+	
+	func set(_ routing: Routing, completionHandler: @escaping (RequestError?) -> ()) {
 		let session = URLSession(configuration: .default)
 		let login = loginFromAccountNumber(accountNumber)
 		let url = URL(string: "https://sm.megafon.ru/sm/client/routing/set?login=\(login)&password=\(password)&routing=\(routing.rawValue)")!
-		let task = session.dataTask(with: $(url), completionHandler: { (data, response, error) in
-			if let error = error {
-				completionHandler(.urlSessionFailure(error: $(error)))
-				return
-			}
-			let httpResponse = (response as! HTTPURLResponse)
-			guard httpResponse.statusCode == 200 else {
-				completionHandler(.badHTTPStatus(response: $(httpResponse)))
-				return
-			}
-			self.lastRouting = routing
-			self.lastUpdateDate = Date()
-			completionHandler(nil)
-		})
+		let task = session.dataTask(with: url) { (data, response, error) in
+			self.proceedWithSet(routing, data: data, response: response, error: error, completionHandler: completionHandler)
+		}
 		task.resume()
 	}
 
