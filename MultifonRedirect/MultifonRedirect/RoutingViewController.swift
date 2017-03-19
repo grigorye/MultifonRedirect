@@ -21,9 +21,9 @@ class RoutingViewController: UITableViewController {
 	@IBOutlet var accountNumberCell: UITableViewCell!
 	@IBOutlet var accountNumberCellLabel: UILabel!
 
-	@IBOutlet var phoneOnlyRouteCell: UITableViewCell!
-	@IBOutlet var multifonOnlyRouteCell: UITableViewCell!
-	@IBOutlet var phoneAndMultifonRouteCell: UITableViewCell!
+	@IBOutlet var phoneOnlyRouteCell: RouteTableViewCell!
+	@IBOutlet var multifonOnlyRouteCell: RouteTableViewCell!
+	@IBOutlet var phoneAndMultifonRouteCell: RouteTableViewCell!
 	
 	var loggedIn: Bool {
 		return nil != routingController
@@ -61,7 +61,7 @@ class RoutingViewController: UITableViewController {
 		didSet {
 			let cellForActiveRouting = cell(for: routing)
 			for cell in routeCells {
-				(cell as! RouteActivationAwareCell).setRouteActivationState(cellForActiveRouting == cell ? .active : .inactive)
+				cell.setRouteActivationState(cellForActiveRouting == cell ? .active : .inactive)
 			}
 		}
 	}
@@ -70,7 +70,7 @@ class RoutingViewController: UITableViewController {
 		let cell = tableView.cellForRow(at: indexPath)!
 		switch cell {
 		case phoneOnlyRouteCell, multifonOnlyRouteCell, phoneAndMultifonRouteCell:
-			changeRouting(from: cell)
+			setRouting(from: cell)
 		case accountNumberCell:
 			tableView.deselectRow(at: indexPath, animated: true)
 			if loggedIn {
@@ -182,7 +182,7 @@ extension RoutingViewController {
 		}
 	}
 	
-	var routeCells: [UITableViewCell] {
+	var routeCells: [RouteTableViewCell] {
 		return [
 			phoneOnlyRouteCell,
 			multifonOnlyRouteCell,
@@ -197,7 +197,7 @@ extension RoutingViewController {
 	func updateAccountStatusView() {
 		accountNumberCellLabel.text = loggedIn ? L.accountTitle(for: phoneNumberFromAccountNumber(routingController.accountNumber)!) : L.logInTitle
 		for cell in routeCells {
-			cell.textLabel!.isEnabled = loggedIn
+			cell.enabled = loggedIn
 		}
 	}
 	
@@ -231,13 +231,13 @@ extension RoutingViewController {
 		updateRouting(from: routingController)
 	}
 	
-	func changeRouting(from cell: UITableViewCell) {
+	func setRouting(from cell: UITableViewCell) {
 		let newRouting = routing(for: cell)
 		let oldRouting = routing
 		routing = nil
 		(cell as! RouteActivationAwareCell).setRouteActivationState(.activating)
 		let routingController = self.routingController!
-		routingController.change(routing: newRouting) { (error) in
+		routingController.set(newRouting) { (error) in
 			DispatchQueue.main.async {
 				self.proceedWithChangeRouting(error, through: routingController, from: oldRouting)
 			}
