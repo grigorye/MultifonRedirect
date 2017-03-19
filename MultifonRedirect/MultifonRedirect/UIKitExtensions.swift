@@ -11,7 +11,7 @@ import UIKit
 extension UIViewController {
 
 	func present(_ error: Error, forFailureDescription failureDescription: String) {
-		let alert = UIAlertController(title: failureDescription, message: ($(error) as NSError).localizedDescription, preferredStyle: .alert)
+		let alert = UIAlertController(title: failureDescription, message: (error as NSError).localizedDescription, preferredStyle: .alert)
 		typealias L = RoutingViewErrorAlertLocalized
 		alert.addAction(UIAlertAction(title: L.okButtonTitle, style: .cancel))
 		present(alert, animated: true)
