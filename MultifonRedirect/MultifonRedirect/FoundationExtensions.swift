@@ -34,7 +34,7 @@ class XMLParserDelegateForSimpleElementTracking: NSObject, XMLParserDelegate {
 	
 	func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
 		//
-		delegate!.parser(parser, didEndElementWithPath: $(currentElementPath), characters: $(currentElementCharacters))
+		delegate!.parser(parser, didEndElementWithPath: currentElementPath, characters: currentElementCharacters)
 		let suffix = ".\(elementName)"
 		assert(currentElementPath.hasSuffix(suffix))
 		currentElementPath = currentElementPath.substring(to: currentElementPath.index(currentElementPath.endIndex, offsetBy: -suffix.distance(from: suffix.startIndex, to: suffix.endIndex)))
