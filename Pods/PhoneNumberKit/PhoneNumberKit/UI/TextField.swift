@@ -23,6 +23,9 @@ open class PhoneNumberTextField: UITextField, UITextFieldDelegate {
     
     public var withPrefix: Bool = true {
         didSet {
+			if #available(iOS 10.0, *) {
+				self.textContentType = .telephoneNumber
+			}
             partialFormatter.withPrefix = withPrefix
             if withPrefix == false {
                 self.keyboardType = UIKeyboardType.numberPad

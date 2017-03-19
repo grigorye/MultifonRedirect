@@ -3,8 +3,9 @@ use_frameworks!
 
 target "iOS" do
 	platform :ios, '8.0'
-	pod 'Crashlytics'
+#	pod 'Crashlytics'
 	pod 'Fabric'
+	pod 'Answers'
 	pod 'PhoneNumberKit', '~> 1.2'
 end
 target "macOS" do
