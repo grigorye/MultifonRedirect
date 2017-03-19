@@ -209,7 +209,9 @@ extension RoutingViewController {
 	//
 
 	func logout() {
+		let action = would(.logout)
 		self.routingController = nil
+		action.succeeded()
 	}
 	
 	func updateRouting(from routingController: RoutingController?) {
@@ -224,29 +226,6 @@ extension RoutingViewController {
 		savedLastUpdateDate = routingController.lastUpdateDate!
 	}
 	
-	func proceedWithChangeRouting(_ error: Error?, through routingController: RoutingController, from oldRouting: Routing?) {
-		guard nil == error else {
-			routing = oldRouting
-			updateAccountStatusView()
-			present(error!, forFailureDescription: L.couldNotChangeRoutingTitle)
-			return
-		}
-		updateRouting(from: routingController)
-	}
-	
-	func setRouting(from cell: UITableViewCell) {
-		let newRouting = routing(for: cell)
-		let oldRouting = routing
-		routing = nil
-		(cell as! RouteActivationAwareCell).setRouteActivationState(.activating)
-		let routingController = self.routingController!
-		routingController.set(newRouting) { (error) in
-			DispatchQueue.main.async {
-				self.proceedWithChangeRouting(error, through: routingController, from: oldRouting)
-			}
-		}
-	}
-	
 	func triggerRefersh() {
 		self.refreshControl?.sendActions(for: .valueChanged)
 	}
@@ -254,25 +233,53 @@ extension RoutingViewController {
 	//
 	// MARK: -
 	//
-
-	func proceedWithRefresh(_ error: Error?, through routingController: RoutingController) {
-		guard nil == error else {
-			updateAccountStatusView()
-			present(error!, forFailureDescription: L.couldNotUpdateRoutingTitle)
-			return
+	
+	func setRouting(from cell: UITableViewCell) {
+		let newRouting = routing(for: cell)
+		let oldRouting = routing!
+		let action = would(.changeRouting(from: oldRouting, to: newRouting)); let preflight: Preflight?; defer { action.preflight = preflight }
+		routing = nil
+		(cell as! RouteActivationAwareCell).setRouteActivationState(.activating)
+		let routingController = self.routingController!
+		preflight = nil
+		routingController.set(newRouting) { [unowned self] (error) in
+			DispatchQueue.main.async {
+				if let error = error {
+					action.failed(due: error)
+					self.routing = oldRouting
+					self.updateAccountStatusView()
+					self.present(error, forFailureDescription: L.couldNotChangeRoutingTitle)
+					return
+				}
+				self.updateRouting(from: routingController)
+				action.succeeded()
+			}
 		}
-		updateRouting(from: routingController)
 	}
 	
+	//
+	// MARK: -
+	//
+	
 	@IBAction func refresh(_ refreshControl: UIRefreshControl) {
+		let action = would(.refreshRouting); let preflight: Preflight?; defer { action.preflight = preflight }
 		guard let routingController = routingController else {
+			preflight = .cancelled(due: .noAccountConnected)
 			refreshControl.endRefreshing()
 			return
 		}
+		preflight = nil
 		routingController.query { (error) in
 			DispatchQueue.main.async {
-				self.proceedWithRefresh(error, through: routingController)
+				if let error = error {
+					action.failed(due: error)
+					self.updateAccountStatusView()
+					self.present(error, forFailureDescription: L.couldNotUpdateRoutingTitle)
+					return
+				}
+				self.updateRouting(from: routingController)
 				refreshControl.endRefreshing()
+				action.succeeded()
 			}
 		}
 	}
