@@ -8,9 +8,14 @@
 
 import Foundation
 import Fabric
-import Crashlytics
+import Answers
+
+private func logEventToAnswers(name: String, attributes: [String : Any]? = nil) {
+	Answers.logCustomEvent(withName: name, customAttributes: attributes)
+}
 
 let fabricInitializer: Void = {
 	Fabric.sharedSDK().debug = true
-	Fabric.with([Crashlytics()])
+	Fabric.with([Answers()])
+	eventLoggers += [logEventToAnswers]
 }()
