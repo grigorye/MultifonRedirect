@@ -232,9 +232,9 @@
                                 <action selector="cancel" destination="fSB-yy-Q91" id="cPG-l5-g9z"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="u6n-f6-a7k">
+                        <barButtonItem key="rightBarButtonItem" title="Sign In" style="done" id="u6n-f6-a7k">
                             <connections>
-                                <action selector="save" destination="fSB-yy-Q91" id="sfu-5b-Vzn"/>
+                                <action selector="login" destination="fSB-yy-Q91" id="a3K-11-x2Y"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
