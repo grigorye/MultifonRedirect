@@ -14,10 +14,25 @@ func $<T>(_ value: T, line: Int = #line, function: String = #function, column: I
 		dump(value, to: &s)
 		return s
 	}()
-	print("• \(function).\(line).\(column):\n\(description)", terminator: "")
+	print("• \(function).\(line).\(column): \(description)", terminator: "")
 	return value
 }
 
+// https://support.apple.com/kb/TA45403?locale=en_US&viewlocale=en_US
+
+typealias LogCStringF = @convention(c) (_ message: UnsafeMutableRawPointer, _ length: CUnsignedInt, _ banner: CBool) -> Void
+
+@available(iOS 9.0, macOS 10.12, watchOS 3.0, tvOS 10.0, *)
+@_silgen_name("_NSSetLogCStringFunction") private func NSSetLogCStringFunction(_ f: LogCStringF)
+
+let logCString: LogCStringF = { messageBytes, length, banner in
+	let message = String(bytesNoCopy: messageBytes, length: Int(length), encoding: .utf8, freeWhenDone: false)!
+	print(message)
+}
+
+public let nslogRedirectorInitializer: Void = {
+	NSSetLogCStringFunction(logCString)
+}()
 
 //
 // The idea is borrowed from https://github.com/devxoul/Then
