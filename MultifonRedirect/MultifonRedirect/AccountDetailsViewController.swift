@@ -32,7 +32,7 @@ extension AccountDetailsViewController {
 			preflight = .cancelled(due: .endEditing)
 			return
 		}
-		guard let phoneNumber = phoneNumberField.text else {
+		guard let phoneNumber = phoneNumberField.text, phoneNumber != "" else {
 			preflight = .cancelled(due: .noPhoneNumberProvided)
 			return
 		}
