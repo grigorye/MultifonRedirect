@@ -22,6 +22,7 @@ func $<T>(_ value: T, line: Int = #line, function: String = #function, column: I
 
 typealias LogCStringF = @convention(c) (_ message: UnsafeMutableRawPointer, _ length: CUnsignedInt, _ banner: CBool) -> Void
 
+#if GE_NSLOG_REDIRECTION_ENABLED
 @available(iOS 9.0, macOS 10.12, watchOS 3.0, tvOS 10.0, *)
 @_silgen_name("_NSSetLogCStringFunction") private func NSSetLogCStringFunction(_ f: LogCStringF)
 
@@ -33,6 +34,9 @@ let logCString: LogCStringF = { messageBytes, length, banner in
 public let nslogRedirectorInitializer: Void = {
 	NSSetLogCStringFunction(logCString)
 }()
+#else
+public let nslogRedirectorInitializer: Void = ()
+#endif
 
 //
 // The idea is borrowed from https://github.com/devxoul/Then
