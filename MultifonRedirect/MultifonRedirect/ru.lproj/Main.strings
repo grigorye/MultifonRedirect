@@ -25,3 +25,6 @@
 /* Class = "UITextField"; placeholder = "Phone"; ObjectID = "iQF-UX-wEf"; */
 "iQF-UX-wEf.placeholder" = "Телефон";
 
+/* Class = "UIBarButtonItem"; title = "Sign In"; ObjectID = "u6n-f6-a7k"; */
+"u6n-f6-a7k.title" = "Войти";
+
