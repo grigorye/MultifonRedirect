@@ -1,14 +1,14 @@
-/* Class = "UILabel"; text = "Multifon Only"; ObjectID = "5gI-Jg-EiA"; */
-"5gI-Jg-EiA.text" = "Только на МультиФон";
+/* Class = "UILabel"; text = "MultiFon"; ObjectID = "5gI-Jg-EiA"; */
+"5gI-Jg-EiA.text" = "МультиФон";
 
 /* Class = "UITableViewSection"; headerTitle = "Accept Calls On:"; ObjectID = "IsX-Pe-emx"; */
-"IsX-Pe-emx.headerTitle" = "Принимать звонки";
+"IsX-Pe-emx.headerTitle" = "Принимать звонки на:";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "KCs-Z2-Xmk"; */
 "KCs-Z2-Xmk.placeholder" = "Пароль";
 
-/* Class = "UILabel"; text = "Both Phone and Multifon"; ObjectID = "XC5-yR-SAu"; */
-"XC5-yR-SAu.text" = "На телефон и МультиФон";
+/* Class = "UILabel"; text = "MultiFon and Phone"; ObjectID = "XC5-yR-SAu"; */
+"XC5-yR-SAu.text" = "МультиФон и Телефон";
 
 /* Class = "UINavigationItem"; title = "M-Redirect"; ObjectID = "YfS-wy-c83"; */
 "YfS-wy-c83.title" = "M-Редирект";
@@ -19,8 +19,8 @@
 /* Class = "UINavigationItem"; title = "Account"; ObjectID = "dP3-Xs-DWk"; */
 "dP3-Xs-DWk.title" = "Учетная запись";
 
-/* Class = "UILabel"; text = "Phone Only"; ObjectID = "dy7-IU-ANf"; */
-"dy7-IU-ANf.text" = "Только на телефон";
+/* Class = "UILabel"; text = "Phone"; ObjectID = "dy7-IU-ANf"; */
+"dy7-IU-ANf.text" = "Телефон";
 
 /* Class = "UITextField"; placeholder = "Phone"; ObjectID = "iQF-UX-wEf"; */
 "iQF-UX-wEf.placeholder" = "Телефон";
