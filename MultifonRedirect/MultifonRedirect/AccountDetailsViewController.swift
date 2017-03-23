@@ -24,6 +24,16 @@ class AccountDetailsViewController: UITableViewController, AccountDetailsEditor 
 	
 }
 
+extension AccountDetailsViewController : UITextFieldDelegate {
+	
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		assert(textField == passwordField)
+		UIApplication.shared.sendAction(#selector(login), to: self, from: self, for: nil)
+		return false
+	}
+	
+}
+
 extension AccountDetailsViewController {
 
 	@IBAction func login() {
