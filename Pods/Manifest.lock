@@ -15,14 +15,18 @@ DEPENDENCIES:
   - Answers
   - Crashlytics
   - Fabric
-  - PhoneNumberKit (~> 1.2)
+  - PhoneNumberKit (from `GitSubtrees/PhoneNumberKit`)
+
+EXTERNAL SOURCES:
+  PhoneNumberKit:
+    :path: GitSubtrees/PhoneNumberKit
 
 SPEC CHECKSUMS:
   Answers: 6a4d22973d8550808630a55f526055c9eb6d39a2
   Crashlytics: 79e236942ca1e7fc641df1feb9a275360a78ab6a
   Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
-  PhoneNumberKit: ffae8f18fb78c1425c7af973711b0b0fd4f4104f
+  PhoneNumberKit: 816720df3bd3b33f47d2685f3d059473eaecbf6a
 
-PODFILE CHECKSUM: 8f3008d64e2003558eebb209edba32cb431f9d18
+PODFILE CHECKSUM: b69d1d2462b341a3572121a88ddaa8512b872025
 
 COCOAPODS: 1.2.0

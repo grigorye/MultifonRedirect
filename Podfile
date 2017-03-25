@@ -6,7 +6,7 @@ target "iOS" do
 #	pod 'Crashlytics'
 	pod 'Fabric'
 	pod 'Answers'
-	pod 'PhoneNumberKit', '~> 1.2'
+	pod 'PhoneNumberKit', :path => 'GitSubtrees/PhoneNumberKit'
 end
 target "macOS" do
 	platform :osx, '10.11'
