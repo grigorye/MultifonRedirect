@@ -19,16 +19,58 @@ class AccountDetailsViewController: UITableViewController, AccountDetailsEditor 
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		phoneNumberField.becomeFirstResponder()
+		if _false {
+			phoneNumberField.becomeFirstResponder()
+		}
+		passwordField.delegate = PasswordFieldDelegate().retainedIn(passwordField)
+		phoneNumberField.delegate = PhoneNumberFieldDelegate().retainedIn(phoneNumberField)
 	}
 	
 }
 
-extension AccountDetailsViewController : UITextFieldDelegate {
+class PhoneNumberFieldDelegate: NSObject, UITextFieldDelegate {
+	
+	var enforcedPrefix = "+7 "
+	
+	func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+		// Put the enforced prefix into otherwise empty field on beginning of editing.
+		guard let text = textField.text, text != "" else {
+			textField.text = enforcedPrefix
+			return true
+		}
+		return true
+	}
+	
+	func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+		// Make field empty on the end of editing, if it contains just the enforced prefix.
+		guard let text = textField.text, text != enforcedPrefix else {
+			textField.text = nil
+			return true
+		}
+		return true
+	}
+	
+	func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+		// Disallow any edits that would affect the enforced prefix, except for the case when the prefix is partially removed (restore the prefix in such a case).
+		guard let text = textField.text as NSString? else {
+			return false
+		}
+		let newText = text.replacingCharacters(in: range, with: string)
+		if !newText.hasPrefix(enforcedPrefix) {
+			if enforcedPrefix.hasPrefix(newText) {
+				textField.text = enforcedPrefix
+			}
+			return false
+		}
+		return true
+	}
+
+}
+
+class PasswordFieldDelegate: NSObject, UITextFieldDelegate {
 	
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-		assert(textField == passwordField)
-		UIApplication.shared.sendAction(#selector(login), to: self, from: self, for: nil)
+		UIApplication.shared.sendAction(#selector(AccountDetailsViewController.login), to: nil, from: self, for: nil)
 		return false
 	}
 	
