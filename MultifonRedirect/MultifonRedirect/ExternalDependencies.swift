@@ -8,6 +8,19 @@
 
 import Foundation
 
+var _false = false
+var _true = true
+
+extension NSObject {
+	
+	func retainedIn(_ object: NSObject) -> Self {
+		let assoc = Unmanaged.passUnretained(self).toOpaque()
+		objc_setAssociatedObject(object, assoc, self, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+		return self
+	}
+	
+}
+
 func $<T>(_ value: T, line: Int = #line, function: String = #function, column: Int = #column) -> T {
 	let description: String = {
 		var s = ""
