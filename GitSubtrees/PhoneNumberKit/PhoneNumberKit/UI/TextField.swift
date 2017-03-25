@@ -189,6 +189,9 @@ open class PhoneNumberTextField: UITextField, UITextFieldDelegate {
             textField.text = modifiedTextField
         }
         else {
+			guard _delegate?.textField?(textField, shouldChangeCharactersIn: NSMakeRange(0, textAsNSString.length), replacementString: formattedNationalNumber) ?? true else {
+				return false
+			}
             selectedTextRange = selectionRangeForNumberReplacement(textField: textField, formattedText: formattedNationalNumber)
             textField.text = formattedNationalNumber
         }
