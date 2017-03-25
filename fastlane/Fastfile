@@ -69,7 +69,7 @@ platform :ios do
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
   lane :beta do |options|
-    match(type: "appstore", git_url: "https://github.com/grigorye/fastlane-match")
+    match(type: "appstore", git_url: "ssh://git@github.com/grigorye/fastlane-match")
   	build_and_archive(export_method: "app-store")
     pilot
 
