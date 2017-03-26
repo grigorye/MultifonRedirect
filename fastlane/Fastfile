@@ -62,6 +62,7 @@ platform :ios do
   end
   
   lane :fabric do |options|
+    match(type: "development", git_url: "ssh://git@github.com/grigorye/fastlane-match")
   	build_and_archive(export_method: "development")
   	crashlytics
   end
