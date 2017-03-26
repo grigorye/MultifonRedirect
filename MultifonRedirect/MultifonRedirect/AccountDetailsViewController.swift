@@ -98,10 +98,11 @@ extension AccountDetailsViewController {
 		}
 		preflight = nil
 		let routingController = RoutingController(accountNumber: accountNumber, password: password)
-		view.isUserInteractionEnabled = false
+		let lockedView = view.window!
+		lockedView.isUserInteractionEnabled = false
 		routingController.query { (error) in
 			DispatchQueue.main.async {
-				self.view.isUserInteractionEnabled = true
+				lockedView.isUserInteractionEnabled = true
 				if let error = error {
 					action.failed(due: error)
 					self.present(error, forFailureDescription: L.couldNotLoginToAccountRoutingTitle)
