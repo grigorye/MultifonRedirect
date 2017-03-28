@@ -269,7 +269,7 @@ extension RoutingViewController {
 			return
 		}
 		preflight = nil
-		routingController.query { (error) in
+		_ = routingController.query { (error) in
 			DispatchQueue.main.async {
 				if let error = error {
 					action.failed(due: error)
