@@ -30,7 +30,6 @@ env \
 	CRASHLYTICS_DEBUG=true \
 	CRASHLYTICS_EMAILS=cake214@icloud.com \
 	GYM_XCARGS='CRASHLYTICS_ENABLED=YES' \
-	DEVELOPER_DIR='/Applications/Xcode.app/Contents/Developer' \
 	FASTLANE_DONT_STORE_PASSWORD=1 \
     MATCH_VERBOSE=1 \
 	bundle exec fastlane ios "${lane:?}"
