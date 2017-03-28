@@ -46,16 +46,12 @@ private class RoutingResponseParser: NSObject {
 	
 	func parse() throws -> Routing {
 		let responseParserDelegate = QueryRoutingResponseParserDelegate()
-		let xmlParserDelegate: XMLParserDelegate = {
-			let $ = XMLParserDelegateForSimpleElementTracking()
-			$.delegate = responseParserDelegate
-			return $
-		}()
-		let xmlParser: XMLParser = {
-			let $ = XMLParser(data: data)
-			$.delegate = xmlParserDelegate
-			return $
-		}()
+		let xmlParserDelegate = XMLParserDelegateForSimpleElementTracking() … {
+			$0.delegate = responseParserDelegate
+		}
+		let xmlParser = XMLParser(data: data) … {
+			$0.delegate = xmlParserDelegate
+		}
 		guard xmlParser.parse() else {
 			throw RequestError.queryRoutingResponseParsingFailure(underlyingError: xmlParser.parserError!)
 		}
@@ -127,7 +123,7 @@ class RoutingController {
 		}
 	}
 	
-	func query(completionHandler: @escaping (Error?) -> ()) {
+	func query(completionHandler: @escaping (Error?) -> ()) -> (() -> ()) {
 		let session = URLSession(configuration: .default)
 		let login = loginFromAccountNumber(accountNumber)
 		let url = URL(string: "https://sm.megafon.ru/sm/client/routing?login=\(login)&password=\(password)")!
@@ -135,6 +131,9 @@ class RoutingController {
 			self.proceedWithQuery(data: data, response: response, error: error, completionHandler: completionHandler)
 		}
 		task.resume()
+		return {
+			task.cancel()
+		}
 	}
 
 	// MARK: -
