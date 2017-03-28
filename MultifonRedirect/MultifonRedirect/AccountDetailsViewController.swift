@@ -8,17 +8,45 @@
 
 import UIKit.UITableViewController
 
+let loginIndicatorBarButtonItemEnabled = false
+let loginIndicatorViewEnabled = !loginIndicatorBarButtonItemEnabled
+
+struct Undoable {
+	var undoStack: [() -> ()] = []
+	mutating func perform(f: @escaping (Bool) -> ()) {
+		f(true)
+		undoStack.insert({
+			f(false)
+		}, at: 0)
+	}
+	mutating func undo() {
+		for i in undoStack {
+			i()
+		}
+		undoStack.removeAll()
+	}
+}
+
 class AccountDetailsViewController: UITableViewController, AccountDetailsEditor {
 
 	typealias L = AccountDetailsViewLocalized
 
 	var routingController: RoutingController?
 	
+	var cancelLoginInProgress: (() -> ())?
+	
 	@IBOutlet var phoneNumberField: UITextField!
 	@IBOutlet var passwordField: UITextField!
+	@IBOutlet var loginIndicatorView: UIActivityIndicatorView!
+	@IBOutlet var loginBarButtonItem: UIBarButtonItem!
+	@IBOutlet var loginIndicatorBarButtonItem: UIBarButtonItem?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		if let loginIndicatorBarButtonItem = loginIndicatorBarButtonItem {
+			let itemIndex = navigationItem.rightBarButtonItems!.index(of: loginIndicatorBarButtonItem)!
+			navigationItem.rightBarButtonItems!.remove(at: itemIndex)
+		}
 		if _false {
 			phoneNumberField.becomeFirstResponder()
 		}
@@ -98,16 +126,50 @@ extension AccountDetailsViewController {
 		}
 		preflight = nil
 		let routingController = RoutingController(accountNumber: accountNumber, password: password)
-		let lockedView = view.window!
-		lockedView.isUserInteractionEnabled = false
-		routingController.query { (error) in
+		var undoable = Undoable()
+		if let loginIndicatorView = loginIndicatorView, loginIndicatorViewEnabled {
+			undoable.perform { forward in
+				if forward {
+					loginIndicatorView.startAnimating()
+				} else {
+					loginIndicatorView.stopAnimating()
+				}
+			}
+		}
+		if let loginIndicatorBarButtonItem = loginIndicatorBarButtonItem {
+			let navigationItem = self.navigationItem
+			var items = navigationItem.rightBarButtonItems!
+			let loginBarButtonItem = self.loginBarButtonItem!
+			if loginIndicatorBarButtonItemEnabled {
+				let itemIndex = items.index(of: loginBarButtonItem)!
+				undoable.perform { forward in
+					navigationItem.rightBarButtonItems = items … {
+						if forward {
+							$0.remove(at: itemIndex)
+							$0.insert(loginIndicatorBarButtonItem, at: itemIndex)
+						}
+					}
+				}
+			}
+		}
+		if !loginIndicatorBarButtonItemEnabled {
+			let loginBarButtonItem = self.loginBarButtonItem!
+			undoable.perform { forward in
+				loginBarButtonItem.isEnabled = !forward
+			}
+		}
+		cancelLoginInProgress = routingController.query { (error) in
 			DispatchQueue.main.async {
-				lockedView.isUserInteractionEnabled = true
+				defer { undoable.undo() }
 				if let error = error {
 					action.failed(due: error)
+					if let requestError = error as? RequestError, case .urlSessionFailure(let underlyingError as NSError) = requestError, underlyingError.domain == NSURLErrorDomain, underlyingError.code == NSURLErrorCancelled {
+						return
+					}
 					self.present(error, forFailureDescription: L.couldNotLoginToAccountRoutingTitle)
 					return
 				}
+				assert(nil != self.cancelLoginInProgress)
 				self.routingController = routingController
 				self.performSegue(withIdentifier: "loggedIn", sender: self)
 				action.succeeded()
@@ -117,6 +179,8 @@ extension AccountDetailsViewController {
 	
 	@IBAction func cancel() {
 		let action = would(.cancelLogin)
+		cancelLoginInProgress?()
+		cancelLoginInProgress = nil
 		performSegue(withIdentifier: "cancel", sender: self)
 		action.succeeded()
 	}
