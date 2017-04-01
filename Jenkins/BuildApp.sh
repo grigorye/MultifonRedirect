@@ -31,5 +31,5 @@ env \
 	CRASHLYTICS_EMAILS=cake214@icloud.com \
 	GYM_XCARGS='CRASHLYTICS_ENABLED=YES' \
 	FASTLANE_DONT_STORE_PASSWORD=1 \
-    MATCH_VERBOSE=1 \
+	MATCH_VERBOSE=1 \
 	bundle exec fastlane ios "${lane:?}"
