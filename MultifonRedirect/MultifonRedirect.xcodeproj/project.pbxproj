@@ -12,10 +12,19 @@
 		C40909C21E6376F7006BBF04 /* AccountDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40909C11E6376F7006BBF04 /* AccountDetailsViewController.swift */; };
 		C4209FFF1E7E98A1005FCF87 /* ActionTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4209FFE1E7E98A0005FCF87 /* ActionTracking.swift */; };
 		C420A0011E7E9A3B005FCF87 /* ActionTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = C420A0001E7E9A3B005FCF87 /* ActionTags.swift */; };
+		C431B4FD1E907AAD00D67D5A /* AppIcon-MultifonOnly@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C431B4FA1E907AAD00D67D5A /* AppIcon-MultifonOnly@2x.png */; };
+		C431B4FE1E907AAD00D67D5A /* AppIcon-MultifonOnly@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C431B4FB1E907AAD00D67D5A /* AppIcon-MultifonOnly@3x.png */; };
+		C431B5061E907ABD00D67D5A /* AppIcon-PhoneAndMultifon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C431B5001E907ABD00D67D5A /* AppIcon-PhoneAndMultifon@2x.png */; };
+		C431B5071E907ABD00D67D5A /* AppIcon-PhoneAndMultifon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C431B5011E907ABD00D67D5A /* AppIcon-PhoneAndMultifon@3x.png */; };
+		C431B5091E907ABD00D67D5A /* AppIcon-PhoneOnly@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C431B5031E907ABD00D67D5A /* AppIcon-PhoneOnly@2x.png */; };
+		C431B50A1E907ABD00D67D5A /* AppIcon-PhoneOnly@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C431B5041E907ABD00D67D5A /* AppIcon-PhoneOnly@3x.png */; };
 		C43F80A71E6B276100349011 /* Fabric.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43F80A61E6B276100349011 /* Fabric.swift */; };
 		C43F80AF1E6B3C1200349011 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C43F80AA1E6B286700349011 /* Fabric.framework */; };
 		C4637A3F1E7601F000E5BD25 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4637A411E7601F000E5BD25 /* InfoPlist.strings */; };
 		C4637A431E7605EF00E5BD25 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C4637A421E7605EF00E5BD25 /* Settings.bundle */; };
+		C46C01191E9090DC00186888 /* AppIcon-MultifonOnly.png in Resources */ = {isa = PBXBuildFile; fileRef = C46C01161E9090DC00186888 /* AppIcon-MultifonOnly.png */; };
+		C46C011A1E9090DC00186888 /* AppIcon-PhoneAndMultifon.png in Resources */ = {isa = PBXBuildFile; fileRef = C46C01171E9090DC00186888 /* AppIcon-PhoneAndMultifon.png */; };
+		C46C011B1E9090DC00186888 /* AppIcon-PhoneOnly.png in Resources */ = {isa = PBXBuildFile; fileRef = C46C01181E9090DC00186888 /* AppIcon-PhoneOnly.png */; };
 		C46E012A1E7F40150092F57B /* ActionLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E01291E7F40150092F57B /* ActionLogger.swift */; };
 		C47456641E64F71F003C7656 /* MultifonNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47456631E64F71F003C7656 /* MultifonNumberTextField.swift */; };
 		C4C5CEBB1E744FF00089DC2F /* RoutingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C5CEBA1E744FF00089DC2F /* RoutingController.swift */; };
@@ -74,6 +83,12 @@
 		C40909C11E6376F7006BBF04 /* AccountDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountDetailsViewController.swift; sourceTree = "<group>"; };
 		C4209FFE1E7E98A0005FCF87 /* ActionTracking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionTracking.swift; sourceTree = "<group>"; };
 		C420A0001E7E9A3B005FCF87 /* ActionTags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionTags.swift; sourceTree = "<group>"; };
+		C431B4FA1E907AAD00D67D5A /* AppIcon-MultifonOnly@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AppIcon-MultifonOnly@2x.png"; path = "AlternateAppIcons/AppIcon-MultifonOnly@2x.png"; sourceTree = "<group>"; };
+		C431B4FB1E907AAD00D67D5A /* AppIcon-MultifonOnly@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AppIcon-MultifonOnly@3x.png"; path = "AlternateAppIcons/AppIcon-MultifonOnly@3x.png"; sourceTree = "<group>"; };
+		C431B5001E907ABD00D67D5A /* AppIcon-PhoneAndMultifon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AppIcon-PhoneAndMultifon@2x.png"; path = "AlternateAppIcons/AppIcon-PhoneAndMultifon@2x.png"; sourceTree = "<group>"; };
+		C431B5011E907ABD00D67D5A /* AppIcon-PhoneAndMultifon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AppIcon-PhoneAndMultifon@3x.png"; path = "AlternateAppIcons/AppIcon-PhoneAndMultifon@3x.png"; sourceTree = "<group>"; };
+		C431B5031E907ABD00D67D5A /* AppIcon-PhoneOnly@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AppIcon-PhoneOnly@2x.png"; path = "AlternateAppIcons/AppIcon-PhoneOnly@2x.png"; sourceTree = "<group>"; };
+		C431B5041E907ABD00D67D5A /* AppIcon-PhoneOnly@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AppIcon-PhoneOnly@3x.png"; path = "AlternateAppIcons/AppIcon-PhoneOnly@3x.png"; sourceTree = "<group>"; };
 		C43F80A61E6B276100349011 /* Fabric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fabric.swift; sourceTree = "<group>"; };
 		C43F80AA1E6B286700349011 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = ../Pods/Fabric/iOS/Fabric.framework; sourceTree = "<group>"; };
 		C43F80AC1E6B37D300349011 /* MultifonRedirect.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = MultifonRedirect.debug.xcconfig; sourceTree = SOURCE_ROOT; };
@@ -81,6 +96,9 @@
 		C43F80AE1E6B3B4400349011 /* MultifonRedirect-app.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "MultifonRedirect-app.xcconfig"; sourceTree = SOURCE_ROOT; };
 		C4637A401E7601F000E5BD25 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C4637A421E7605EF00E5BD25 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		C46C01161E9090DC00186888 /* AppIcon-MultifonOnly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AppIcon-MultifonOnly.png"; path = "AlternateAppIcons/AppIcon-MultifonOnly.png"; sourceTree = "<group>"; };
+		C46C01171E9090DC00186888 /* AppIcon-PhoneAndMultifon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AppIcon-PhoneAndMultifon.png"; path = "AlternateAppIcons/AppIcon-PhoneAndMultifon.png"; sourceTree = "<group>"; };
+		C46C01181E9090DC00186888 /* AppIcon-PhoneOnly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AppIcon-PhoneOnly.png"; path = "AlternateAppIcons/AppIcon-PhoneOnly.png"; sourceTree = "<group>"; };
 		C46E01291E7F40150092F57B /* ActionLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionLogger.swift; sourceTree = "<group>"; };
 		C47456631E64F71F003C7656 /* MultifonNumberTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultifonNumberTextField.swift; sourceTree = "<group>"; };
 		C4C5CEBA1E744FF00089DC2F /* RoutingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutingController.swift; sourceTree = "<group>"; };
@@ -145,6 +163,22 @@
 			);
 			name = Frameworks;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		C431B50B1E907AC800D67D5A /* AlternateIcons */ = {
+			isa = PBXGroup;
+			children = (
+				C46C01161E9090DC00186888 /* AppIcon-MultifonOnly.png */,
+				C431B4FA1E907AAD00D67D5A /* AppIcon-MultifonOnly@2x.png */,
+				C431B4FB1E907AAD00D67D5A /* AppIcon-MultifonOnly@3x.png */,
+				C46C01171E9090DC00186888 /* AppIcon-PhoneAndMultifon.png */,
+				C431B5001E907ABD00D67D5A /* AppIcon-PhoneAndMultifon@2x.png */,
+				C431B5011E907ABD00D67D5A /* AppIcon-PhoneAndMultifon@3x.png */,
+				C46C01181E9090DC00186888 /* AppIcon-PhoneOnly.png */,
+				C431B5031E907ABD00D67D5A /* AppIcon-PhoneOnly@2x.png */,
+				C431B5041E907ABD00D67D5A /* AppIcon-PhoneOnly@3x.png */,
+			);
+			name = AlternateIcons;
 			sourceTree = "<group>";
 		};
 		C4637A3C1E75A9D000E5BD25 /* XCConfigs */ = {
@@ -229,6 +263,7 @@
 				C4F3594B1E5D139500F2B779 /* LaunchScreen.storyboard */,
 				C4F3594E1E5D139500F2B779 /* Info.plist */,
 				C4637A421E7605EF00E5BD25 /* Settings.bundle */,
+				C431B50B1E907AC800D67D5A /* AlternateIcons */,
 				C4637A3C1E75A9D000E5BD25 /* XCConfigs */,
 				C40909C01E636876006BBF04 /* Frameworks */,
 			);
@@ -329,16 +364,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C46C011A1E9090DC00186888 /* AppIcon-PhoneAndMultifon.png in Resources */,
 				C4D7FC6D1E6216FC00C40FE8 /* RoutingViewErrorAlert.strings in Resources */,
+				C431B50A1E907ABD00D67D5A /* AppIcon-PhoneOnly@3x.png in Resources */,
 				C4D7FC721E6216FD00C40FE8 /* InfoPlist.strings in Resources */,
 				C4C5CEC61E757B040089DC2F /* AccountDetails.strings in Resources */,
+				C431B5091E907ABD00D67D5A /* AppIcon-PhoneOnly@2x.png in Resources */,
 				C4C5CECB1E757B050089DC2F /* RoutingViewAccountAlert.strings in Resources */,
+				C431B4FE1E907AAD00D67D5A /* AppIcon-MultifonOnly@3x.png in Resources */,
 				C4F3594D1E5D139500F2B779 /* LaunchScreen.storyboard in Resources */,
 				C4F3594A1E5D139500F2B779 /* Assets.xcassets in Resources */,
 				C4F359481E5D139500F2B779 /* Main.storyboard in Resources */,
+				C46C011B1E9090DC00186888 /* AppIcon-PhoneOnly.png in Resources */,
+				C431B4FD1E907AAD00D67D5A /* AppIcon-MultifonOnly@2x.png in Resources */,
 				C4D7FC621E6216FC00C40FE8 /* AccountParamsEditor.strings in Resources */,
+				C46C01191E9090DC00186888 /* AppIcon-MultifonOnly.png in Resources */,
 				C4D7FC781E6216FD00C40FE8 /* RoutingView.strings in Resources */,
 				C4637A431E7605EF00E5BD25 /* Settings.bundle in Resources */,
+				C431B5071E907ABD00D67D5A /* AppIcon-PhoneAndMultifon@3x.png in Resources */,
+				C431B5061E907ABD00D67D5A /* AppIcon-PhoneAndMultifon@2x.png in Resources */,
 				C4D7FC681E6216FC00C40FE8 /* RequestError.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
