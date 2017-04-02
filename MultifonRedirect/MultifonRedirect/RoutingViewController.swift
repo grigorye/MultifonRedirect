@@ -214,6 +214,27 @@ extension RoutingViewController {
 		action.succeeded()
 	}
 	
+	func updateAppIcon() {
+		if #available(iOS 10.3, *) {
+			let application = UIApplication.shared
+			_ = $(application.supportsAlternateIcons)
+			let iconName: String? = {
+				switch routing {
+				case nil: return nil
+				case .phoneOnly?: return "AppIcon-PhoneOnly"
+				case .multifonOnly?: return "AppIcon-MultifonOnly"
+				case .phoneAndMultifon?: return "AppIcon-PhoneAndMultifon"
+				}
+			}()
+			guard application.alternateIconName != iconName else {
+				return
+			}
+			application.setAlternateIconName(iconName) { error in
+				_ = $(error)
+			}
+		}
+	}
+	
 	func updateRouting(from routingController: RoutingController?) {
 		guard let routingController = routingController else {
 			routing = nil
@@ -224,6 +245,7 @@ extension RoutingViewController {
 		routing = routingController.lastRouting!
 		savedLastRouting = routingController.lastRouting!
 		savedLastUpdateDate = routingController.lastUpdateDate!
+		updateAppIcon()
 	}
 	
 	func triggerRefersh() {

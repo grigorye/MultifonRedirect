@@ -1,7 +1,25 @@
 #! /bin/sh -xe
 
-for i in 20 29 40 58 60 76 80 87 120 152 167 180
+for suffix in "" "-MultifonOnly" "-PhoneOnly" "-PhoneAndMultifon"
 do
-	svg2png -w $i AppIcon.svg > MultifonRedirect/MultifonRedirect/Assets.xcassets/AppIcon.appiconset/AppIcon-${i}x${i}.png
+	AppIcon="AppIcon${suffix}"
+	xcassets=MultifonRedirect/MultifonRedirect/Assets.xcassets
+	AppIconSet="${xcassets:?}"/"${AppIcon:?}".appiconset
+	mkdir -p "${AppIconSet:?}"
+	for i in 20 29 40 58 60 76 80 87 120 152 167 180
+	do
+		svg2png -w $i "${AppIcon:?}".svg > "${AppIconSet:?}"/"${AppIcon:?}"-${i}x${i}.png
+	done
+	if [ z"${suffix}" != "z" ]
+	then
+		for j in 60 120 180
+		do
+			svg2png -w 60 "${AppIcon:?}".svg > MultifonRedirect/MultifonRedirect/AlternateAppIcons/"${AppIcon:?}".png
+			svg2png -w 120 "${AppIcon:?}".svg > MultifonRedirect/MultifonRedirect/AlternateAppIcons/"${AppIcon:?}"@2x.png
+			svg2png -w 180 "${AppIcon:?}".svg > MultifonRedirect/MultifonRedirect/AlternateAppIcons/"${AppIcon:?}"@3x.png
+		done
+		sed "s/AppIcon-/AppIcon${suffix}-/g" < "${xcassets:?}"/AppIcon.appiconset/Contents.json > "${AppIconSet:?}"/Contents.json
+	else
+		svg2png -w 1024 "${AppIcon:?}".svg > "${AppIcon:?}"-1024x1024.png
+	fi
 done
-svg2png -w 1024 AppIcon.svg > AppIcon-1024x1024.png
