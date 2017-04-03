@@ -22,6 +22,8 @@
 		C43F80AF1E6B3C1200349011 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C43F80AA1E6B286700349011 /* Fabric.framework */; };
 		C4637A3F1E7601F000E5BD25 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4637A411E7601F000E5BD25 /* InfoPlist.strings */; };
 		C4637A431E7605EF00E5BD25 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C4637A421E7605EF00E5BD25 /* Settings.bundle */; };
+		C463FB6B1E91D80E00F984D1 /* ShortcutsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463FB6A1E91D80E00F984D1 /* ShortcutsController.swift */; };
+		C463FB6D1E91D9BD00F984D1 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463FB6C1E91D9BD00F984D1 /* Globals.swift */; };
 		C46C01191E9090DC00186888 /* AppIcon-MultifonOnly.png in Resources */ = {isa = PBXBuildFile; fileRef = C46C01161E9090DC00186888 /* AppIcon-MultifonOnly.png */; };
 		C46C011A1E9090DC00186888 /* AppIcon-PhoneAndMultifon.png in Resources */ = {isa = PBXBuildFile; fileRef = C46C01171E9090DC00186888 /* AppIcon-PhoneAndMultifon.png */; };
 		C46C011B1E9090DC00186888 /* AppIcon-PhoneOnly.png in Resources */ = {isa = PBXBuildFile; fileRef = C46C01181E9090DC00186888 /* AppIcon-PhoneOnly.png */; };
@@ -96,6 +98,8 @@
 		C43F80AE1E6B3B4400349011 /* MultifonRedirect-app.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "MultifonRedirect-app.xcconfig"; sourceTree = SOURCE_ROOT; };
 		C4637A401E7601F000E5BD25 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C4637A421E7605EF00E5BD25 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		C463FB6A1E91D80E00F984D1 /* ShortcutsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcutsController.swift; sourceTree = "<group>"; };
+		C463FB6C1E91D9BD00F984D1 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		C46C01161E9090DC00186888 /* AppIcon-MultifonOnly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AppIcon-MultifonOnly.png"; path = "AlternateAppIcons/AppIcon-MultifonOnly.png"; sourceTree = "<group>"; };
 		C46C01171E9090DC00186888 /* AppIcon-PhoneAndMultifon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AppIcon-PhoneAndMultifon.png"; path = "AlternateAppIcons/AppIcon-PhoneAndMultifon.png"; sourceTree = "<group>"; };
 		C46C01181E9090DC00186888 /* AppIcon-PhoneOnly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AppIcon-PhoneOnly.png"; path = "AlternateAppIcons/AppIcon-PhoneOnly.png"; sourceTree = "<group>"; };
@@ -239,8 +243,10 @@
 				C4C5CECD1E757B050089DC2F /* RoutingViewAccountAlert.strings */,
 				C4C5CEC81E757B040089DC2F /* AccountDetails.strings */,
 				C4F359421E5D139400F2B779 /* AppDelegate.swift */,
+				C463FB6A1E91D80E00F984D1 /* ShortcutsController.swift */,
 				C43F80A61E6B276100349011 /* Fabric.swift */,
 				C4F359441E5D139400F2B779 /* RoutingViewController.swift */,
+				C463FB6C1E91D9BD00F984D1 /* Globals.swift */,
 				C4C5CEC01E74C4C70089DC2F /* PersistentData.swift */,
 				C4C5CEBA1E744FF00089DC2F /* RoutingController.swift */,
 				C40909C11E6376F7006BBF04 /* AccountDetailsViewController.swift */,
@@ -439,6 +445,7 @@
 				C4F359451E5D139400F2B779 /* RoutingViewController.swift in Sources */,
 				C40909C21E6376F7006BBF04 /* AccountDetailsViewController.swift in Sources */,
 				C47456641E64F71F003C7656 /* MultifonNumberTextField.swift in Sources */,
+				C463FB6D1E91D9BD00F984D1 /* Globals.swift in Sources */,
 				C4C72B301E6359B8004E6BB0 /* FoundationExtensions.swift in Sources */,
 				C4F359431E5D139400F2B779 /* AppDelegate.swift in Sources */,
 				C4C72B321E635A8D004E6BB0 /* UserDefaults.swift in Sources */,
@@ -449,6 +456,7 @@
 				C420A0011E7E9A3B005FCF87 /* ActionTags.swift in Sources */,
 				C4D7FC5B1E61EEB500C40FE8 /* Localized.swift in Sources */,
 				C4209FFF1E7E98A1005FCF87 /* ActionTracking.swift in Sources */,
+				C463FB6B1E91D80E00F984D1 /* ShortcutsController.swift in Sources */,
 				C43F80A71E6B276100349011 /* Fabric.swift in Sources */,
 				C4D7FC591E61C10200C40FE8 /* Data.swift in Sources */,
 				C4C5CEBD1E7464020089DC2F /* UIKitExtensions.swift in Sources */,

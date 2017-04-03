@@ -24,45 +24,11 @@ class RoutingViewController: UITableViewController {
 	@IBOutlet var phoneOnlyRouteCell: RouteTableViewCell!
 	@IBOutlet var multifonOnlyRouteCell: RouteTableViewCell!
 	@IBOutlet var phoneAndMultifonRouteCell: RouteTableViewCell!
-	
-	var loggedIn: Bool {
-		return nil != routingController
-	}
-	
-	lazy var routingControllerImp: RoutingController! = {
-		guard let accountNumber = savedAccountNumber, let password = savedPassword else {
-			return nil
-		}
-		return RoutingController(accountNumber: accountNumber, password: password) … {
-			$0.lastRouting = savedLastRouting
-			$0.lastUpdateDate = savedLastUpdateDate
-		}
-	}()
 
-	var routingController: RoutingController! {
-		set {
-			routingControllerImp = newValue
-			if let routingController = newValue {
-				savedAccountNumber = routingController.accountNumber
-				savedPassword = routingController.password
-			} else {
-				savedAccountNumber = nil
-				savedPassword = nil
-			}
-			updateRouting(from: routingController)
-			updateAccountStatusView()
-		}
-		get {
-			return routingControllerImp
-		}
-	}
-
-	var routing: Routing? {
-		didSet {
-			let cellForActiveRouting = cell(for: routing)
-			for cell in routeCells {
-				cell.setRouteActivationState(cellForActiveRouting == cell ? .active : .inactive)
-			}
+	func routingDidChange() {
+		let cellForActiveRouting = cell(for: routing)
+		for cell in routeCells {
+			cell.setRouteActivationState(cellForActiveRouting == cell ? .active : .inactive)
 		}
 	}
 	
@@ -80,7 +46,7 @@ class RoutingViewController: UITableViewController {
 				typealias L = RoutingViewAccountAlertLocalized
 				let alert = UIAlertController(title: L.title, message: phoneNumberFromAccountNumber(routingController.accountNumber), preferredStyle: .alert)
 				alert.addAction(UIAlertAction(title: L.logOutTitle, style: .default) { _ in
-					self.logout()
+					logout()
 				})
 				alert.addAction(UIAlertAction(title: L.cancelTitle, style: .cancel))
 				present(alert, animated: true)
@@ -138,8 +104,8 @@ class RoutingViewController: UITableViewController {
 				()
 			}]
 		}
-		routing = routingController?.lastRouting
 		updateAccountStatusView()
+		routingViewController = self
 	}
 	
 	var scheduledForDeinit = [() -> ()]()
@@ -176,7 +142,7 @@ extension RoutingViewController {
 		}
 	}
 	
-	func routing(for cell: UITableViewCell) -> Routing {
+	func routingFor(_ cell: UITableViewCell) -> Routing {
 		switch cell {
 		case phoneOnlyRouteCell: return .phoneOnly
 		case multifonOnlyRouteCell: return .multifonOnly
@@ -204,50 +170,6 @@ extension RoutingViewController {
 		}
 	}
 	
-	//
-	// MARK: -
-	//
-
-	func logout() {
-		let action = would(.logout)
-		self.routingController = nil
-		action.succeeded()
-	}
-	
-	func updateAppIcon() {
-		if #available(iOS 10.3, *) {
-			let application = UIApplication.shared
-			_ = $(application.supportsAlternateIcons)
-			let iconName: String? = {
-				switch routing {
-				case nil: return nil
-				case .phoneOnly?: return "AppIcon-PhoneOnly"
-				case .multifonOnly?: return "AppIcon-MultifonOnly"
-				case .phoneAndMultifon?: return "AppIcon-PhoneAndMultifon"
-				}
-			}()
-			guard application.alternateIconName != iconName else {
-				return
-			}
-			application.setAlternateIconName(iconName) { error in
-				_ = $(error)
-			}
-		}
-	}
-	
-	func updateRouting(from routingController: RoutingController?) {
-		guard let routingController = routingController else {
-			routing = nil
-			savedLastRouting = nil
-			savedLastUpdateDate = nil
-			return
-		}
-		routing = routingController.lastRouting!
-		savedLastRouting = routingController.lastRouting!
-		savedLastUpdateDate = routingController.lastUpdateDate!
-		updateAppIcon()
-	}
-	
 	func triggerRefersh() {
 		self.refreshControl?.sendActions(for: .valueChanged)
 	}
@@ -257,23 +179,23 @@ extension RoutingViewController {
 	//
 	
 	func setRouting(from cell: UITableViewCell) {
-		let newRouting = routing(for: cell)
+		let newRouting = routingFor(cell)
 		let oldRouting = routing!
 		let action = would(.changeRouting(from: oldRouting, to: newRouting)); let preflight: Preflight?; defer { action.preflight = preflight }
 		routing = nil
 		(cell as! RouteActivationAwareCell).setRouteActivationState(.activating)
-		let routingController = self.routingController!
+		let routingController = MultifonRedirect.routingController!
 		preflight = nil
 		routingController.set(newRouting) { [unowned self] (error) in
 			DispatchQueue.main.async {
 				if let error = error {
 					action.failed(due: error)
-					self.routing = oldRouting
+					routing = oldRouting
 					self.updateAccountStatusView()
 					self.present(error, forFailureDescription: L.couldNotChangeRoutingTitle)
 					return
 				}
-				self.updateRouting(from: routingController)
+				updateRouting(from: routingController)
 				action.succeeded()
 			}
 		}
@@ -299,7 +221,7 @@ extension RoutingViewController {
 					self.present(error, forFailureDescription: L.couldNotUpdateRoutingTitle)
 					return
 				}
-				self.updateRouting(from: routingController)
+				updateRouting(from: routingController)
 				refreshControl.endRefreshing()
 				action.succeeded()
 			}
