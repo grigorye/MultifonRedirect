@@ -5,7 +5,11 @@ supDir="${PWD:?}/sup"
 if ${clean:?}
 then
 	rm -rf build
+else
+	rm -rf build/*.result
 fi
+
+mkdir -p build/fastlane
 
 if ${clean_sup:?}
 then
