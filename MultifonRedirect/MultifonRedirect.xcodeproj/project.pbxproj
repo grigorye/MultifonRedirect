@@ -29,6 +29,7 @@
 		C46C011B1E9090DC00186888 /* AppIcon-PhoneOnly.png in Resources */ = {isa = PBXBuildFile; fileRef = C46C01181E9090DC00186888 /* AppIcon-PhoneOnly.png */; };
 		C46E012A1E7F40150092F57B /* ActionLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E01291E7F40150092F57B /* ActionLogger.swift */; };
 		C47456641E64F71F003C7656 /* MultifonNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47456631E64F71F003C7656 /* MultifonNumberTextField.swift */; };
+		C47E009D1E96C65E00E5D521 /* Undoable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47E009C1E96C65E00E5D521 /* Undoable.swift */; };
 		C4C5CEBB1E744FF00089DC2F /* RoutingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C5CEBA1E744FF00089DC2F /* RoutingController.swift */; };
 		C4C5CEBD1E7464020089DC2F /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C5CEBC1E7464020089DC2F /* UIKitExtensions.swift */; };
 		C4C5CEC11E74C4C70089DC2F /* PersistentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C5CEC01E74C4C70089DC2F /* PersistentData.swift */; };
@@ -105,6 +106,7 @@
 		C46C01181E9090DC00186888 /* AppIcon-PhoneOnly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AppIcon-PhoneOnly.png"; path = "AlternateAppIcons/AppIcon-PhoneOnly.png"; sourceTree = "<group>"; };
 		C46E01291E7F40150092F57B /* ActionLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionLogger.swift; sourceTree = "<group>"; };
 		C47456631E64F71F003C7656 /* MultifonNumberTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultifonNumberTextField.swift; sourceTree = "<group>"; };
+		C47E009C1E96C65E00E5D521 /* Undoable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Undoable.swift; sourceTree = "<group>"; };
 		C4C5CEBA1E744FF00089DC2F /* RoutingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutingController.swift; sourceTree = "<group>"; };
 		C4C5CEBC1E7464020089DC2F /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
 		C4C5CEC01E74C4C70089DC2F /* PersistentData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentData.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 				C4C5CEC01E74C4C70089DC2F /* PersistentData.swift */,
 				C4C5CEBA1E744FF00089DC2F /* RoutingController.swift */,
 				C40909C11E6376F7006BBF04 /* AccountDetailsViewController.swift */,
+				C47E009C1E96C65E00E5D521 /* Undoable.swift */,
 				C4209FFE1E7E98A0005FCF87 /* ActionTracking.swift */,
 				C46E01291E7F40150092F57B /* ActionLogger.swift */,
 				C420A0001E7E9A3B005FCF87 /* ActionTags.swift */,
@@ -461,6 +464,7 @@
 				C4D7FC591E61C10200C40FE8 /* Data.swift in Sources */,
 				C4C5CEBD1E7464020089DC2F /* UIKitExtensions.swift in Sources */,
 				C46E012A1E7F40150092F57B /* ActionLogger.swift in Sources */,
+				C47E009D1E96C65E00E5D521 /* Undoable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

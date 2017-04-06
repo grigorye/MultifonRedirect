@@ -11,22 +11,6 @@ import UIKit.UITableViewController
 let loginIndicatorBarButtonItemEnabled = false
 let loginIndicatorViewEnabled = !loginIndicatorBarButtonItemEnabled
 
-struct Undoable {
-	var undoStack: [() -> ()] = []
-	mutating func perform(f: @escaping (Bool) -> ()) {
-		f(true)
-		undoStack.insert({
-			f(false)
-		}, at: 0)
-	}
-	mutating func undo() {
-		for i in undoStack {
-			i()
-		}
-		undoStack.removeAll()
-	}
-}
-
 class AccountDetailsViewController: UITableViewController, AccountDetailsEditor {
 
 	typealias L = AccountDetailsViewLocalized
