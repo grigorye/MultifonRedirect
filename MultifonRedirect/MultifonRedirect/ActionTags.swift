@@ -14,6 +14,7 @@ enum ActionTag {
 	case cancelLogin
 	case refreshRouting
 	case changeRouting(from: Routing, to: Routing)
+	case setRoutingFromShortcut(Routing)
 	case logout
 	
 }
