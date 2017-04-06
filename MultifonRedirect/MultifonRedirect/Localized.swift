@@ -109,6 +109,7 @@ struct RoutingViewLocalized {
 		value: "Sign In",
 		comment: ""
 	)
+	
 	static func accountTitle(for phoneNumber: String) -> String {
 		let format = NSLocalizedString(
 			"accountTitle.for",
@@ -145,4 +146,44 @@ struct RoutingViewLocalized {
 		let ago = dateAgoComponentsFormatter.string(from: date, to: Date())!
 		return String.localizedStringWithFormat(format, ago)
 	}
+	
+}
+
+struct ShortcutsLocalized {
+	
+	static let phoneOnlyRoutingTitle = NSLocalizedString(
+		"phoneOnlyRouting.title",
+		tableName: "Shortcuts",
+		value: "Phone",
+		comment: ""
+	)
+	
+	static let multifonOnlyRoutingTitle = NSLocalizedString(
+		"multifonOnlyRouting.title",
+		tableName: "Shortcuts",
+		value: "MultiFon",
+		comment: ""
+	)
+	
+	static let phoneAndMultifonRoutingTitle = NSLocalizedString(
+		"phoneAndMultifonRouting.title",
+		tableName: "Shortcuts",
+		value: "MultiFon and Phone",
+		comment: ""
+	)
+	
+	static let logoutTitle = NSLocalizedString(
+		"logout.title",
+		tableName: "Shortcuts",
+		value: "Sign Out",
+		comment: ""
+	)
+
+	static let loginTitle = NSLocalizedString(
+		"login.title",
+		tableName: "Shortcuts",
+		value: "Sign In",
+		comment: ""
+	)
+	
 }

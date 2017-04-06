@@ -10,6 +10,8 @@ import UIKit
 
 class ShortcutsController {
 	
+	typealias L = ShortcutsLocalized
+	
 	enum Shortcut {
 		
 		enum Action: String {
@@ -103,13 +105,13 @@ class ShortcutsController {
 	func updateShortcuts(from routingController: RoutingController?) {
 		let shortcutItems: [UIApplicationShortcutItem] = {
 			if let _ = routingController {
-				let phoneOnly = UIMutableApplicationShortcutItem(type: Shortcut.routing(.phoneOnly).type, localizedTitle: "Phone Only")
-				let multifonOnly = UIMutableApplicationShortcutItem(type: Shortcut.routing(.multifonOnly).type, localizedTitle: "Multifon Only")
-				let phoneAndMultifon = UIMutableApplicationShortcutItem(type: Shortcut.routing(.phoneAndMultifon).type, localizedTitle: "Phone and Multifon")
-				let logout = UIMutableApplicationShortcutItem(type: Shortcut.action(.logout).type, localizedTitle: "Logout")
+				let phoneOnly = UIMutableApplicationShortcutItem(type: Shortcut.routing(.phoneOnly).type, localizedTitle: L.phoneOnlyRoutingTitle)
+				let multifonOnly = UIMutableApplicationShortcutItem(type: Shortcut.routing(.multifonOnly).type, localizedTitle: L.multifonOnlyRoutingTitle)
+				let phoneAndMultifon = UIMutableApplicationShortcutItem(type: Shortcut.routing(.phoneAndMultifon).type, localizedTitle: L.phoneAndMultifonRoutingTitle)
+				let logout = UIMutableApplicationShortcutItem(type: Shortcut.action(.logout).type, localizedTitle: L.logoutTitle)
 				return [phoneOnly, multifonOnly, phoneAndMultifon, logout]
 			} else {
-				let login = UIMutableApplicationShortcutItem(type: Shortcut.action(.login).type, localizedTitle: "Sign In")
+				let login = UIMutableApplicationShortcutItem(type: Shortcut.action(.login).type, localizedTitle: L.loginTitle)
 				return [login]
 			}
 		}()
