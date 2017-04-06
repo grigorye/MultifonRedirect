@@ -60,8 +60,16 @@ class ShortcutsController {
 		let shortcut = Shortcut(type: shortcutItem.type)!
 		switch shortcut {
 		case .routing(let routing):
-			routingController.set(routing) { (requestError) in
-				_ = $(requestError)
+			let action = would(.setRoutingFromShortcut(routing))
+			routingController.set(routing) { (error) in
+				DispatchQueue.main.async {
+					if let error = error {
+						action.failed(due: error)
+						return
+					}
+					updateRouting(from: routingController)
+					action.succeeded()
+				}
 			}
 			return false
 		case .action(.login):
