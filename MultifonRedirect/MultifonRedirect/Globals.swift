@@ -75,22 +75,33 @@ func updateRouting(from routingController: RoutingController?) {
 }
 
 func updateAppIcon(for routing: Routing?) {
-	if #available(iOS 10.3, *) {
-		let application = UIApplication.shared
-		_ = $(application.supportsAlternateIcons)
-		let iconName: String? = {
-			switch routing {
-			case nil: return nil
-			case .phoneOnly?: return "AppIcon-PhoneOnly"
-			case .multifonOnly?: return "AppIcon-MultifonOnly"
-			case .phoneAndMultifon?: return "AppIcon-PhoneAndMultifon"
-			}
-		}()
-		guard application.alternateIconName != iconName else {
+	guard #available(iOS 10.3, *) else {
+		return
+	}
+	let action = would(.updateAppIcon(for: routing)); let preflight: Preflight?; defer { action.preflight = preflight }
+	let application = UIApplication.shared
+	guard application.supportsAlternateIcons else {
+		preflight = .cancelled(due: .applicationDoesNotSupportAlternateIcons)
+		return
+	}
+	let iconName: String? = {
+		switch routing {
+		case nil: return nil
+		case .phoneOnly?: return "AppIcon-PhoneOnly"
+		case .multifonOnly?: return "AppIcon-MultifonOnly"
+		case .phoneAndMultifon?: return "AppIcon-PhoneAndMultifon"
+		}
+	}()
+	guard application.alternateIconName != iconName else {
+		preflight = .cancelled(due: .applicationIconWouldNotBeChanged)
+		return
+	}
+	preflight = nil
+	application.setAlternateIconName(iconName) { error in
+		if let error = error {
+			action.failed(due: $(error))
 			return
 		}
-		application.setAlternateIconName(iconName) { error in
-			_ = $(error)
-		}
+		action.succeeded()
 	}
 }

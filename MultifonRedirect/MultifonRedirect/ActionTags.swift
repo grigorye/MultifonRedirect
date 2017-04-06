@@ -16,6 +16,7 @@ enum ActionTag {
 	case changeRouting(from: Routing, to: Routing)
 	case setRoutingFromShortcut(Routing)
 	case logout
+	case updateAppIcon(for: Routing?)
 	
 }
 
@@ -26,5 +27,7 @@ enum ActionCancellationTag {
 	case noPhoneNumberProvided
 	case noPasswordProvided
 	case noAccountConnected
+	case applicationDoesNotSupportAlternateIcons
+	case applicationIconWouldNotBeChanged
 	
 }
