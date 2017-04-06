@@ -53,11 +53,11 @@ private func mirrored<T>(_ value: T) -> Any {
 struct ActionLogger {
 	
 	private func logEvent(prefix: String, _ actionTag: ActionTag, attributes eventAttributes: [String : Any]? = nil) {
-		let (actionName, actionAttributes): (String, [String : Any]?) = {
+		let (actionName, actionAttributes): (String, Any?) = {
 			let mirror = Mirror(reflecting: actionTag)
 			let children = mirror.children
 			if let compoundChild = children.first {
-				return (compoundChild.label!, Optional(mirrored(compoundChild.value) as! [String : Any]))
+				return (compoundChild.label!, compoundChild.value)
 			} else {
 				return ("\(actionTag)", nil)
 			}
