@@ -20,6 +20,12 @@
 		C431B50A1E907ABD00D67D5A /* AppIcon-PhoneOnly@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C431B5041E907ABD00D67D5A /* AppIcon-PhoneOnly@3x.png */; };
 		C43F80A71E6B276100349011 /* Fabric.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43F80A61E6B276100349011 /* Fabric.swift */; };
 		C43F80AF1E6B3C1200349011 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C43F80AA1E6B286700349011 /* Fabric.framework */; };
+		C445384C1E999A44009E68EB /* GETracing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C445384B1E999A44009E68EB /* GETracing.framework */; };
+		C445384D1E999A44009E68EB /* GETracing.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C445384B1E999A44009E68EB /* GETracing.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C445384F1E999A49009E68EB /* GEFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C445384E1E999A49009E68EB /* GEFoundation.framework */; };
+		C44538501E999A49009E68EB /* GEFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C445384E1E999A49009E68EB /* GEFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C44538531E999AB1009E68EB /* ModuleExports-GETracing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44538521E999AB1009E68EB /* ModuleExports-GETracing.swift */; };
+		C44538551E999B40009E68EB /* ModuleExports-GEFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44538541E999B40009E68EB /* ModuleExports-GEFoundation.swift */; };
 		C4637A3F1E7601F000E5BD25 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4637A411E7601F000E5BD25 /* InfoPlist.strings */; };
 		C4637A431E7605EF00E5BD25 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C4637A421E7605EF00E5BD25 /* Settings.bundle */; };
 		C463FB6B1E91D80E00F984D1 /* ShortcutsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463FB6A1E91D80E00F984D1 /* ShortcutsController.swift */; };
@@ -32,7 +38,6 @@
 		C47E009D1E96C65E00E5D521 /* Undoable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47E009C1E96C65E00E5D521 /* Undoable.swift */; };
 		C4C5CEBB1E744FF00089DC2F /* RoutingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C5CEBA1E744FF00089DC2F /* RoutingController.swift */; };
 		C4C5CEBD1E7464020089DC2F /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C5CEBC1E7464020089DC2F /* UIKitExtensions.swift */; };
-		C4C5CEC11E74C4C70089DC2F /* PersistentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C5CEC01E74C4C70089DC2F /* PersistentData.swift */; };
 		C4C5CEC31E7561DB0089DC2F /* RouteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C5CEC21E7561DB0089DC2F /* RouteTableViewCell.swift */; };
 		C4C5CEC61E757B040089DC2F /* AccountDetails.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4C5CEC81E757B040089DC2F /* AccountDetails.strings */; };
 		C4C5CECB1E757B050089DC2F /* RoutingViewAccountAlert.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4C5CECD1E757B050089DC2F /* RoutingViewAccountAlert.strings */; };
@@ -75,6 +80,8 @@
 			dstSubfolderSpec = 10;
 			files = (
 				C40909BE1E63684D006BBF04 /* PhoneNumberKit.framework in Embed Frameworks */,
+				C44538501E999A49009E68EB /* GEFoundation.framework in Embed Frameworks */,
+				C445384D1E999A44009E68EB /* GETracing.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -97,6 +104,10 @@
 		C43F80AC1E6B37D300349011 /* MultifonRedirect.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = MultifonRedirect.debug.xcconfig; sourceTree = SOURCE_ROOT; };
 		C43F80AD1E6B37D300349011 /* MultifonRedirect.release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = MultifonRedirect.release.xcconfig; sourceTree = SOURCE_ROOT; };
 		C43F80AE1E6B3B4400349011 /* MultifonRedirect-app.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "MultifonRedirect-app.xcconfig"; sourceTree = SOURCE_ROOT; };
+		C445384B1E999A44009E68EB /* GETracing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GETracing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C445384E1E999A49009E68EB /* GEFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GEFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C44538521E999AB1009E68EB /* ModuleExports-GETracing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ModuleExports-GETracing.swift"; path = "../../GETracing/GETracing/ModuleExports-GETracing.swift"; sourceTree = "<group>"; };
+		C44538541E999B40009E68EB /* ModuleExports-GEFoundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ModuleExports-GEFoundation.swift"; path = "../../GEFoundation/GEFoundation/ModuleExports-GEFoundation.swift"; sourceTree = "<group>"; };
 		C4637A401E7601F000E5BD25 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C4637A421E7605EF00E5BD25 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		C463FB6A1E91D80E00F984D1 /* ShortcutsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcutsController.swift; sourceTree = "<group>"; };
@@ -109,7 +120,6 @@
 		C47E009C1E96C65E00E5D521 /* Undoable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Undoable.swift; sourceTree = "<group>"; };
 		C4C5CEBA1E744FF00089DC2F /* RoutingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutingController.swift; sourceTree = "<group>"; };
 		C4C5CEBC1E7464020089DC2F /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
-		C4C5CEC01E74C4C70089DC2F /* PersistentData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentData.swift; sourceTree = "<group>"; };
 		C4C5CEC21E7561DB0089DC2F /* RouteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteTableViewCell.swift; sourceTree = "<group>"; };
 		C4C5CEC71E757B040089DC2F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/AccountDetails.strings; sourceTree = "<group>"; };
 		C4C5CECC1E757B050089DC2F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/RoutingViewAccountAlert.strings; sourceTree = "<group>"; };
@@ -154,7 +164,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C40909BD1E63684D006BBF04 /* PhoneNumberKit.framework in Frameworks */,
+				C445384F1E999A49009E68EB /* GEFoundation.framework in Frameworks */,
 				C43F80AF1E6B3C1200349011 /* Fabric.framework in Frameworks */,
+				C445384C1E999A44009E68EB /* GETracing.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +176,8 @@
 		C40909C01E636876006BBF04 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C445384B1E999A44009E68EB /* GETracing.framework */,
+				C445384E1E999A49009E68EB /* GEFoundation.framework */,
 				C43F80AA1E6B286700349011 /* Fabric.framework */,
 				C40909BC1E63684D006BBF04 /* PhoneNumberKit.framework */,
 			);
@@ -249,7 +263,6 @@
 				C43F80A61E6B276100349011 /* Fabric.swift */,
 				C4F359441E5D139400F2B779 /* RoutingViewController.swift */,
 				C463FB6C1E91D9BD00F984D1 /* Globals.swift */,
-				C4C5CEC01E74C4C70089DC2F /* PersistentData.swift */,
 				C4C5CEBA1E744FF00089DC2F /* RoutingController.swift */,
 				C40909C11E6376F7006BBF04 /* AccountDetailsViewController.swift */,
 				C47E009C1E96C65E00E5D521 /* Undoable.swift */,
@@ -274,6 +287,8 @@
 				C4637A421E7605EF00E5BD25 /* Settings.bundle */,
 				C431B50B1E907AC800D67D5A /* AlternateIcons */,
 				C4637A3C1E75A9D000E5BD25 /* XCConfigs */,
+				C44538521E999AB1009E68EB /* ModuleExports-GETracing.swift */,
+				C44538541E999B40009E68EB /* ModuleExports-GEFoundation.swift */,
 				C40909C01E636876006BBF04 /* Frameworks */,
 			);
 			path = MultifonRedirect;
@@ -454,14 +469,15 @@
 				C4C72B321E635A8D004E6BB0 /* UserDefaults.swift in Sources */,
 				C4C5CEBB1E744FF00089DC2F /* RoutingController.swift in Sources */,
 				C4C5CEC31E7561DB0089DC2F /* RouteTableViewCell.swift in Sources */,
+				C44538531E999AB1009E68EB /* ModuleExports-GETracing.swift in Sources */,
 				C4D7FC5D1E61EF3B00C40FE8 /* ExternalDependencies.swift in Sources */,
-				C4C5CEC11E74C4C70089DC2F /* PersistentData.swift in Sources */,
 				C420A0011E7E9A3B005FCF87 /* ActionTags.swift in Sources */,
 				C4D7FC5B1E61EEB500C40FE8 /* Localized.swift in Sources */,
 				C4209FFF1E7E98A1005FCF87 /* ActionTracking.swift in Sources */,
 				C463FB6B1E91D80E00F984D1 /* ShortcutsController.swift in Sources */,
 				C43F80A71E6B276100349011 /* Fabric.swift in Sources */,
 				C4D7FC591E61C10200C40FE8 /* Data.swift in Sources */,
+				C44538551E999B40009E68EB /* ModuleExports-GEFoundation.swift in Sources */,
 				C4C5CEBD1E7464020089DC2F /* UIKitExtensions.swift in Sources */,
 				C46E012A1E7F40150092F57B /* ActionLogger.swift in Sources */,
 				C47E009D1E96C65E00E5D521 /* Undoable.swift in Sources */,
@@ -695,7 +711,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 465NA5BW7E;
 				INFOPLIST_FILE = MultifonRedirect/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.grigorye.MultifonRedirect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -715,7 +731,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 465NA5BW7E;
 				INFOPLIST_FILE = MultifonRedirect/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.grigorye.MultifonRedirect;
 				PRODUCT_NAME = "$(TARGET_NAME)";

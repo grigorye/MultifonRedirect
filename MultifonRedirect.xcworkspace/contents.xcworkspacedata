@@ -5,6 +5,12 @@
       location = "group:MultifonRedirect/MultifonRedirect.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:GEFoundation/GEFoundation.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:GETracing/GETracing.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>
