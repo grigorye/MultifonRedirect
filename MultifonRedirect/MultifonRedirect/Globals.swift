@@ -10,12 +10,17 @@ import UIKit
 import Foundation
 
 var routingControllerImp: RoutingController! = {
-	guard let accountNumber = savedAccountNumber, let password = savedPassword else {
+	guard let accountNumber = defaults.accountNumber, let password = defaults.password else {
 		return nil
 	}
 	return RoutingController(accountNumber: accountNumber, password: password) … {
-		$0.lastRouting = savedLastRouting
-		$0.lastUpdateDate = savedLastUpdateDate
+		$0.lastRouting = {
+			guard let lastRouting = defaults.lastRouting else {
+				return nil
+			}
+			return Routing(rawValue: lastRouting)
+		}()
+		$0.lastUpdateDate = defaults.lastUpdateDate
 	}
 }()
 
@@ -23,11 +28,11 @@ var routingController: RoutingController! {
 	set {
 		routingControllerImp = newValue
 		if let routingController = newValue {
-			savedAccountNumber = routingController.accountNumber
-			savedPassword = routingController.password
+			defaults.accountNumber = routingController.accountNumber
+			defaults.password = routingController.password
 		} else {
-			savedAccountNumber = nil
-			savedPassword = nil
+			defaults.accountNumber = nil
+			defaults.password = nil
 		}
 		updateRouting(from: routingController)
 		routingViewController.updateAccountStatusView()
@@ -64,13 +69,13 @@ var routing: Routing? = routingController?.lastRouting {
 func updateRouting(from routingController: RoutingController?) {
 	guard let routingController = routingController else {
 		routing = nil
-		savedLastRouting = nil
-		savedLastUpdateDate = nil
+		defaults.lastRouting = nil
+		defaults.lastUpdateDate = nil
 		return
 	}
-	routing = routingController.lastRouting!
-	savedLastRouting = routingController.lastRouting!
-	savedLastUpdateDate = routingController.lastUpdateDate!
+	routing = routingController.lastRouting
+	defaults.lastRouting = routingController.lastRouting?.rawValue
+	defaults.lastUpdateDate = routingController.lastUpdateDate
 	updateAppIcon(for: routing)
 }
 
