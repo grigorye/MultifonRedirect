@@ -8,13 +8,7 @@
 
 import UIKit
 
-protocol AccountDetailsEditor {
-	
-	var routingController: RoutingController? { get set }
-
-}
-
-class RoutingViewController: UITableViewController {
+class RoutingViewController: UITableViewController, AccountPossessor {
 
 	typealias L = RoutingViewLocalized
 
@@ -25,32 +19,49 @@ class RoutingViewController: UITableViewController {
 	@IBOutlet var multifonOnlyRouteCell: RouteTableViewCell!
 	@IBOutlet var phoneAndMultifonRouteCell: RouteTableViewCell!
 
-	func routingDidChange() {
-		let cellForActiveRouting = cell(for: routing)
+	func accountLastRoutingDidChange() {
+		let lastRouting = accountController?.lastRouting
+		let cellForActiveRouting: RouteTableViewCell? = {
+			switch lastRouting {
+			case nil:
+				return nil
+			case .some(let routing):
+				return cell(for: routing)
+			}
+		}()
 		for cell in routeCells {
-			cell.setRouteActivationState(cellForActiveRouting == cell ? .active : .inactive)
+			cell.setRouteActivationState((cellForActiveRouting == cell) ? .active : .inactive)
 		}
+	}
+	
+	var nextRouteCell: RouteTableViewCell? {
+		didSet {
+			oldValue?.setRouteActivationState(.inactive)
+			$(nextRouteCell)?.setRouteActivationState(.activating)
+		}
+	}
+	
+	func accountNextRoutingDidChange() {
+		nextRouteCell = cell(for: accountController?.nextRouting)
 	}
 	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let cell = tableView.cellForRow(at: indexPath)!
 		switch cell {
 		case phoneOnlyRouteCell, multifonOnlyRouteCell, phoneAndMultifonRouteCell:
-			guard loggedIn else {
-				return
-			}
 			setRouting(from: cell)
 		case accountNumberCell:
 			tableView.deselectRow(at: indexPath, animated: true)
-			if loggedIn {
+			switch accountController {
+			case .some(let accountController):
 				typealias L = RoutingViewAccountAlertLocalized
-				let alert = UIAlertController(title: L.title, message: phoneNumberFromAccountNumber(routingController.accountNumber), preferredStyle: .alert)
+				let alert = UIAlertController(title: L.title, message: phoneNumberFromAccountNumber(accountController.accountParams.accountNumber), preferredStyle: .alert)
 				alert.addAction(UIAlertAction(title: L.logOutTitle, style: .default) { _ in
-					logout()
+					self.logout()
 				})
 				alert.addAction(UIAlertAction(title: L.cancelTitle, style: .cancel))
 				present(alert, animated: true)
-			} else {
+			case nil:
 				performSegue(withIdentifier: "showAccountDetails", sender: self)
 			}
 		default: ()
@@ -64,7 +75,14 @@ class RoutingViewController: UITableViewController {
 	var didUpdateRefreshControlForCurrentDrag = false
 	
 	func updateRefreshControl() {
-		refreshControl!.attributedTitle = !loggedIn ? nil : NSAttributedString(string: L.updated(at: routingController.lastUpdateDate))
+		refreshControl!.attributedTitle = {
+			switch accountController {
+			case .some(let accountController):
+				return NSAttributedString(string: L.updated(at: accountController.lastUpdateDate))
+			case nil:
+				return NSAttributedString(string: L.refreshNotPossibleTitle)
+			}
+		}()
 	}
 	
 	override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
@@ -90,27 +108,21 @@ class RoutingViewController: UITableViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		self.registerAccountPossesor()
+		scheduledForDeinit.append {
+			self.unrergisterAccountPossesor()
+		}
 		accountNumberCellLabel.textColor = view.tintColor
-		scheduledForViewDidAppear += [{
-			self.triggerRefersh()
-		}]
-		do {
-			let notificationCenter = NotificationCenter.default
-			let observer = notificationCenter.addObserver(forName: .UIApplicationWillEnterForeground, object: nil, queue: nil) { [unowned self] (_) in
+		scheduledForViewDidAppear.append {
+			if nil != self.accountController {
 				self.triggerRefersh()
 			}
-			scheduledForDeinit += [{
-				notificationCenter.removeObserver(observer)
-				()
-			}]
 		}
-		updateAccountStatusView()
-		routingViewController = self
 	}
 	
 	var scheduledForDeinit = [() -> ()]()
 	deinit {
-		for i in scheduledForViewDidAppear { i() }
+		for i in scheduledForDeinit { i() }
 		scheduledForDeinit = []
 	}
 }
@@ -120,9 +132,7 @@ extension RoutingViewController {
 	@IBAction func unwindFromAccountDetails(_ segue: UIStoryboardSegue) {
 		switch segue.identifier! {
 		case "cancel": ()
-		case "loggedIn":
-			let accountDetailsEditor = segue.source as! AccountDetailsEditor
-			routingController = accountDetailsEditor.routingController!
+		case "loggedIn": ()
 		default: fatalError()
 		}
 	}
@@ -131,7 +141,7 @@ extension RoutingViewController {
 
 extension RoutingViewController {
 
-	func cell(for routing: Routing?) -> UITableViewCell? {
+	func cell(for routing: Routing?) -> RouteTableViewCell? {
 		guard let routing = routing else {
 			return nil
 		}
@@ -163,10 +173,21 @@ extension RoutingViewController {
 	// MARK: -
 	//
 
-	func updateAccountStatusView() {
-		accountNumberCellLabel.text = loggedIn ? L.accountTitle(for: phoneNumberFromAccountNumber(routingController.accountNumber)!) : L.logInTitle
+	func accountControllerDidChange() {
+		accountNumberCellLabel.text = {
+			switch accountController {
+			case nil:
+				return L.logInTitle
+			case .some(let accountController):
+				return L.accountTitle(for: phoneNumberFromAccountNumber(accountController.accountParams.accountNumber)!)
+			}
+		}()
+		let loggedIn = nil != accountController
 		for cell in routeCells {
 			cell.enabled = loggedIn
+		}
+		if !loggedIn {
+			accountLastRoutingDidChange()
 		}
 	}
 	
@@ -180,22 +201,14 @@ extension RoutingViewController {
 	
 	func setRouting(from cell: UITableViewCell) {
 		let newRouting = routingFor(cell)
-		let oldRouting = routing!
-		let action = would(.changeRouting(from: oldRouting, to: newRouting)); let preflight: Preflight?; defer { action.preflight = preflight }
-		routing = nil
-		(cell as! RouteActivationAwareCell).setRouteActivationState(.activating)
-		let routingController = MultifonRedirect.routingController!
-		preflight = nil
-		routingController.set(newRouting) { [unowned self] (error) in
+		let action = would(.setRoutingFromPicker(newRouting))
+		accountController!.setRouting(newRouting) { (erring) in
 			DispatchQueue.main.async {
-				if let error = error {
-					action.failed(due: error)
-					routing = oldRouting
-					self.updateAccountStatusView()
+				if let error = erring.error {
 					self.present(error, forFailureDescription: L.couldNotChangeRoutingTitle)
+					action.failed(due: error)
 					return
 				}
-				updateRouting(from: routingController)
 				action.succeeded()
 			}
 		}
@@ -206,23 +219,21 @@ extension RoutingViewController {
 	//
 	
 	@IBAction func refresh(_ refreshControl: UIRefreshControl) {
-		let action = would(.refreshRouting); let preflight: Preflight?; defer { action.preflight = preflight }
-		guard let routingController = routingController else {
-			preflight = .cancelled(due: .noAccountConnected)
+		let action = would(.refreshRoutingFromRefrseshControl); let preflight: Preflight?; defer { action.preflight = preflight }
+		guard let accountController = accountController else {
 			refreshControl.endRefreshing()
+			preflight = .cancelled(due: .noAccountConnected)
 			return
 		}
 		preflight = nil
-		_ = routingController.query { (error) in
+		_ = accountController.refreshRouting { (erring) in
 			DispatchQueue.main.async {
-				if let error = error {
+				refreshControl.endRefreshing()
+				if let error = erring.error {
 					action.failed(due: error)
-					self.updateAccountStatusView()
 					self.present(error, forFailureDescription: L.couldNotUpdateRoutingTitle)
 					return
 				}
-				updateRouting(from: routingController)
-				refreshControl.endRefreshing()
 				action.succeeded()
 			}
 		}

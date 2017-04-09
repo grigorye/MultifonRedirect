@@ -9,16 +9,18 @@
 import UIKit
 
 struct AppIconNames {
+	
 	static let phoneOnly = "AppIcon-PhoneOnly"
 	static let multifonOnly = "AppIcon-MultifonOnly"
 	static let phoneAndMultifon = "AppIcon-PhoneAndMultifon"
+	
 }
 
-class AlternateAppIconController {
+class AlternateAppIconController : NSObject, AccountPossessor {
 	
 	let application = UIApplication.shared
 
-	func updateForAccountController(_ accountController: AccountController?) {
+	func accountControllerDidChange() {
 		guard #available(iOS 10.3, *) else {
 			return
 		}
@@ -34,17 +36,21 @@ class AlternateAppIconController {
 		}
 	}
 	
-	func updateForLastRouting(_ routing: Routing?) {
+	func accountNextRoutingDidChange() {
+	}
+	
+	func accountLastRoutingDidChange() {
 		guard #available(iOS 10.3, *) else {
 			return
 		}
-		let action = would(.updateAppIcon(for: routing)); let preflight: Preflight?; defer { action.preflight = preflight }
+		let lastRouting = accountController?.lastRouting
+		let action = would(.updateAppIcon(for: lastRouting)); let preflight: Preflight?; defer { action.preflight = preflight }
 		guard application.supportsAlternateIcons else {
 			preflight = .cancelled(due: .applicationDoesNotSupportAlternateIcons)
 			return
 		}
 		let iconName: String? = {
-			switch routing {
+			switch lastRouting {
 			case nil:
 				return nil
 			case .phoneOnly?:
@@ -69,4 +75,18 @@ class AlternateAppIconController {
 		}
 	}
 	
+	var scheduledForDeinit = ScheduledHandlers()
+	
+	deinit {
+		scheduledForDeinit.perform()
+	}
+	
+	override init() {
+		super.init()
+		self.registerAccountPossesor()
+		scheduledForDeinit.append {
+			self.unrergisterAccountPossesor()
+		}
+	}
+
 }
