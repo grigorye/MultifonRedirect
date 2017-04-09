@@ -120,6 +120,13 @@ struct RoutingViewLocalized {
 		return String.localizedStringWithFormat(format, phoneNumber)
 	}
 	
+	static let refreshNotPossibleTitle = NSLocalizedString(
+		"refreshNotPossible.title",
+		tableName: "RoutingView",
+		value: "Please sign in",
+		comment: ""
+	)
+	
 	private static let dateAgoComponentsFormatter: DateComponentsFormatter = {
 		$0.unitsStyle = .full
 		$0.allowsFractionalUnits = true
