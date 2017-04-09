@@ -20,6 +20,7 @@ enum ActionTag {
 	case logout
 	case updateAppIcon(for: Routing?)
 	case clearAppIconDueLogout
+	case clearAppIconAsUserDisabled
 	
 }
 
@@ -32,5 +33,6 @@ enum ActionCancellationTag {
 	case noAccountConnected
 	case applicationDoesNotSupportAlternateIcons
 	case applicationIconWouldNotBeChanged
+	case applicationIconIsAlreadyPrimary
 	
 }
