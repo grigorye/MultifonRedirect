@@ -12,6 +12,7 @@ protocol AccountController : class {
 	
 	var lastRouting: Routing? { get set }
 	var lastUpdateDate: Date? { get set }
+	var nextRouting: Routing? { get set }
 	var accountParams: AccountParams { get }
 
 }
@@ -33,8 +34,10 @@ extension AccountController {
 	}
 	
 	func setRouting(_ routing: Routing, completionHandler: @escaping (Erring<Void>) -> ()) {
+		nextRouting = routing
 		MultifonRedirect.setRouting(routing, for: accountParams) { (erring) in
 			DispatchQueue.main.async {
+				self.nextRouting = nil
 				guard case .some() = erring else {
 					completionHandler(erring)
 					return
@@ -47,16 +50,3 @@ extension AccountController {
 	}
 	
 }
-
-class InMemoryAccountController : AccountController {
-	
-	var lastRouting: Routing?
-	var lastUpdateDate: Date? = nil
-	let accountParams: AccountParams
-
-	init(_ accountParams: AccountParams) {
-		self.accountParams = accountParams
-	}
-
-}
-
