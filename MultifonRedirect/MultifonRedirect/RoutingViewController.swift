@@ -108,10 +108,7 @@ class RoutingViewController: UITableViewController, AccountPossessor {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		self.registerAccountPossesor()
-		scheduledForDeinit.append {
-			self.unrergisterAccountPossesor()
-		}
+		scheduledForDeinit.append(bindAccountAccessor())
 		accountNumberCellLabel.textColor = view.tintColor
 		scheduledForViewDidAppear.append {
 			if nil != self.accountController {

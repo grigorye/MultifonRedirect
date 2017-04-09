@@ -166,10 +166,7 @@ class ShortcutsController : NSObject, AccountPossessor {
 	
 	override init() {
 		super.init()
-		self.registerAccountPossesor()
-		scheduledForDeinit.append {
-			self.unrergisterAccountPossesor()
-		}
+		scheduledForDeinit.append(bindAccountAccessor())
 	}
 	
 }
