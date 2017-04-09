@@ -11,7 +11,7 @@ import Foundation
 
 class GlobalAccountHolder {
 
-	var accountController = GlobalAccountController() {
+	fileprivate var accountController = GlobalAccountController() {
 		didSet {
 			accountControllerDidChange()
 			if nil != accountController {
