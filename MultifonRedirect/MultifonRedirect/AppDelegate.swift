@@ -18,8 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
 
-	let shortcutsController = ShortcutsController()
-	
+	private let shortcutsController = ShortcutsController()
+	private let alternateAppIconController = AlternateAppIconController()
+
 	func handleShortcutItem(_ shortcutItem: UIApplicationShortcutItem) -> Bool {
 		return shortcutsController.handleShortcutItem(shortcutItem)
 	}
@@ -30,6 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		RequestError.setUserInfoValueProvider()
+		_ = alternateAppIconController
 		let shortcutsApplicationDidFinishLaunching = shortcutsController.application(application, didFinishLaunchingWithOptions: launchOptions)
 		return shortcutsApplicationDidFinishLaunching
 	}
