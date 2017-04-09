@@ -26,6 +26,7 @@
 		C44538501E999A49009E68EB /* GEFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C445384E1E999A49009E68EB /* GEFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C44538531E999AB1009E68EB /* ModuleExports-GETracing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44538521E999AB1009E68EB /* ModuleExports-GETracing.swift */; };
 		C44538551E999B40009E68EB /* ModuleExports-GEFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44538541E999B40009E68EB /* ModuleExports-GEFoundation.swift */; };
+		C44538581E9AD0DD009E68EB /* Shortcuts.strings in Resources */ = {isa = PBXBuildFile; fileRef = C445385A1E9AD0DD009E68EB /* Shortcuts.strings */; };
 		C4637A3F1E7601F000E5BD25 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4637A411E7601F000E5BD25 /* InfoPlist.strings */; };
 		C4637A431E7605EF00E5BD25 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C4637A421E7605EF00E5BD25 /* Settings.bundle */; };
 		C463FB6B1E91D80E00F984D1 /* ShortcutsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463FB6A1E91D80E00F984D1 /* ShortcutsController.swift */; };
@@ -111,6 +112,7 @@
 		C445384E1E999A49009E68EB /* GEFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GEFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C44538521E999AB1009E68EB /* ModuleExports-GETracing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ModuleExports-GETracing.swift"; path = "../../GETracing/GETracing/ModuleExports-GETracing.swift"; sourceTree = "<group>"; };
 		C44538541E999B40009E68EB /* ModuleExports-GEFoundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ModuleExports-GEFoundation.swift"; path = "../../GEFoundation/GEFoundation/ModuleExports-GEFoundation.swift"; sourceTree = "<group>"; };
+		C44538591E9AD0DD009E68EB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Shortcuts.strings; sourceTree = "<group>"; };
 		C4637A401E7601F000E5BD25 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C4637A421E7605EF00E5BD25 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		C463FB6A1E91D80E00F984D1 /* ShortcutsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcutsController.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 		C4D7FC7B1E621A3300C40FE8 /* Strings */ = {
 			isa = PBXGroup;
 			children = (
+				C445385A1E9AD0DD009E68EB /* Shortcuts.strings */,
 				C4C5CECD1E757B050089DC2F /* RoutingViewAccountAlert.strings */,
 				C4C5CEC81E757B040089DC2F /* AccountDetails.strings */,
 				C4D7FC7A1E6216FD00C40FE8 /* RoutingView.strings */,
@@ -415,6 +418,7 @@
 				C4D7FC781E6216FD00C40FE8 /* RoutingView.strings in Resources */,
 				C4637A431E7605EF00E5BD25 /* Settings.bundle in Resources */,
 				C431B5071E907ABD00D67D5A /* AppIcon-PhoneAndMultifon@3x.png in Resources */,
+				C44538581E9AD0DD009E68EB /* Shortcuts.strings in Resources */,
 				C431B5061E907ABD00D67D5A /* AppIcon-PhoneAndMultifon@2x.png in Resources */,
 				C4D7FC681E6216FC00C40FE8 /* RequestError.strings in Resources */,
 			);
@@ -507,6 +511,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		C445385A1E9AD0DD009E68EB /* Shortcuts.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C44538591E9AD0DD009E68EB /* ru */,
+			);
+			name = Shortcuts.strings;
+			sourceTree = "<group>";
+		};
 		C4637A411E7601F000E5BD25 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

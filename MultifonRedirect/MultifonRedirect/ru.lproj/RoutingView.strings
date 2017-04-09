@@ -14,5 +14,8 @@
 "never.updated.placeholder" = "Обновить информацию о маршрутизации";
 
 /* No comment provided by engineer. */
+"refreshNotPossible.title" = "Пожалуйста, войдите";
+
+/* No comment provided by engineer. */
 "updated.ago" = "Обновлено %@ назад";
 

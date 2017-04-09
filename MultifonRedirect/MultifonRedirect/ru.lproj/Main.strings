@@ -8,7 +8,7 @@
 "KCs-Z2-Xmk.placeholder" = "Пароль";
 
 /* Class = "UILabel"; text = "MultiFon and Phone"; ObjectID = "XC5-yR-SAu"; */
-"XC5-yR-SAu.text" = "МультиФон и Телефон";
+"XC5-yR-SAu.text" = "МультиФон и телефон";
 
 /* Class = "UINavigationItem"; title = "M-Redirect"; ObjectID = "YfS-wy-c83"; */
 "YfS-wy-c83.title" = "M-Редирект";

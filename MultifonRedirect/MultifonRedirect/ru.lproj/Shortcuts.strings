@@ -1,0 +1,15 @@
+/* No comment provided by engineer. */
+"login.title" = "Войти";
+
+/* No comment provided by engineer. */
+"logout.title" = "Выйти";
+
+/* No comment provided by engineer. */
+"multifonOnlyRouting.title" = "МультиФон";
+
+/* No comment provided by engineer. */
+"phoneAndMultifonRouting.title" = "МультиФон и телефон";
+
+/* No comment provided by engineer. */
+"phoneOnlyRouting.title" = "Телефон";
+
