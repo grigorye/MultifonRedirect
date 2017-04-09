@@ -146,8 +146,8 @@ class ShortcutsController : NSObject, AccountPossessor {
 			case .some(let accountController):
 				logoutShortcutItem.localizedSubtitle = accountController.accountParams.accountNumber
 				return [
-					phoneOnlyShortcutItem,
 					multifonOnlyShortcutItem,
+					phoneOnlyShortcutItem,
 					phoneAndMultifonShortcutItem,
 					logoutShortcutItem
 				]
