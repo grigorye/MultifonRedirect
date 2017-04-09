@@ -11,12 +11,10 @@ import UIKit.UITableViewController
 let loginIndicatorBarButtonItemEnabled = false
 let loginIndicatorViewEnabled = !loginIndicatorBarButtonItemEnabled
 
-class AccountDetailsViewController: UITableViewController, AccountDetailsEditor {
+class AccountDetailsViewController: UITableViewController {
 
 	typealias L = AccountDetailsViewLocalized
 
-	var routingController: RoutingController?
-	
 	var cancelLoginInProgress: (() -> ())?
 	
 	@IBOutlet var phoneNumberField: UITextField!
@@ -109,7 +107,6 @@ extension AccountDetailsViewController {
 			return
 		}
 		preflight = nil
-		let routingController = RoutingController(accountNumber: accountNumber, password: password)
 		var undoable = Undoable()
 		if let loginIndicatorView = loginIndicatorView, loginIndicatorViewEnabled {
 			undoable.perform { forward in
@@ -142,7 +139,8 @@ extension AccountDetailsViewController {
 				loginBarButtonItem.isEnabled = !forward
 			}
 		}
-		cancelLoginInProgress = routingController.query { (error) in
+		let accountParams = AccountParams(accountNumber: accountNumber, password: password)
+		cancelLoginInProgress = globalAccountHolder.login(with: accountParams) { (error) in
 			DispatchQueue.main.async {
 				defer { undoable.undo() }
 				if let error = error {
@@ -154,9 +152,8 @@ extension AccountDetailsViewController {
 					return
 				}
 				assert(nil != self.cancelLoginInProgress)
-				self.routingController = routingController
-				self.performSegue(withIdentifier: "loggedIn", sender: self)
 				action.succeeded()
+				self.performSegue(withIdentifier: "loggedIn", sender: self)
 			}
 		}
 	}
