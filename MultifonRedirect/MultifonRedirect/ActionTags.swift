@@ -12,11 +12,14 @@ enum ActionTag {
 	
 	case login
 	case cancelLogin
+	case refreshRoutingFromRefrseshControl
 	case refreshRouting
-	case changeRouting(from: Routing, to: Routing)
+	case changeRouting(from: Routing?, to: Routing)
+	case setRoutingFromPicker(Routing)
 	case setRoutingFromShortcut(Routing)
 	case logout
 	case updateAppIcon(for: Routing?)
+	case clearAppIconDueLogout
 	
 }
 
