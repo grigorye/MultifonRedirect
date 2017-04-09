@@ -10,8 +10,9 @@ import Foundation
 import Fabric
 import Answers
 
+
 private func logEventToAnswers(name: String, attributes: [String : Any]? = nil) {
-	Answers.logCustomEvent(withName: name, customAttributes: attributes)
+	Answers.logCustomEvent(withName: name, customAttributes: (attributes as NSDictionary?)?.flattenWithPrefix(nil))
 }
 
 let fabricInitializer: Void = {
