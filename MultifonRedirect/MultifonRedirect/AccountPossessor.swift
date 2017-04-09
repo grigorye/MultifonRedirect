@@ -93,8 +93,10 @@ extension AccountPossessor {
 	
 	func registerAccountPossesor() {
 		registeredPossessors.append(self)
-		accountLastRoutingDidChange()
 		accountControllerDidChange()
+		if nil != accountController {
+			accountLastRoutingDidChange()
+		}
 	}
 	
 	func unrergisterAccountPossesor() {
