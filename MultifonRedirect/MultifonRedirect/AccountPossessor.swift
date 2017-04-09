@@ -91,7 +91,7 @@ extension AccountPossessor {
 		}
 	}
 	
-	func registerAccountPossesor() {
+	private func registerAccountPossesor() {
 		registeredPossessors.append(self)
 		accountControllerDidChange()
 		if nil != accountController {
@@ -99,9 +99,14 @@ extension AccountPossessor {
 		}
 	}
 	
-	func unrergisterAccountPossesor() {
+	private func unrergisterAccountPossesor() {
 		let i = (registeredPossessors.index {$0.isEqual(self)})!
 		registeredPossessors.remove(at: i)
+	}
+	
+	func bindAccountAccessor() -> Handler {
+		registerAccountPossesor()
+		return { self.unrergisterAccountPossesor() }
 	}
 	
 	var accountController: AccountController? {
