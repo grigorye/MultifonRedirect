@@ -124,17 +124,21 @@ class ShortcutsController : NSObject, AccountPossessor {
 	let multifonOnlyShortcutItem = UIMutableApplicationShortcutItem(type: Shortcut.routing(.multifonOnly).type, localizedTitle: L.multifonOnlyRoutingTitle)
 	let phoneAndMultifonShortcutItem = UIMutableApplicationShortcutItem(type: Shortcut.routing(.phoneAndMultifon).type, localizedTitle: L.phoneAndMultifonRoutingTitle)
 
+	var shortcutsForLoggedIn: [UIApplicationShortcutItem] {
+		return [
+			multifonOnlyShortcutItem,
+			phoneOnlyShortcutItem,
+			phoneAndMultifonShortcutItem,
+			logoutShortcutItem
+		]
+	}
+	
 	func accountLastRoutingDidChange() {
 		let lastRouting = accountController!.lastRouting
 		phoneOnlyShortcutItem.icon = lastRouting.shortcutIcon(forSelected: .phoneOnly)
 		multifonOnlyShortcutItem.icon = lastRouting.shortcutIcon(forSelected: .multifonOnly)
 		phoneAndMultifonShortcutItem.icon = lastRouting.shortcutIcon(forSelected: .phoneAndMultifon)
-		UIApplication.shared.shortcutItems = [
-			phoneOnlyShortcutItem,
-			multifonOnlyShortcutItem,
-			phoneAndMultifonShortcutItem,
-			logoutShortcutItem
-		]
+		UIApplication.shared.shortcutItems = shortcutsForLoggedIn
 	}
 	
 	func accountNextRoutingDidChange() {
@@ -145,12 +149,7 @@ class ShortcutsController : NSObject, AccountPossessor {
 			switch accountController {
 			case .some(let accountController):
 				logoutShortcutItem.localizedSubtitle = accountController.accountParams.accountNumber
-				return [
-					multifonOnlyShortcutItem,
-					phoneOnlyShortcutItem,
-					phoneAndMultifonShortcutItem,
-					logoutShortcutItem
-				]
+				return shortcutsForLoggedIn
 			case nil:
 				return [loginShortcutItem]
 			}
