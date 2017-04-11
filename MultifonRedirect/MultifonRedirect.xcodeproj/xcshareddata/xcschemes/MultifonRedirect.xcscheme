@@ -38,6 +38,16 @@
                ReferencedContainer = "container:MultifonRedirect.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C45D86781E9C664100AD432F"
+               BuildableName = "MultifonRedirectSupportTests.xctest"
+               BlueprintName = "MultifonRedirectSupportTests"
+               ReferencedContainer = "container:MultifonRedirect.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
