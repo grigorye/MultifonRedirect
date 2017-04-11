@@ -6,6 +6,7 @@
 //  Copyright © 2017 Grigory Entin. All rights reserved.
 //
 
+import MultifonRedirectSupport
 import Foundation
 import Fabric
 import Answers

@@ -6,6 +6,7 @@
 //  Copyright © 2017 Grigory Entin. All rights reserved.
 //
 
+import MultifonRedirectSupport
 import UIKit.UITableViewController
 
 let loginIndicatorBarButtonItemEnabled = false
