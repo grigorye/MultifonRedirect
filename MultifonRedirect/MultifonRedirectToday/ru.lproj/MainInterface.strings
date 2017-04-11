@@ -1,0 +1,15 @@
+/* Class = "UILabel"; text = "My Phone:"; ObjectID = "9Td-IT-4si"; */
+"9Td-IT-4si.text" = "Мой номер:";
+
+/* Class = "UISegmentedControl"; OLr-cg-crl.segmentTitles[0] = "MultiFon"; ObjectID = "OLr-cg-crl"; */
+"OLr-cg-crl.segmentTitles[0]" = "МультиФон";
+
+/* Class = "UISegmentedControl"; OLr-cg-crl.segmentTitles[1] = "Phone"; ObjectID = "OLr-cg-crl"; */
+"OLr-cg-crl.segmentTitles[1]" = "Телефон";
+
+/* Class = "UISegmentedControl"; OLr-cg-crl.segmentTitles[2] = "Both"; ObjectID = "OLr-cg-crl"; */
+"OLr-cg-crl.segmentTitles[2]" = "Оба";
+
+/* Class = "UILabel"; text = "+7 921 987-65-43"; ObjectID = "YpB-wb-la8"; */
+"YpB-wb-la8.text" = "+7 921 987-65-43";
+
