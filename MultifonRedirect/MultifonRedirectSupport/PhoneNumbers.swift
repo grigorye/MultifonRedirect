@@ -14,14 +14,14 @@ let partialFormatter = PartialFormatter(defaultRegion: defaultRegion)
 let phoneNumberKit = PhoneNumberKit()
 
 
-func phoneNumberFromAccountNumber(_ accountNumber: String?) -> String? {
+public func phoneNumberFromAccountNumber(_ accountNumber: String?) -> String? {
 	guard let accountNumber = accountNumber else {
 		return nil
 	}
 	return partialFormatter.formatPartial("+\(accountNumber)")
 }
 
-func accountNumberFromPhoneNumber(_ phoneNumber: String?) -> String? {
+public func accountNumberFromPhoneNumber(_ phoneNumber: String?) -> String? {
 	guard let phoneNumber = phoneNumber else {
 		return nil
 	}

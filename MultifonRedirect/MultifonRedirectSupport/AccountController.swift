@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol AccountController : class {
+public protocol AccountController : class {
 	
 	var lastRouting: Routing? { get set }
 	var lastUpdateDate: Date? { get set }
@@ -19,8 +19,8 @@ protocol AccountController : class {
 
 extension AccountController {
 	
-	func refreshRouting(completionHandler: @escaping (Erring<Void>) -> ()) -> CancellationToken {
-		return MultifonRedirect.queryRouting(for: accountParams) { (erringRouting) in
+	public func refreshRouting(completionHandler: @escaping (Erring<Void>) -> ()) -> CancellationToken {
+		return queryRouting(for: accountParams) { (erringRouting) in
 			DispatchQueue.main.async {
 				guard case .some(let routing) = erringRouting else {
 					completionHandler(.error(erringRouting.error!))
@@ -33,9 +33,9 @@ extension AccountController {
 		}
 	}
 	
-	func setRouting(_ routing: Routing, completionHandler: @escaping (Erring<Void>) -> ()) {
+	public func setRouting(_ routing: Routing, completionHandler: @escaping (Erring<Void>) -> ()) {
 		nextRouting = routing
-		MultifonRedirect.setRouting(routing, for: accountParams) { (erring) in
+		MultifonRedirectSupport.setRouting(routing, for: accountParams) { (erring) in
 			DispatchQueue.main.async {
 				self.nextRouting = nil
 				guard case .some() = erring else {

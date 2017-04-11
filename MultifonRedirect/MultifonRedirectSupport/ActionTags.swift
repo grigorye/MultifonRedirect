@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ActionTag {
+public enum ActionTag {
 	
 	case login
 	case cancelLogin
@@ -24,7 +24,7 @@ enum ActionTag {
 	
 }
 
-enum ActionCancellationTag {
+public enum ActionCancellationTag {
 	
 	case endEditing
 	case convertToAccountNumber(phoneNumber: String)

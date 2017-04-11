@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Routing: String {
+public enum Routing: String {
 	case phoneOnly = "0"
 	case multifonOnly = "1"
 	case phoneAndMultifon = "2"

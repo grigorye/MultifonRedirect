@@ -10,9 +10,9 @@ import Foundation
 
 private let logger = ActionLogger()
 
-class Action {
+public class Action {
 	
-	enum Preflight {
+	public enum Preflight {
 		case cancelled(due: ActionCancellationTag)
 		case succeeded
 	}
@@ -22,7 +22,7 @@ class Action {
 		case succeeded
 	}
 	
-	var preflight: Preflight? {
+	public var preflight: Preflight? {
 		didSet {
 			if case .cancelled(let due)? = preflight {
 				logger.cancelled(tag, due: due)
@@ -52,19 +52,19 @@ class Action {
 		logger.started(tag)
 	}
 	
-	func failed(due error: Error) {
+	public func failed(due error: Error) {
 		completionState = .failed
 		logger.failed(tag, error: error)
 	}
 	
-	func succeeded() {
+	public func succeeded() {
 		completionState = .succeeded
 		logger.succeeded(tag)
 	}
 }
 
-typealias Preflight = Action.Preflight
+public typealias Preflight = Action.Preflight
 
-func would(_ tag: ActionTag) -> Action {
+public func would(_ tag: ActionTag) -> Action {
 	return Action(with: tag)
 }

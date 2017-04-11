@@ -6,10 +6,9 @@
 //  Copyright © 2017 Grigory Entin. All rights reserved.
 //
 
-import UIKit
 import Foundation
 
-class GlobalAccountHolder {
+public class GlobalAccountHolder {
 
 	fileprivate var accountController = GlobalAccountController() {
 		didSet {
@@ -20,7 +19,7 @@ class GlobalAccountHolder {
 		}
 	}
 	
-	func login(with accountParams: AccountParams, completionHandler: @escaping (Error?) -> ()) -> CancellationToken {
+	public func login(with accountParams: AccountParams, completionHandler: @escaping (Error?) -> ()) -> CancellationToken {
 		return queryRouting(for: accountParams) { (erring) in
 			DispatchQueue.main.async {
 				guard case .some(let routing) = erring else {
@@ -70,9 +69,9 @@ class GlobalAccountHolder {
 }
 
 
-let globalAccountHolder = GlobalAccountHolder()
+public let globalAccountHolder = GlobalAccountHolder()
 
-protocol AccountPossessor : NSObjectProtocol {
+public protocol AccountPossessor : NSObjectProtocol {
 	
 	func accountControllerDidChange()
 	func accountLastRoutingDidChange()
@@ -80,7 +79,7 @@ protocol AccountPossessor : NSObjectProtocol {
 	
 }
 
-extension AccountPossessor {
+public extension AccountPossessor {
 	
 	private var registeredPossessors: [AccountPossessor] {
 		get {

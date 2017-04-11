@@ -8,14 +8,14 @@
 
 import Foundation
 
-typealias CancellationToken = (() -> ())
+public typealias CancellationToken = (() -> ())
 
-enum Erring<T> {
+public enum Erring<T> {
 	
 	case some(T)
 	case error(Error)
 	
-	var error: Error? {
+	public var error: Error? {
 		switch self {
 		case .error(let error):
 			return error
@@ -26,7 +26,7 @@ enum Erring<T> {
 	
 }
 
-enum RequestError: Error {
+public enum RequestError: Error {
 	case unused
 	case urlSessionFailure(error: Error)
 	case badHTTPStatus(response: HTTPURLResponse)
@@ -105,10 +105,15 @@ private class QueryRoutingResponseParserDelegate: NSObject, SimpleElementTrackin
 	}
 }
 
-struct AccountParams {
+public struct AccountParams {
 	
-	let accountNumber: String
-	let password: String
+	public let accountNumber: String
+	public let password: String
+	
+	public init(accountNumber: String, password: String) {
+		self.accountNumber = accountNumber
+		self.password = password
+	}
 	
 }
 
