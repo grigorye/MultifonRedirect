@@ -6,6 +6,7 @@
 //  Copyright © 2017 Grigory Entin. All rights reserved.
 //
 
+import GEFoundation
 import Foundation
 
 public class GlobalAccountHolder {
@@ -103,7 +104,7 @@ public extension AccountPossessor {
 		registeredPossessors.remove(at: i)
 	}
 	
-	func bindAccountAccessor() -> Handler {
+	func bindAccountAccessor() -> GEFoundation.Handler {
 		registerAccountPossesor()
 		return { self.unrergisterAccountPossesor() }
 	}
