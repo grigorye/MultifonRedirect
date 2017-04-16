@@ -6,7 +6,12 @@
 //  Copyright © 2017 Grigory Entin. All rights reserved.
 //
 
+import class GEFoundation.TypedUserDefaults
 import Foundation
+
+let sharedDefaultsSuiteName = "group.com.grigorye.MultifonRedirect"
+
+public let defaults = GEFoundation.TypedUserDefaults(suiteName: sharedDefaultsSuiteName)!
 
 class GlobalAccountController : AccountController {
 	
