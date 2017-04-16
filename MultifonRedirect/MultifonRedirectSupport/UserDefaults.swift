@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension KVOCompliantUserDefaults {
+extension TypedUserDefaults {
 	
 	@NSManaged var accountNumber: String?
 	@NSManaged var password: String?
