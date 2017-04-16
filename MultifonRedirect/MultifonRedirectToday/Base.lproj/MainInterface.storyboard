@@ -22,36 +22,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Phone:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Td-IT-4si">
-                                <rect key="frame" x="16" y="16" width="72.5" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+7 921 987-65-43" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YpB-wb-la8">
-                                <rect key="frame" x="175" y="16" width="128.5" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="OLr-cg-crl">
-                                <rect key="frame" x="16" y="50" width="288" height="29"/>
-                                <segments>
-                                    <segment title="MultiFon"/>
-                                    <segment title="Phone"/>
-                                    <segment title="Both"/>
-                                </segments>
-                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                            </segmentedControl>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Pi7-vp-9Ai">
+                                <rect key="frame" x="16" y="78.5" width="288" height="44"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not Logged In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1T-8s-1QG">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MultiFon and Phone" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcv-nT-BIK">
+                                        <rect key="frame" x="0.0" y="23.5" width="288" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="YpB-wb-la8" firstAttribute="baseline" secondItem="9Td-IT-4si" secondAttribute="baseline" id="P8x-CJ-GGc"/>
-                            <constraint firstItem="YpB-wb-la8" firstAttribute="trailing" secondItem="S3S-Oj-5AN" secondAttribute="trailingMargin" id="Wyn-Qd-5gi"/>
-                            <constraint firstItem="OLr-cg-crl" firstAttribute="trailing" secondItem="S3S-Oj-5AN" secondAttribute="trailingMargin" id="g0J-6i-MUu"/>
-                            <constraint firstItem="9Td-IT-4si" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="16" id="gaa-pX-aUg"/>
-                            <constraint firstItem="OLr-cg-crl" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="p2X-Ja-Ogj"/>
-                            <constraint firstItem="OLr-cg-crl" firstAttribute="top" secondItem="9Td-IT-4si" secondAttribute="bottom" constant="16" id="r5S-Ax-7ZN"/>
-                            <constraint firstItem="9Td-IT-4si" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="zUF-HO-GsS"/>
+                            <constraint firstItem="Pi7-vp-9Ai" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="BJD-ET-Wxc"/>
+                            <constraint firstItem="Pi7-vp-9Ai" firstAttribute="centerY" secondItem="S3S-Oj-5AN" secondAttribute="centerY" id="Ghn-qm-FIy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Pi7-vp-9Ai" secondAttribute="trailing" id="iRD-1K-P4X"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -60,6 +52,10 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="200"/>
+                    <connections>
+                        <outlet property="notLoggedInLabel" destination="M1T-8s-1QG" id="VFN-Ol-xiV"/>
+                        <outlet property="routingLabel" destination="gcv-nT-BIK" id="bmW-OF-NX6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
