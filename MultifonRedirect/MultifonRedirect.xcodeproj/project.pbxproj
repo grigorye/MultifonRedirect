@@ -10,6 +10,11 @@
 		C40909BD1E63684D006BBF04 /* PhoneNumberKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C40909BC1E63684D006BBF04 /* PhoneNumberKit.framework */; };
 		C40909BE1E63684D006BBF04 /* PhoneNumberKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C40909BC1E63684D006BBF04 /* PhoneNumberKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C40909C21E6376F7006BBF04 /* AccountDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40909C11E6376F7006BBF04 /* AccountDetailsViewController.swift */; };
+		C41B5C711E9D880400351FD8 /* MultifonRedirectSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C45D86711E9C664100AD432F /* MultifonRedirectSupport.framework */; };
+		C41B5C721E9D880400351FD8 /* GETracing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C445384B1E999A44009E68EB /* GETracing.framework */; };
+		C41B5C731E9D880400351FD8 /* PhoneNumberKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C40909BC1E63684D006BBF04 /* PhoneNumberKit.framework */; };
+		C41B5C761E9D882800351FD8 /* GEFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C445384E1E999A49009E68EB /* GEFoundation.framework */; };
+		C4290F881EA313F100CAD5AE /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4290F871EA313F100CAD5AE /* Globals.swift */; };
 		C431B4FD1E907AAD00D67D5A /* AppIcon-MultifonOnly@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C431B4FA1E907AAD00D67D5A /* AppIcon-MultifonOnly@2x.png */; };
 		C431B4FE1E907AAD00D67D5A /* AppIcon-MultifonOnly@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C431B4FB1E907AAD00D67D5A /* AppIcon-MultifonOnly@3x.png */; };
 		C431B5061E907ABD00D67D5A /* AppIcon-PhoneAndMultifon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C431B5001E907ABD00D67D5A /* AppIcon-PhoneAndMultifon@2x.png */; };
@@ -50,6 +55,9 @@
 		C45D86A21E9C6ABB00AD432F /* ActionTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4209FFE1E7E98A0005FCF87 /* ActionTracking.swift */; };
 		C45D86A31E9C6ABB00AD432F /* ActionLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E01291E7F40150092F57B /* ActionLogger.swift */; };
 		C45D86A41E9C6ABB00AD432F /* ActionTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = C420A0001E7E9A3B005FCF87 /* ActionTags.swift */; };
+		C45D86A71E9D7F0D00AD432F /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D86A61E9D7F0D00AD432F /* Localized.swift */; };
+		C45D86A81E9D811400AD432F /* ModuleExports-GETracing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44538521E999AB1009E68EB /* ModuleExports-GETracing.swift */; };
+		C45D86A91E9D811400AD432F /* ModuleExports-GEFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44538541E999B40009E68EB /* ModuleExports-GEFoundation.swift */; };
 		C4637A3F1E7601F000E5BD25 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4637A411E7601F000E5BD25 /* InfoPlist.strings */; };
 		C4637A431E7605EF00E5BD25 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C4637A421E7605EF00E5BD25 /* Settings.bundle */; };
 		C463FB6B1E91D80E00F984D1 /* ShortcutsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463FB6A1E91D80E00F984D1 /* ShortcutsController.swift */; };
@@ -151,6 +159,7 @@
 		C40909C11E6376F7006BBF04 /* AccountDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountDetailsViewController.swift; sourceTree = "<group>"; };
 		C4209FFE1E7E98A0005FCF87 /* ActionTracking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionTracking.swift; sourceTree = "<group>"; };
 		C420A0001E7E9A3B005FCF87 /* ActionTags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionTags.swift; sourceTree = "<group>"; };
+		C4290F871EA313F100CAD5AE /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		C431B4FA1E907AAD00D67D5A /* AppIcon-MultifonOnly@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AppIcon-MultifonOnly@2x.png"; path = "AlternateAppIcons/AppIcon-MultifonOnly@2x.png"; sourceTree = "<group>"; };
 		C431B4FB1E907AAD00D67D5A /* AppIcon-MultifonOnly@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AppIcon-MultifonOnly@3x.png"; path = "AlternateAppIcons/AppIcon-MultifonOnly@3x.png"; sourceTree = "<group>"; };
 		C431B5001E907ABD00D67D5A /* AppIcon-PhoneAndMultifon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AppIcon-PhoneAndMultifon@2x.png"; path = "AlternateAppIcons/AppIcon-PhoneAndMultifon@2x.png"; sourceTree = "<group>"; };
@@ -181,6 +190,7 @@
 		C45D86821E9C664100AD432F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C45D868F1E9C677A00AD432F /* MultifonRedirect.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MultifonRedirect.entitlements; sourceTree = "<group>"; };
 		C45D86901E9C680A00AD432F /* MultifonRedirectToday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MultifonRedirectToday.entitlements; sourceTree = "<group>"; };
+		C45D86A61E9D7F0D00AD432F /* Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
 		C4637A401E7601F000E5BD25 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C4637A421E7605EF00E5BD25 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		C463FB6A1E91D80E00F984D1 /* ShortcutsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcutsController.swift; sourceTree = "<group>"; };
@@ -232,6 +242,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C41B5C761E9D882800351FD8 /* GEFoundation.framework in Frameworks */,
+				C41B5C711E9D880400351FD8 /* MultifonRedirectSupport.framework in Frameworks */,
+				C41B5C721E9D880400351FD8 /* GETracing.framework in Frameworks */,
+				C41B5C731E9D880400351FD8 /* PhoneNumberKit.framework in Frameworks */,
 				C45D86571E9C340300AD432F /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,6 +332,7 @@
 				C45D86901E9C680A00AD432F /* MultifonRedirectToday.entitlements */,
 				C45D866A1E9C64B300AD432F /* InfoPlist.strings */,
 				C45D86591E9C340300AD432F /* TodayViewController.swift */,
+				C45D86A61E9D7F0D00AD432F /* Localized.swift */,
 				C45D865B1E9C340300AD432F /* MainInterface.storyboard */,
 				C45D865E1E9C340300AD432F /* Info.plist */,
 			);
@@ -431,10 +446,11 @@
 				C4D7FC5E1E620FC200C40FE8 /* RequestErrorPresentation.swift */,
 				C4D7FC5C1E61EF3B00C40FE8 /* ExternalDependencies.swift */,
 				C4C5CEBC1E7464020089DC2F /* UIKitExtensions.swift */,
-				C4D7FC5A1E61EEB500C40FE8 /* Localized.swift */,
 				C47456631E64F71F003C7656 /* MultifonNumberTextField.swift */,
+				C4290F871EA313F100CAD5AE /* Globals.swift */,
 				C4F359461E5D139500F2B779 /* Main.storyboard */,
 				C4F359491E5D139500F2B779 /* Assets.xcassets */,
+				C4D7FC5A1E61EEB500C40FE8 /* Localized.swift */,
 				C4D7FC7B1E621A3300C40FE8 /* Strings */,
 				C4F3594B1E5D139500F2B779 /* LaunchScreen.storyboard */,
 				C4F3594E1E5D139500F2B779 /* Info.plist */,
@@ -718,7 +734,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C45D86A91E9D811400AD432F /* ModuleExports-GEFoundation.swift in Sources */,
 				C45D865A1E9C340300AD432F /* TodayViewController.swift in Sources */,
+				C45D86A71E9D7F0D00AD432F /* Localized.swift in Sources */,
+				C45D86A81E9D811400AD432F /* ModuleExports-GETracing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -775,6 +794,7 @@
 				C463FB6B1E91D80E00F984D1 /* ShortcutsController.swift in Sources */,
 				C43F80A71E6B276100349011 /* Fabric.swift in Sources */,
 				C47E009F1E98D5D600E5D521 /* AlternateAppIconController.swift in Sources */,
+				C4290F881EA313F100CAD5AE /* Globals.swift in Sources */,
 				C44538551E999B40009E68EB /* ModuleExports-GEFoundation.swift in Sources */,
 				C4C5CEBD1E7464020089DC2F /* UIKitExtensions.swift in Sources */,
 				C47E009D1E96C65E00E5D521 /* Undoable.swift in Sources */,
@@ -1035,6 +1055,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1101,6 +1122,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1441,6 +1463,7 @@
 				C45D86641E9C340300AD432F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C45D86881E9C664100AD432F /* Build configuration list for PBXNativeTarget "MultifonRedirectSupport" */ = {
 			isa = XCConfigurationList;
@@ -1449,6 +1472,7 @@
 				C45D868A1E9C664100AD432F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C45D868B1E9C664100AD432F /* Build configuration list for PBXNativeTarget "MultifonRedirectSupportTests" */ = {
 			isa = XCConfigurationList;
@@ -1457,6 +1481,7 @@
 				C45D868D1E9C664100AD432F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C4C5CED91E758EFE0089DC2F /* Build configuration list for PBXNativeTarget "MultifonRedirectFastlaneSnapshot" */ = {
 			isa = XCConfigurationList;
