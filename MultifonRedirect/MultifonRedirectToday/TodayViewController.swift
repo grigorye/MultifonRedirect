@@ -59,7 +59,7 @@ extension TodayViewController: AccountPossessor {
 			case .multifonOnly?:
 				return L.multifonOnlyRoutingTitle
 			case .phoneAndMultifon?:
-				return L.multifonOnlyRoutingTitle
+				return L.phoneAndMultifonRoutingTitle
 			case nil:
 				return L.unknownRoutingTitle
 			}
