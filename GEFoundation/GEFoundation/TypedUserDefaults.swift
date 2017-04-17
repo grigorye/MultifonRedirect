@@ -6,17 +6,9 @@
 //  Copyright © 2015 Grigory Entin. All rights reserved.
 //
 
-import UIKit
 import Foundation
 
 public let defaults = TypedUserDefaults()!
-
-private let objcEncode_Bool = String(validatingUTF8: NSNumber(value: true).objCType)!
-private let objcEncode_Int = "i"
-private let objcEncode_Long = "l"
-private let objcEncode_LongLong = "q"
-private let objcEncode_C99Bool = "B"
-private let objcEncode_AnyObject = "@"
 
 // MARK: -
 
@@ -135,17 +127,15 @@ public class TypedUserDefaults : NSObject {
 		let isSetter = selName.hasSuffix(":")
 		let valueTypeEncoded = propertyInfo.valueTypeEncoded
 		let methodIMP: IMP = {
-			switch valueTypeEncoded {
-			case objcEncode_Bool, objcEncode_C99Bool:
+			switch ObjCEncode(rawValue: valueTypeEncoded)! {
+			case .Bool, .C99Bool:
 				return isSetter ? unsafeBitCast(setBoolValueIMP, to: IMP.self) : unsafeBitCast(boolValueIMP, to: IMP.self)
-			case objcEncode_Long, objcEncode_Int:
+			case .Long, .Int:
 				return isSetter ? unsafeBitCast(setLongValueIMP, to: IMP.self) : unsafeBitCast(longValueIMP, to: IMP.self)
-			case objcEncode_LongLong:
+			case .LongLong:
 				return isSetter ? unsafeBitCast(setLongLongValueIMP, to: IMP.self) : unsafeBitCast(longLongValueIMP, to: IMP.self)
-			case objcEncode_AnyObject:
+			case .AnyObject:
 				return isSetter ? unsafeBitCast(setObjectValueIMP, to: IMP.self) : unsafeBitCast(objectValueIMP, to: IMP.self)
-			default:
-				fatalError("\(L(valueTypeEncoded))")
 			}
 		}()
 		let types = isSetter ? "v@:\(valueTypeEncoded)" : "\(valueTypeEncoded)@:"
