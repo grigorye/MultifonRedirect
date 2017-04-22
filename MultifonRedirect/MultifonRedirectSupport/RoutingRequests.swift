@@ -105,7 +105,7 @@ private class QueryRoutingResponseParserDelegate: NSObject, SimpleElementTrackin
 	}
 }
 
-public struct AccountParams {
+public class AccountParams : NSObject {
 	
 	public let accountNumber: String
 	public let password: String
