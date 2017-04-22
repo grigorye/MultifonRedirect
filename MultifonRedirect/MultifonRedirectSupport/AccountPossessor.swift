@@ -11,7 +11,20 @@ import Foundation
 
 public class GlobalAccountHolder {
 
-	fileprivate var accountController = GlobalAccountController() {
+	private final func bindAccountGlobalAccountController() -> Handler {
+		let binding = KVOBinding(defaults•#keyPath(TypedUserDefaults.accountParams), options: [.initial, .new]) { (change) in
+			let newValue = change![NSKeyValueChangeKey.newKey] as? AccountParams
+			self.accountController = {
+				guard let accountParams = newValue else {
+					return nil
+				}
+				return GlobalAccountController(accountParams: accountParams)
+			}()
+		}
+		return { _ = binding }
+	}
+	
+	fileprivate var accountController: GlobalAccountController? {
 		didSet {
 			accountControllerDidChange()
 			if nil != accountController {
@@ -27,21 +40,20 @@ public class GlobalAccountHolder {
 					completionHandler(erring.error!)
 					return
 				}
-				defaults.accountNumber = accountParams.accountNumber
-				defaults.password = accountParams.password
+				defaults.accountParams = accountParams
+				assert(nil != self.accountController)
 				defaults.lastUpdateDate = Date()
 				defaults.lastRouting = routing.rawValue
-				self.accountController = GlobalAccountController()
 				completionHandler(nil)
 			}
 		}
 	}
 	
 	func logout() {
-		let action = would(.logout)
 		accountController = nil
-		defaults.accountNumber = nil
-		defaults.password = nil
+		let action = would(.logout)
+		defaults.accountParams = nil
+		assert(nil == self.accountController)
 		action.succeeded()
 	}
 	
@@ -66,6 +78,16 @@ public class GlobalAccountHolder {
 	}
 
 	var accountPossessors = [AccountPossessor]()
+	
+	var scheduledForDeinit = ScheduledHandlers()
+	
+	deinit {
+		scheduledForDeinit.perform()
+	}
+
+	init() {
+		scheduledForDeinit.append(bindAccountGlobalAccountController())
+	}
 	
 }
 
