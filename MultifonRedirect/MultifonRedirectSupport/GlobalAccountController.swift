@@ -65,11 +65,8 @@ class GlobalAccountController : AccountController {
 		}
 	}
 	
-	init?() {
-		guard let accountNumber = defaults.accountNumber, let password = defaults.password else {
-			return nil
-		}
-		accountParams = AccountParams(accountNumber: accountNumber, password: password)
+	init(accountParams: AccountParams) {
+		self.accountParams = accountParams
 	}
 	
 }
