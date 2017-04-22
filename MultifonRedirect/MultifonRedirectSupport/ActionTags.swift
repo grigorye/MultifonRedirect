@@ -30,6 +30,7 @@ public enum ActionCancellationTag {
 	case convertToAccountNumber(phoneNumber: String)
 	case noPhoneNumberProvided
 	case noPasswordProvided
+	case invalidCharactersInPassword
 	case noAccountConnected
 	case applicationDoesNotSupportAlternateIcons
 	case applicationIconWouldNotBeChanged
