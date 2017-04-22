@@ -107,6 +107,10 @@ extension AccountDetailsViewController {
 			preflight = .cancelled(due: .noPasswordProvided)
 			return
 		}
+		guard password.canBeConverted(to: .ascii) else {
+			preflight = .cancelled(due: .invalidCharactersInPassword)
+			return
+		}
 		preflight = nil
 		var undoable = Undoable()
 		if let loginIndicatorView = loginIndicatorView, loginIndicatorViewEnabled {
