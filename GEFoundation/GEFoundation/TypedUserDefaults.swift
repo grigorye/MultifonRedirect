@@ -8,10 +8,6 @@
 
 import Foundation
 
-public let defaults = TypedUserDefaults()!
-
-// MARK: -
-
 typealias _Self = TypedUserDefaults
 
 private let objectValueIMP: @convention(c) (_Self, Selector) -> AnyObject? = { _self, _cmd in
@@ -22,7 +18,7 @@ private let objectValueIMP: @convention(c) (_Self, Selector) -> AnyObject? = { _
 }
 private let setObjectValueIMP: @convention(c) (_Self, Selector, NSObject?) -> Void = { _self, _cmd, value in
 	let defaultName = _Self.defaultNameForSelector(_cmd)
-	_self.defaults.set(value, forKey:(defaultName))
+	_self.suiteDefaults.set(value, forKey:(defaultName))
 }
 private let boolValueIMP: @convention(c) (_Self, Selector) -> Bool = { _self, _cmd in
 	let propertyName = NSStringFromSelector(_cmd)
@@ -46,17 +42,17 @@ private let longLongValueIMP: @convention(c) (_Self, Selector) -> CLongLong = { 
 private let setBoolValueIMP: @convention(c) (_Self, Selector, Bool) -> Void = { _self, _cmd, value in
 	let propertyName = NSStringFromSelector(_cmd)
 	$(propertyName)
-	_self.defaults.set(value, forKey: propertyName)
+	_self.suiteDefaults.set(value, forKey: propertyName)
 }
 private let setLongValueIMP: @convention(c) (_Self, Selector, CLong) -> Void = { _self, _cmd, value in
 	let propertyName = NSStringFromSelector(_cmd)
 	$(propertyName)
-	_self.defaults.set(value, forKey: propertyName)
+	_self.suiteDefaults.set(value, forKey: propertyName)
 }
 private let setLongLongValueIMP: @convention(c) (_Self, Selector, CLongLong) -> Void = { _self, _cmd, value in
 	let propertyName = NSStringFromSelector(_cmd)
 	$(propertyName)
-	_self.defaults.set(Int(value), forKey: propertyName)
+	_self.suiteDefaults.set(Int(value), forKey: propertyName)
 }
 
 extension TypedUserDefaults {
@@ -104,7 +100,8 @@ extension TypedUserDefaults {
 
 public class TypedUserDefaults : NSObject {
 
-	var defaults: UserDefaults
+	let defaults: UserDefaults
+	let suiteDefaults: UserDefaults
 	
 	override public class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String> {
 		var keyPaths = super.keyPathsForValuesAffectingValue(forKey: key)
@@ -146,10 +143,16 @@ public class TypedUserDefaults : NSObject {
 	}
 	
 	public init?(suiteName: String? = nil) {
-		guard let defaults = UserDefaults(suiteName: suiteName) else {
+		guard let suiteDefaults = UserDefaults(suiteName: suiteName) else {
 			return nil
 		}
-		self.defaults = defaults
+		self.suiteDefaults = suiteDefaults
+		self.defaults = UserDefaults() … {
+			guard let suiteName = suiteName else {
+				return
+			}
+			$0.addSuite(named: suiteName)
+		}
 		super.init()
 	}
 	
