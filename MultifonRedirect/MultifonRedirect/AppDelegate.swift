@@ -14,6 +14,14 @@ let versionIsClean: Bool = {
 	return nil == version.rangeOfCharacter(from: CharacterSet.decimalDigits.inverted)
 }()
 
+extension UIApplication {
+	
+	var presentingViewController: UIViewController {
+		return keyWindow!.rootViewController!
+	}
+	
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
