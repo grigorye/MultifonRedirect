@@ -9,6 +9,24 @@
 import MultifonRedirectSupport
 import UIKit
 
+extension AccountPossessor {
+	
+	func logoutInteractively(presentingViewController: UIViewController, completionHandler: @escaping (Error?) -> Void) {
+		typealias L = RoutingViewAccountAlertLocalized
+		let accountController = self.accountController!
+		let alert = UIAlertController(title: L.title, message: phoneNumberFromAccountNumber(accountController.accountParams.accountNumber), preferredStyle: .alert)
+		alert.addAction(UIAlertAction(title: L.logOutTitle, style: .default) { _ in
+			self.logout()
+			completionHandler(nil)
+		})
+		alert.addAction(UIAlertAction(title: L.cancelTitle, style: .cancel) { _ in
+			completionHandler(NSError(domain: NSCocoaErrorDomain, code: NSUserCancelledError))
+		})
+		presentingViewController.present(alert, animated: true)
+	}
+	
+}
+
 class RoutingViewController: UITableViewController, AccountPossessor {
 
 	typealias L = RoutingViewLocalized
@@ -54,14 +72,15 @@ class RoutingViewController: UITableViewController, AccountPossessor {
 		case accountNumberCell:
 			tableView.deselectRow(at: indexPath, animated: true)
 			switch accountController {
-			case .some(let accountController):
-				typealias L = RoutingViewAccountAlertLocalized
-				let alert = UIAlertController(title: L.title, message: phoneNumberFromAccountNumber(accountController.accountParams.accountNumber), preferredStyle: .alert)
-				alert.addAction(UIAlertAction(title: L.logOutTitle, style: .default) { _ in
-					self.logout()
-				})
-				alert.addAction(UIAlertAction(title: L.cancelTitle, style: .cancel))
-				present(alert, animated: true)
+			case .some:
+				let action = would(.logoutFromRoutingView)
+				logoutInteractively(presentingViewController: self) { (error) in
+					if let error = error {
+						action.failed(due: error)
+					} else {
+						action.succeeded()
+					}
+				}
 			case nil:
 				performSegue(withIdentifier: "showAccountDetails", sender: self)
 			}
