@@ -91,7 +91,21 @@ class ShortcutsController : NSObject, AccountPossessor {
 		case .action(.login):
 			return false
 		case .action(.logout):
-			logout()
+			let action = would(.logoutFromShortcut)
+			let preflight: Preflight?; defer { action.preflight = preflight }
+			let presentingViewController = UIApplication.shared.presentingViewController
+			guard nil == presentingViewController.presentedViewController else {
+				preflight = .cancelled(due: .interactionNotReady)
+				return false
+			}
+			preflight = nil
+			logoutInteractively(presentingViewController: presentingViewController) { (error) in
+				if let error = error {
+					action.failed(due: error)
+				} else {
+					action.succeeded()
+				}
+			}
 			return false
 		}
 	}
