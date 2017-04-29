@@ -18,6 +18,8 @@ public enum ActionTag {
 	case setRoutingFromPicker(Routing)
 	case setRoutingFromShortcut(Routing)
 	case logout
+	case logoutFromRoutingView
+	case logoutFromShortcut
 	case updateAppIcon(for: Routing?)
 	case clearAppIconDueLogout
 	case clearAppIconAsUserDisabled
@@ -26,6 +28,7 @@ public enum ActionTag {
 
 public enum ActionCancellationTag {
 	
+	case interactionNotReady
 	case endEditing
 	case convertToAccountNumber(phoneNumber: String)
 	case noPhoneNumberProvided
