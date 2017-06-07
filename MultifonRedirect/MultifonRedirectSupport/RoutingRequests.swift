@@ -162,7 +162,7 @@ private func proceedWithSet(_ routing: Routing, data: Data?, response: URLRespon
 		completionHandler(.error(RequestError.badHTTPStatus(response: httpResponse)))
 		return
 	}
-	completionHandler(.some())
+	completionHandler(.some(()))
 }
 
 func setRouting(_ routing: Routing, for accountParams: AccountParams, completionHandler: @escaping (Erring<Void>) -> ()) {

@@ -28,7 +28,7 @@ extension AccountController {
 				}
 				self.lastRouting = routing
 				self.lastUpdateDate = Date()
-				completionHandler(.some())
+				completionHandler(.some(()))
 			}
 		}
 	}
@@ -44,7 +44,7 @@ extension AccountController {
 				}
 				self.lastRouting = routing
 				self.lastUpdateDate = Date()
-				completionHandler(.some())
+				completionHandler(.some(()))
 			}
 		}
 	}

@@ -56,7 +56,7 @@ class RoutingViewController: UITableViewController, AccountPossessor {
 	var nextRouteCell: RouteTableViewCell? {
 		didSet {
 			oldValue?.setRouteActivationState(.inactive)
-			$(nextRouteCell)?.setRouteActivationState(.activating)
+			x$(nextRouteCell)?.setRouteActivationState(.activating)
 		}
 	}
 	

@@ -125,7 +125,7 @@ class ShortcutsController : NSObject, AccountPossessor {
 	
 	func applicationDidBecomeActive(_ application: UIApplication) {
 		if let launchedShortcutItem = launchedShortcutItem {
-			_ = $(handleShortcutItem(launchedShortcutItem))
+			_ = x$(handleShortcutItem(launchedShortcutItem))
 			self.launchedShortcutItem = nil
 		}
 	}

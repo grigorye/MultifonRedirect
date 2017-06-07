@@ -13,14 +13,14 @@ extension TypedUserDefaults {
 	@NSManaged var accountNumber: String?
 	@NSManaged var password: String?
 	
-	dynamic class var keyPathsForValuesAffectingAccountParams: Set<String> {
+	@objc dynamic class var keyPathsForValuesAffectingAccountParams: Set<String> {
 		return [
 			#keyPath(accountNumber),
 			#keyPath(password)
 		]
 	}
 	
-	dynamic var accountParams: AccountParams? {
+	@objc dynamic var accountParams: AccountParams? {
 		get {
 			guard let accountNumber = accountNumber, let password = password else {
 				return nil

@@ -43,7 +43,7 @@ class AlternateAppIconController : NSObject, AccountPossessor {
 		preflight = nil
 		application.setAlternateIconName(nil) { error in
 			if let error = error {
-				action.failed(due: $(error))
+				action.failed(due: x$(error))
 				return
 			}
 			action.succeeded()
@@ -58,7 +58,7 @@ class AlternateAppIconController : NSObject, AccountPossessor {
 			let action = would(.clearAppIconDueLogout)
 			application.setAlternateIconName(nil) { error in
 				if let error = error {
-					action.failed(due: $(error))
+					action.failed(due: x$(error))
 					return
 				}
 				action.succeeded()
@@ -98,7 +98,7 @@ class AlternateAppIconController : NSObject, AccountPossessor {
 		preflight = nil
 		application.setAlternateIconName(iconName) { error in
 			if let error = error {
-				action.failed(due: $(error))
+				action.failed(due: x$(error))
 				return
 			}
 			action.succeeded()
