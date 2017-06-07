@@ -74,7 +74,7 @@ extension TypedUserDefaults {
 		var propertyCount = UInt32(0)
 		let propertyList = class_copyPropertyList(_Self.self, &propertyCount)!
 		for i in 0..<Int(propertyCount) {
-			let property = propertyList[i]!
+			let property = propertyList[i]
 			let propertyInfo = PropertyInfo(property: property)
 			let attributesDictionary = propertyInfo.attributesDictionary
 			let propertyName = propertyInfo.name

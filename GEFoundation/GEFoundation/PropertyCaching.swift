@@ -126,7 +126,7 @@ public func cachePropertyWithName(_ cls: AnyClass!, name propertyName: String) {
 		let getterSel = NSSelectorFromString(getterName)
 		let getterMethod = class_getInstanceMethod(x$(cls), getterSel)
 		let getterTypeEncoding = String(validatingUTF8: method_getTypeEncoding(getterMethod!)!)!
-		let oldGetterImp = method_getImplementation(getterMethod!)!
+		let oldGetterImp = method_getImplementation(getterMethod!)
 		let cachedGetterImp = cachedGetterImpForPropertyTypeEncoding(propertyTypeEncoding, sel: getterSel, propertyName: propertyName, oldImp: oldGetterImp)
 		let oldGetterImpAfterReplacingMethod = class_replaceMethod(cls, x$(getterSel), x$(cachedGetterImp), getterTypeEncoding)
 		assert(oldGetterImp == oldGetterImpAfterReplacingMethod)
@@ -136,7 +136,7 @@ public func cachePropertyWithName(_ cls: AnyClass!, name propertyName: String) {
 		let setterSel = NSSelectorFromString(setterName)
 		let setterMethod = class_getInstanceMethod(x$(cls), setterSel)
 		let setterTypeEncoding = String(validatingUTF8: method_getTypeEncoding(setterMethod!)!)!
-		let oldSetterImp = method_getImplementation(setterMethod!)!
+		let oldSetterImp = method_getImplementation(setterMethod!)
 		let cachedSetterImp = cachedSetterImpForPropertyTypeEncoding(propertyTypeEncoding, sel: setterSel, propertyName: propertyName, oldImp: oldSetterImp)
 		let oldSetterImpAfterReplacingMethod = class_replaceMethod(cls, x$(setterSel), x$(cachedSetterImp), setterTypeEncoding)
 		assert(oldSetterImp == oldSetterImpAfterReplacingMethod)
