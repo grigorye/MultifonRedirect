@@ -12,10 +12,9 @@ import Foundation
 public class GlobalAccountHolder {
 
 	private final func bindAccountGlobalAccountController() -> Handler {
-		let binding = KVOBinding(defaults•#keyPath(TypedUserDefaults.accountParams), options: [.initial, .new]) { (change) in
-			let newValue = change![NSKeyValueChangeKey.newKey] as? AccountParams
+		let binding = defaults.observe(\.accountParams, options: [.initial, .new]) { (_, change) in
 			self.accountController = {
-				guard let accountParams = newValue else {
+				guard let newValue = change.newValue, let accountParams = newValue else {
 					return nil
 				}
 				return GlobalAccountController(accountParams: accountParams)

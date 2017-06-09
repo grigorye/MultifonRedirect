@@ -130,7 +130,7 @@ class AlternateAppIconController : NSObject, AccountPossessor {
 	}
 	
 	private final func bindAlternateAppIconsEnabledDefault() -> Handler {
-		let binding = KVOBinding(defaults•#keyPath(TypedUserDefaults.alternateAppIconsEnabled), options: [.initial]) { (_) in
+		let binding = defaults.observe(\.alternateAppIconsEnabled, options: [.initial]) { (_, _) in
 			self.invalidateApplicationIconForDefaults()
 		}
 		return { _ = binding }
