@@ -14,6 +14,7 @@
   },
   "social_media_url": "http://twitter.com/marmelroy",
   "requires_arc": true,
+  "swift_version": "4.1",
   "ios": {
     "frameworks": "CoreTelephony"
   },
@@ -25,9 +26,6 @@
     "osx": "10.10",
     "tvos": "9.0",
     "watchos": "2.0"
-  },
-  "pod_target_xcconfig": {
-    "SWIFT_VERSION": "4.0"
   },
   "subspecs": [
     {

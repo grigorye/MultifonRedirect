@@ -20,7 +20,6 @@ post_install do |installer|
       configuration.build_settings['CONFIGURATION_BUILD_DIR'] = '${PODS_CONFIGURATION_BUILD_DIR}'
       configuration.build_settings['CODE_SIGNING_REQUIRED'] = 'NO'
       configuration.build_settings['PROVISIONING_PROFILE_SPECIFIER'] = '465NA5BW7E/'
-      configuration.build_settings['SWIFT_VERSION'] = '3.1'
       configuration.build_settings['DEBUG_INFORMATION_FORMAT'] = 'dwarf-with-dsym'
       configuration.build_settings['ENABLE_BITCODE'] = 'NO'
       configuration.build_settings['APPLICATION_EXTENSION_API_ONLY'] = 'YES'
