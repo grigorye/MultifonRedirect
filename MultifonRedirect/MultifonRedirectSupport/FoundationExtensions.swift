@@ -37,7 +37,7 @@ class XMLParserDelegateForSimpleElementTracking: NSObject, XMLParserDelegate {
 		delegate!.parser(parser, didEndElementWithPath: currentElementPath, characters: currentElementCharacters)
 		let suffix = ".\(elementName)"
 		assert(currentElementPath.hasSuffix(suffix))
-		currentElementPath = currentElementPath.substring(to: currentElementPath.index(currentElementPath.endIndex, offsetBy: -suffix.distance(from: suffix.startIndex, to: suffix.endIndex)))
+		currentElementPath = String(currentElementPath.dropLast(suffix.count))
 		currentElementCharacters = outerElementsCharacters.popLast()!
 	}
 
