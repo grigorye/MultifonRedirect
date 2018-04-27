@@ -129,7 +129,7 @@ extension AccountDetailsViewController {
 			if loginIndicatorBarButtonItemEnabled {
 				let itemIndex = items.index(of: loginBarButtonItem)!
 				undoable.perform { forward in
-					navigationItem.rightBarButtonItems = items … {
+					navigationItem.rightBarButtonItems = items ≈ {
 						if forward {
 							$0.remove(at: itemIndex)
 							$0.insert(loginIndicatorBarButtonItem, at: itemIndex)
