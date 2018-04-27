@@ -490,8 +490,8 @@
 			buildPhases = (
 				C45D86501E9C340300AD432F /* Sources */,
 				C45D86511E9C340300AD432F /* Frameworks */,
-				C460D27F2093CD3B00EDA239 /* Embed Source Version into Bundle */,
 				C45D86521E9C340300AD432F /* Resources */,
+				C460D27F2093CD3B00EDA239 /* Embed Source Version into Bundle */,
 			);
 			buildRules = (
 			);
