@@ -18,10 +18,13 @@ func descriptionImp<T>(of value: T) -> String {
 }
 
 public func description<T>(of value: T) -> String {
-	return "\(value)"
+	var s = ""
+	debugPrint(value, terminator: "", to: &s)
+	return s
 }
 
 public func L<T>(file: String = #file, line: Int = #line, column: Int = #column, function: String = #function, dso: UnsafeRawPointer = #dsohandle, _ valueClosure: @autoclosure () -> T) -> String {
+	// swiftlint:disable:previous identifier_name
 	let value = valueClosure()
 	let location = SourceLocation(file: file, line: line, column: column, function: function, moduleReference: .dso(dso))
 	let sourceExtractedInfo = GETracing.sourceExtractedInfo(for: location, traceFunctionName: "L")

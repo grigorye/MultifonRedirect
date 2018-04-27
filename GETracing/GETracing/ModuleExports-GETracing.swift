@@ -6,7 +6,8 @@
 //  Copyright © 2016 Grigory Entin. All rights reserved.
 //
 
-import GETracing
+@_exported import GETracing
+
 import Foundation
 
 internal var moduleTracingEnabled: Bool = {
@@ -16,21 +17,10 @@ internal var moduleTracingEnabled: Bool = {
 }()
 
 @discardableResult
-internal func x$<T>(file: String = #file, line: Int = #line, column: Int = #column, function: String = #function, dso: UnsafeRawPointer = #dsohandle, _ valueClosure: @autoclosure () -> T) -> T
+internal func x$<T>(file: String = #file, line: Int = #line, column: Int = #column, function: String = #function, dso: UnsafeRawPointer = #dsohandle, _ valueClosure: @autoclosure () throws -> T) rethrows -> T
 {
 	guard moduleTracingEnabled else {
-		return valueClosure()
+		return try valueClosure()
 	}
-	return GETracing.x$(file: file, line: line, column: column, function: function, dso: dso, valueClosure)
-}
-
-internal prefix func •<T>(argument: @autoclosure () -> T) {
-}
-
-internal func L<T>(file: String = #file, line: Int = #line, column: Int = #column, function: String = #function, dso: UnsafeRawPointer = #dsohandle, _ valueClosure: @autoclosure () -> T) -> String {
-	return GETracing.L(file: file, line: line, column: column, function: function, dso: dso, valueClosure)
-}
-
-internal func disableTrace(file: String = #file, function: String = #function) -> Any? {
-	return GETracing.disableTrace(file: file, function: function)
+	return try GETracing.x$(file: file, line: line, column: column, function: function, dso: dso, valueClosure)
 }
