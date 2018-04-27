@@ -29,6 +29,7 @@ Pod::Spec.new do |s|
 
 
   s.requires_arc = true
+  s.swift_version = '4.1'
 
   s.ios.frameworks = 'CoreTelephony'
   s.osx.frameworks = 'CoreTelephony'
@@ -37,8 +38,6 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = '10.10'
   s.tvos.deployment_target = '9.0'
   s.watchos.deployment_target = '2.0'
-
-  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
 
   s.subspec 'PhoneNumberKitCore' do |core|
     core.ios.deployment_target = '8.0'
