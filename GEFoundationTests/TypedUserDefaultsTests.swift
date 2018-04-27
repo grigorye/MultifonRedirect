@@ -1,5 +1,5 @@
 //
-//  KVOCompliantUserDefaultsTests.swift
+//  TypedUserDefaultsTests.swift
 //  GEBase
 //
 //  Created by Grigory Entin on 23.10.16.
@@ -11,16 +11,29 @@ import Foundation
 
 import XCTest
 
-extension KVOCompliantUserDefaults {
+extension TypedUserDefaults {
 	@NSManaged var testInt: Int
+	@NSManaged var testString: String?
 }
+
 class KVOCompliantUserDefaultsTests : XCTestCase {
+	
 	func testDeinit() {
-		_ = KVOCompliantUserDefaults()
+		_ = TypedUserDefaults()
 	}
+	
 	func testChangeToSameValue() {
-		let d = KVOCompliantUserDefaults()
+		let d = TypedUserDefaults()
 		d.testInt = 0
 		d.testInt = 0
 	}
+	
+	func testNil() {
+		let d = TypedUserDefaults()
+		d.testString = "foo"
+		XCTAssertEqual("foo", d.testString)
+		d.testString = nil
+		XCTAssertEqual(nil, d.testString)
+	}
+	
 }
