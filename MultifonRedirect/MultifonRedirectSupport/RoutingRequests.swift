@@ -88,9 +88,21 @@ private class RoutingResponseParser: NSObject {
 
 private class QueryRoutingResponseParserDelegate: NSObject, SimpleElementTrackingXMLParserDelegate {
 	
-	var responseRouting: String?
-	var responseResultCode: String?
-	var responseResultDescription: String?
+	var responseRouting: String? {
+		willSet {
+			x$(newValue)
+		}
+	}
+	var responseResultCode: String? {
+		willSet {
+			x$(newValue)
+		}
+	}
+	var responseResultDescription: String? {
+		willSet {
+			x$(newValue)
+		}
+	}
 	
 	func parser(_ parser: XMLParser, didEndElementWithPath elementPath: String, characters: String) {
 		switch elementPath {
