@@ -4,11 +4,11 @@ PODS:
   - Crashlytics (3.8.6):
     - Fabric (~> 1.6.3)
   - Fabric (1.6.13)
-  - PhoneNumberKit (1.2.2):
-    - PhoneNumberKit/PhoneNumberKitCore (= 1.2.2)
-    - PhoneNumberKit/UIKit (= 1.2.2)
-  - PhoneNumberKit/PhoneNumberKitCore (1.2.2)
-  - PhoneNumberKit/UIKit (1.2.2):
+  - PhoneNumberKit (2.1.0):
+    - PhoneNumberKit/PhoneNumberKitCore (= 2.1.0)
+    - PhoneNumberKit/UIKit (= 2.1.0)
+  - PhoneNumberKit/PhoneNumberKitCore (2.1.0)
+  - PhoneNumberKit/UIKit (2.1.0):
     - PhoneNumberKit/PhoneNumberKitCore
 
 DEPENDENCIES:
@@ -31,7 +31,7 @@ SPEC CHECKSUMS:
   Answers: ef6af16bc75366334db6323a87f37ea54e2dab71
   Crashlytics: 95d05f4e4c19a771250c4bd9ce344d996de32bbf
   Fabric: 2fb5676bc811af011a04513451f463dac6803206
-  PhoneNumberKit: c820d16b5d8f36055d298f3dd006017555567978
+  PhoneNumberKit: 68df13ed332430bc9b27126baa70dc31965b77cf
 
 PODFILE CHECKSUM: 0f6cc6d8f17bce9b2cff313ee4a70e45d18ba338
 
