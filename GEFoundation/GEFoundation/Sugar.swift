@@ -12,25 +12,28 @@ import Foundation
 // The idea is borrowed from https://github.com/devxoul/Then
 //
 
+infix operator ≈
 infix operator …
 
 @discardableResult
-public func with<T: AnyObject>(_ obj: T, _ initialize: (T) throws -> Void) rethrows -> T {
-	try initialize(obj)
+public func with<T: AnyObject>(_ obj: T, _ body: (T) throws -> Void) rethrows -> T {
+	try body(obj)
 	return obj
 }
-public func with<T: Any>(_ value: T, _ initialize: (inout T) throws -> Void) rethrows -> T {
+public func with<T>(_ value: T, _ body: (inout T) throws -> Void) rethrows -> T {
 	var valueCopy = value
-	try initialize(&valueCopy)
+	try body(&valueCopy)
 	return valueCopy
 }
 
-@discardableResult
-public func …<T: Any>(value: T, initialize: (inout T) throws -> Void) rethrows -> T {
-	return try with(value, initialize)
+public func ≈<T>(value: T, body: (inout T) throws -> Void) rethrows -> T {
+	// swiftlint:disable:previous identifier_name
+	return try with(value, body)
 }
-public func …<T: AnyObject>(obj: T, initialize: (T) throws -> Void) rethrows -> T {
-	return try with(obj, initialize)
+@discardableResult
+public func …<T: AnyObject>(obj: T, body: (T) throws -> Void) rethrows -> T {
+	// swiftlint:disable:previous identifier_name
+	return try with(obj, body)
 }
 
 /**
@@ -43,3 +46,5 @@ public func …<T: AnyObject>(obj: T, initialize: (T) throws -> Void) rethrows -
 		error: errored out in DoExecute, couldn't PrepareToExecuteJITExpression
 */
 public typealias Ignored = Int
+
+public typealias UnusedKVOValue = AnyObject?
