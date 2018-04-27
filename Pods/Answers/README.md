@@ -1,6 +1,6 @@
 ![Answers Header](https://docs.fabric.io/ios/cocoapod-readmes/cocoapods-answers-header.png)
 
-Part of [Twitter Fabric](https://www.fabric.io), [Answers](https://answers.io/) is real-time mobile analytics that you don't need to analyze. It was created to make understanding your user base incredibly simple -- so you can spend your time building amazing experiences in your product, not digging through data.
+Part of [Google Fabric](https://get.fabric.io), [Answers](https://answers.io/) is real-time mobile analytics that you don't need to analyze. It was created to make understanding your user base incredibly simple -- so you can spend your time building amazing experiences in your product, not digging through data.
 
 ## Setup
 
@@ -31,8 +31,7 @@ Part of [Twitter Fabric](https://www.fabric.io), [Answers](https://answers.io/) 
 
 ## Resources
 
-* [Documentation](https://docs.fabric.io/ios/answers/index.html)
-* [Forums](https://twittercommunity.com/c/fabric/answers)
+* [Documentation](https://docs.fabric.io/apple/answers/overview.html)
+* [Forums](https://stackoverflow.com/questions/tagged/google-fabric)
 * [Website](http://www.answers.io/)
-* Follow us on Twitter: [@fabric](https://twitter.com/fabric) and [@answersio](https://twitter.com/answersio)
-* Follow us on Periscope: [Fabric](https://periscope.tv/fabric) and [TwitterDev](https://periscope.tv/twitterdev)
+* Follow us on Twitter: [@fabric](https://twitter.com/fabric)
