@@ -226,7 +226,7 @@ class PhoneNumberKitParsingTests: XCTestCase {
     }
     
     func testAllExampleNumbers() {
-        let metaDataArray = phoneNumberKit.metadataManager.territories.filter{$0.codeID.characters.count == 2}
+        let metaDataArray = phoneNumberKit.metadataManager.territories.filter{$0.codeID.count == 2}
         for metadata in metaDataArray {
             let codeID = metadata.codeID
             let metadataWithTypes: [(MetadataPhoneNumberDesc?, PhoneNumberType?)] = [
@@ -296,12 +296,12 @@ class PhoneNumberKitParsingTests: XCTestCase {
         XCTAssertEqual(number.type, PhoneNumberType.fixedLine)
     }
 
-    func testMaldivesPagerNumber() {
+    func testMaldivesMobileNumber() {
         guard let number = try? phoneNumberKit.parse("7812345", withRegion: "MV") else {
             XCTFail()
             return
         }
-        XCTAssertEqual(number.type, PhoneNumberType.pager)
+        XCTAssertEqual(number.type, PhoneNumberType.mobile)
     }
 
     func testZimbabweVoipType() {
@@ -361,5 +361,36 @@ class PhoneNumberKitParsingTests: XCTestCase {
         print("time to parse \(numberOfParses) phone numbers, \(timeInterval) seconds")
     }
 
+    func testUANumber() {
+        do {
+            let phoneNumber1 = try phoneNumberKit.parse("380501887766", withRegion: "UA")
+            XCTAssertNotNil(phoneNumber1)
+            let phoneNumberInternationalFormat1 = phoneNumberKit.format(phoneNumber1, toType: .international)
+            XCTAssertTrue(phoneNumberInternationalFormat1 == "+380 50 188 7766")
+            let phoneNumberNationalFormat1 = phoneNumberKit.format(phoneNumber1, toType: .national)
+            XCTAssertTrue(phoneNumberNationalFormat1 == "050 188 7766")
+            let phoneNumberE164Format1 = phoneNumberKit.format(phoneNumber1, toType: .e164)
+            XCTAssertTrue(phoneNumberE164Format1 == "+380501887766")
+            let phoneNumber2 = try phoneNumberKit.parse("050 188 7766", withRegion: "UA")
+            XCTAssertNotNil(phoneNumber2)
+            let phoneNumberInternationalFormat2 = phoneNumberKit.format(phoneNumber2, toType: .international)
+            XCTAssertTrue(phoneNumberInternationalFormat2 == "+380 50 188 7766")
+            let phoneNumberNationalFormat2 = phoneNumberKit.format(phoneNumber2, toType: .national)
+            XCTAssertTrue(phoneNumberNationalFormat2 == "050 188 7766")
+            let phoneNumberE164Format2 = phoneNumberKit.format(phoneNumber2, toType: .e164)
+            XCTAssertTrue(phoneNumberE164Format2 == "+380501887766")
+            let phoneNumber3 = try phoneNumberKit.parse("050 188 7766", withRegion: "UA")
+            XCTAssertNotNil(phoneNumber3)
+            let phoneNumberInternationalFormat3 = phoneNumberKit.format(phoneNumber3, toType: .international)
+            XCTAssertTrue(phoneNumberInternationalFormat3 == "+380 50 188 7766")
+            let phoneNumberNationalFormat3 = phoneNumberKit.format(phoneNumber3, toType: .national)
+            XCTAssertTrue(phoneNumberNationalFormat3 == "050 188 7766")
+            let phoneNumberE164Format3 = phoneNumberKit.format(phoneNumber3, toType: .e164)
+            XCTAssertTrue(phoneNumberE164Format3 == "+380501887766")
+        }
+        catch {
+            XCTFail()
+        }
+    }
 
 }
