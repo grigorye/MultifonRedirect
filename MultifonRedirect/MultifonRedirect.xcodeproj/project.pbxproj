@@ -7,6 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00FC70D9511D8DF6CD625333 /* Undoable.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C47E009C1E96C65E00E5D521 /* Undoable.swift */; };
+		0F814D7E7D88105145BE4FE7 /* ShortcutsController.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C463FB6A1E91D80E00F984D1 /* ShortcutsController.swift */; };
+		13B22E1D8BC932C5AE7AA1C9 /* FoundationExtensions.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C4C72B2F1E6359B8004E6BB0 /* FoundationExtensions.swift */; };
+		13B34ECA671FD8BC8CE0F168 /* AccountController.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C4C5CEBA1E744FF00089DC2F /* AccountController.swift */; };
+		19BCC9A245F3BB232382690A /* Data.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C4D7FC581E61C10200C40FE8 /* Data.swift */; };
+		1A8736907752E356259C1B3A /* ActionLogger.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C46E01291E7F40150092F57B /* ActionLogger.swift */; };
+		2183227EAC269D575FF9BF6B /* ActionTracking.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C4209FFE1E7E98A0005FCF87 /* ActionTracking.swift */; };
+		27D0E4B9B31D5EE519F67CB8 /* UserDefaults.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C4C72B311E635A8D004E6BB0 /* UserDefaults.swift */; };
+		2AD5C3F626B55728AF2DEF73 /* ModuleExports-GEFoundation.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C44538541E999B40009E68EB /* ModuleExports-GEFoundation.swift */; };
+		2F48ECC6805AAD7935052EDF /* ActionTags.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C420A0001E7E9A3B005FCF87 /* ActionTags.swift */; };
+		2F8C4E50A9F9B8F9D383FAE7 /* RequestErrorPresentation.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C4D7FC5E1E620FC200C40FE8 /* RequestErrorPresentation.swift */; };
+		36AAE74F6406BA12DA5AC188 /* AppDelegate.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C4F359421E5D139400F2B779 /* AppDelegate.swift */; };
+		3A3F553BD3A18FB92DB1B097 /* MultifonRedirectSupportTests.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C45D86801E9C664100AD432F /* MultifonRedirectSupportTests.swift */; };
+		3A6B0537411CEF5C3EBD4301 /* AlternateAppIconController.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C47E009E1E98D5D600E5D521 /* AlternateAppIconController.swift */; };
+		49CDABFEC00AB4B03F10B500 /* Globals.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C4290F871EA313F100CAD5AE /* Globals.swift */; };
+		5020BB0D24D8F8947E0AF50A /* SnapshotHelper.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C4C5CEDC1E7590490089DC2F /* SnapshotHelper.swift */; };
+		5D0AF200567DA496858F686F /* RouteTableViewCell.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C4C5CEC21E7561DB0089DC2F /* RouteTableViewCell.swift */; };
+		5E034A0B37599627D742D2B0 /* MultifonRedirectFastlaneSnapshot.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C4C5CED41E758EFE0089DC2F /* MultifonRedirectFastlaneSnapshot.swift */; };
+		5EC69BEAE740F2FF3F5260E8 /* MultifonNumberTextField.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C47456631E64F71F003C7656 /* MultifonNumberTextField.swift */; };
+		6EB3C0E746B2406E6C90F3D9 /* ModuleExports-GEFoundation.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C44538541E999B40009E68EB /* ModuleExports-GEFoundation.swift */; };
+		784795B4037F501EB59FFAED /* ModuleExports-GEFoundation.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C44538541E999B40009E68EB /* ModuleExports-GEFoundation.swift */; };
+		7AEAC1F8EDBFC00B1C64E1BD /* ModuleExports-GETracing.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C44538521E999AB1009E68EB /* ModuleExports-GETracing.swift */; };
+		7C8E9DBF06FE5819495EB0AF /* TodayViewController.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C45D86591E9C340300AD432F /* TodayViewController.swift */; };
+		848A30F980F025F3304DECC8 /* AccountPossessor.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C463FB6C1E91D9BD00F984D1 /* AccountPossessor.swift */; };
+		88BA1DF069F2066B1F22C681 /* Localized.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C45D86A61E9D7F0D00AD432F /* Localized.swift */; };
+		8D09BF4C847597FF71810F9B /* ModuleExports-GETracing.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C44538521E999AB1009E68EB /* ModuleExports-GETracing.swift */; };
+		9D13446D8B3279FE8FB17EFE /* AccountDetailsViewController.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C40909C11E6376F7006BBF04 /* AccountDetailsViewController.swift */; };
+		ADA5F5D75F681BBC0DD0431C /* UIKitExtensions.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C4C5CEBC1E7464020089DC2F /* UIKitExtensions.swift */; };
+		AF6228B722177B407E6A6479 /* Localized.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C4D7FC5A1E61EEB500C40FE8 /* Localized.swift */; };
+		B477A17F7799EF5805C52076 /* RoutingRequests.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C47E00A01E997EB600E5D521 /* RoutingRequests.swift */; };
+		B841F88D848765D6C197A631 /* ExternalDependencies.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C4D7FC5C1E61EF3B00C40FE8 /* ExternalDependencies.swift */; };
 		C40909BD1E63684D006BBF04 /* PhoneNumberKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C40909BC1E63684D006BBF04 /* PhoneNumberKit.framework */; };
 		C40909BE1E63684D006BBF04 /* PhoneNumberKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C40909BC1E63684D006BBF04 /* PhoneNumberKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C40909C21E6376F7006BBF04 /* AccountDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40909C11E6376F7006BBF04 /* AccountDetailsViewController.swift */; };
@@ -89,6 +120,11 @@
 		C4F359481E5D139500F2B779 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4F359461E5D139500F2B779 /* Main.storyboard */; };
 		C4F3594A1E5D139500F2B779 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4F359491E5D139500F2B779 /* Assets.xcassets */; };
 		C4F3594D1E5D139500F2B779 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4F3594B1E5D139500F2B779 /* LaunchScreen.storyboard */; };
+		E1A2AB89E9B71F77250E576E /* RoutingViewController.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C4F359441E5D139400F2B779 /* RoutingViewController.swift */; };
+		E1EF069624385C952474B75E /* Fabric.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C43F80A61E6B276100349011 /* Fabric.swift */; };
+		E7191493BE10AD51D022A326 /* ModuleExports-GETracing.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C44538521E999AB1009E68EB /* ModuleExports-GETracing.swift */; };
+		EAEC95D7C82021407EA73B59 /* GlobalAccountController.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C47E00A21E99906A00E5D521 /* GlobalAccountController.swift */; };
+		FA9A7AF7431F75CDC0164C03 /* PhoneNumbers.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C4C72B331E635ADC004E6BB0 /* PhoneNumbers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +166,78 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		63A6EC1A729B598979EDAC4D /* Embed Sources */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "Sources/$(TARGET_NAME)";
+			dstSubfolderSpec = 7;
+			files = (
+				3A3F553BD3A18FB92DB1B097 /* MultifonRedirectSupportTests.swift in Embed Sources */,
+			);
+			name = "Embed Sources";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		75C1A1F319A946F1A2E97184 /* Embed Sources */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "Sources/$(TARGET_NAME)";
+			dstSubfolderSpec = 7;
+			files = (
+				5E034A0B37599627D742D2B0 /* MultifonRedirectFastlaneSnapshot.swift in Embed Sources */,
+				5020BB0D24D8F8947E0AF50A /* SnapshotHelper.swift in Embed Sources */,
+			);
+			name = "Embed Sources";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F04F71206F208950B561637 /* Embed Sources */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "Sources/$(TARGET_NAME)";
+			dstSubfolderSpec = 7;
+			files = (
+				2F8C4E50A9F9B8F9D383FAE7 /* RequestErrorPresentation.swift in Embed Sources */,
+				E1A2AB89E9B71F77250E576E /* RoutingViewController.swift in Embed Sources */,
+				9D13446D8B3279FE8FB17EFE /* AccountDetailsViewController.swift in Embed Sources */,
+				5EC69BEAE740F2FF3F5260E8 /* MultifonNumberTextField.swift in Embed Sources */,
+				36AAE74F6406BA12DA5AC188 /* AppDelegate.swift in Embed Sources */,
+				5D0AF200567DA496858F686F /* RouteTableViewCell.swift in Embed Sources */,
+				8D09BF4C847597FF71810F9B /* ModuleExports-GETracing.swift in Embed Sources */,
+				B841F88D848765D6C197A631 /* ExternalDependencies.swift in Embed Sources */,
+				AF6228B722177B407E6A6479 /* Localized.swift in Embed Sources */,
+				0F814D7E7D88105145BE4FE7 /* ShortcutsController.swift in Embed Sources */,
+				E1EF069624385C952474B75E /* Fabric.swift in Embed Sources */,
+				3A6B0537411CEF5C3EBD4301 /* AlternateAppIconController.swift in Embed Sources */,
+				49CDABFEC00AB4B03F10B500 /* Globals.swift in Embed Sources */,
+				784795B4037F501EB59FFAED /* ModuleExports-GEFoundation.swift in Embed Sources */,
+				ADA5F5D75F681BBC0DD0431C /* UIKitExtensions.swift in Embed Sources */,
+				00FC70D9511D8DF6CD625333 /* Undoable.swift in Embed Sources */,
+			);
+			name = "Embed Sources";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84C34F0A0F5757EF63B4566F /* Embed Sources */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "Sources/$(TARGET_NAME)";
+			dstSubfolderSpec = 7;
+			files = (
+				848A30F980F025F3304DECC8 /* AccountPossessor.swift in Embed Sources */,
+				13B22E1D8BC932C5AE7AA1C9 /* FoundationExtensions.swift in Embed Sources */,
+				EAEC95D7C82021407EA73B59 /* GlobalAccountController.swift in Embed Sources */,
+				B477A17F7799EF5805C52076 /* RoutingRequests.swift in Embed Sources */,
+				2F48ECC6805AAD7935052EDF /* ActionTags.swift in Embed Sources */,
+				2AD5C3F626B55728AF2DEF73 /* ModuleExports-GEFoundation.swift in Embed Sources */,
+				E7191493BE10AD51D022A326 /* ModuleExports-GETracing.swift in Embed Sources */,
+				27D0E4B9B31D5EE519F67CB8 /* UserDefaults.swift in Embed Sources */,
+				13B34ECA671FD8BC8CE0F168 /* AccountController.swift in Embed Sources */,
+				2183227EAC269D575FF9BF6B /* ActionTracking.swift in Embed Sources */,
+				FA9A7AF7431F75CDC0164C03 /* PhoneNumbers.swift in Embed Sources */,
+				19BCC9A245F3BB232382690A /* Data.swift in Embed Sources */,
+				1A8736907752E356259C1B3A /* ActionLogger.swift in Embed Sources */,
+			);
+			name = "Embed Sources";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C40909BF1E63684D006BBF04 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -153,6 +261,20 @@
 				C45D86611E9C340300AD432F /* MultifonRedirectToday.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E571E7B07EFE1AEA02760534 /* Embed Sources */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "Sources/$(TARGET_NAME)";
+			dstSubfolderSpec = 7;
+			files = (
+				6EB3C0E746B2406E6C90F3D9 /* ModuleExports-GEFoundation.swift in Embed Sources */,
+				7C8E9DBF06FE5819495EB0AF /* TodayViewController.swift in Embed Sources */,
+				88BA1DF069F2066B1F22C681 /* Localized.swift in Embed Sources */,
+				7AEAC1F8EDBFC00B1C64E1BD /* ModuleExports-GETracing.swift in Embed Sources */,
+			);
+			name = "Embed Sources";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -492,6 +614,7 @@
 				C45D86511E9C340300AD432F /* Frameworks */,
 				C45D86521E9C340300AD432F /* Resources */,
 				C460D27F2093CD3B00EDA239 /* Embed Source Version into Bundle */,
+				E571E7B07EFE1AEA02760534 /* Embed Sources */,
 			);
 			buildRules = (
 			);
@@ -510,6 +633,7 @@
 				C45D866D1E9C664100AD432F /* Frameworks */,
 				C45D866E1E9C664100AD432F /* Headers */,
 				C45D866F1E9C664100AD432F /* Resources */,
+				84C34F0A0F5757EF63B4566F /* Embed Sources */,
 			);
 			buildRules = (
 			);
@@ -527,6 +651,7 @@
 				C45D86751E9C664100AD432F /* Sources */,
 				C45D86761E9C664100AD432F /* Frameworks */,
 				C45D86771E9C664100AD432F /* Resources */,
+				63A6EC1A729B598979EDAC4D /* Embed Sources */,
 			);
 			buildRules = (
 			);
@@ -546,6 +671,7 @@
 				C4C5CECE1E758EFE0089DC2F /* Sources */,
 				C4C5CECF1E758EFE0089DC2F /* Frameworks */,
 				C4C5CED01E758EFE0089DC2F /* Resources */,
+				75C1A1F319A946F1A2E97184 /* Embed Sources */,
 			);
 			buildRules = (
 			);
@@ -568,6 +694,7 @@
 				C40909BF1E63684D006BBF04 /* Embed Frameworks */,
 				C43F80B11E6B3ED600349011 /* Integrate Fabric */,
 				C45D86651E9C340300AD432F /* Embed App Extensions */,
+				7F04F71206F208950B561637 /* Embed Sources */,
 			);
 			buildRules = (
 			);
