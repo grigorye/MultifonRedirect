@@ -8,14 +8,14 @@
 
 import Foundation
 
+let bundleExtensions = ["app", "xctest", "framework", "appex"]
+
 func bundleURLFromSharedObjectName(_ objectName: String) -> URL? {
 	
 	let objectURL = URL(fileURLWithPath: objectName)
 	let objectParentURL = objectURL.deletingLastPathComponent()
 	
-	guard !["app", "xctest", "framework"].contains(objectParentURL.pathExtension) else {
-		
-		// .{app|xctest|framework}/SharedObject
+	guard !bundleExtensions.contains(objectParentURL.pathExtension) else {
 		return objectParentURL
 	}
 	
