@@ -7,6 +7,7 @@
 //
 
 import MultifonRedirectSupport
+import GEFoundation
 import UIKit.UITableViewController
 
 let loginIndicatorBarButtonItemEnabled = false
@@ -124,7 +125,7 @@ extension AccountDetailsViewController {
 		}
 		if let loginIndicatorBarButtonItem = loginIndicatorBarButtonItem {
 			let navigationItem = self.navigationItem
-			var items = navigationItem.rightBarButtonItems!
+            let items = navigationItem.rightBarButtonItems!
 			let loginBarButtonItem = self.loginBarButtonItem!
 			if loginIndicatorBarButtonItemEnabled {
 				let itemIndex = items.index(of: loginBarButtonItem)!

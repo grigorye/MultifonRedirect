@@ -7,6 +7,8 @@
 //
 
 import MultifonRedirectSupport
+import GEFoundation
+import GETracing
 import UIKit
 
 extension TypedUserDefaults {

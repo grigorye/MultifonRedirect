@@ -6,6 +6,7 @@
 //  Copyright © 2017 Grigory Entin. All rights reserved.
 //
 
+import GEFoundation
 import Foundation
 
 extension TypedUserDefaults {
