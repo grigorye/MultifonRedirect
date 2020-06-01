@@ -6,6 +6,8 @@
 //  Copyright © 2017 Grigory Entin. All rights reserved.
 //
 
+import GETracing
+import Then
 import Foundation
 
 public typealias CancellationToken = (() -> ())
@@ -63,10 +65,10 @@ private class RoutingResponseParser: NSObject {
 	
 	func parse() throws -> Routing {
 		let responseParserDelegate = QueryRoutingResponseParserDelegate()
-		let xmlParserDelegate = XMLParserDelegateForSimpleElementTracking() … {
+        let xmlParserDelegate = XMLParserDelegateForSimpleElementTracking().then {
 			$0.delegate = responseParserDelegate
 		}
-		let xmlParser = XMLParser(data: data) … {
+        let xmlParser = XMLParser(data: data).then {
 			$0.delegate = xmlParserDelegate
 		}
 		guard xmlParser.parse() else {
