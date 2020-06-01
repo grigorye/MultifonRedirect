@@ -1,0 +1,21 @@
+{
+  "name": "MultifonRedirect",
+  "version": "0.1",
+  "summary": "Internal pod for the app.",
+  "description": "A pod containing just sources for now (mainly for GETracing).",
+  "homepage": "https://github.com/grigorye/MultifonRedirect",
+  "license": "MIT",
+  "authors": {
+    "Grigory Entin": "grigory.entin@gmail.com"
+  },
+  "platforms": {
+    "ios": "11.0"
+  },
+  "source": {
+    "git": "https://github.com/grigorye/MultifonRedirect.git"
+  },
+  "resource_bundles": {
+    "MultifonRedirect-Sources": "MultifonRedirect"
+  },
+  "static_framework": true
+}

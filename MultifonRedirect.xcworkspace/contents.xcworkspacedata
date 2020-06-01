@@ -4,19 +4,6 @@
    <FileRef
       location = "group:MultifonRedirect/MultifonRedirect.xcodeproj">
    </FileRef>
-   <Group
-      location = "container:"
-      name = "Modules">
-      <FileRef
-         location = "group:GEFoundation/GEFoundation.xcodeproj">
-      </FileRef>
-      <FileRef
-         location = "group:GETracing/GETracing.xcodeproj">
-      </FileRef>
-      <FileRef
-         location = "group:TestHostApp/TestHostApp.xcodeproj">
-      </FileRef>
-   </Group>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
