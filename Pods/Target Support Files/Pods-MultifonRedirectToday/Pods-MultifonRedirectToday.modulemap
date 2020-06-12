@@ -1,0 +1,6 @@
+framework module Pods_MultifonRedirectToday {
+  umbrella header "Pods-MultifonRedirectToday-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -14,7 +14,7 @@
   },
   "social_media_url": "http://twitter.com/marmelroy",
   "requires_arc": true,
-  "swift_version": "4.1",
+  "swift_versions": "4.1",
   "ios": {
     "frameworks": "CoreTelephony"
   },
@@ -52,5 +52,6 @@
       },
       "source_files": "PhoneNumberKit/UI/"
     }
-  ]
+  ],
+  "swift_version": "4.1"
 }

@@ -7,6 +7,7 @@
 //
 
 import MultifonRedirectSupport
+import GETracing
 import UIKit
 
 extension AccountPossessor {

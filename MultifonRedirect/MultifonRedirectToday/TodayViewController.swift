@@ -8,6 +8,7 @@
 
 import MultifonRedirectSupport
 import GEFoundation
+import GETracing
 import UIKit
 import NotificationCenter
 

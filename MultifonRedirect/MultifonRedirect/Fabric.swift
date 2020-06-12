@@ -13,7 +13,10 @@ import Answers
 
 
 private func logEventToAnswers(name: String, attributes: [String : Any]? = nil) {
-	Answers.logCustomEvent(withName: name, customAttributes: (attributes as NSDictionary?)?.flattenWithPrefix(nil))
+    let customAttributes = (attributes as NSDictionary?)?.flattenWithPrefix(nil).mapValues({ (x) in
+        "\(x)"
+    })
+	Answers.logCustomEvent(withName: name, customAttributes: customAttributes)
 }
 
 let fabricInitializer: Void = {

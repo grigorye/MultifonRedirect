@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		00FC70D9511D8DF6CD625333 /* Undoable.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C47E009C1E96C65E00E5D521 /* Undoable.swift */; };
+		045A5618D17C95E7D9E28286 /* Pods_MultifonRedirect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8F35C857B894376B0E3628C /* Pods_MultifonRedirect.framework */; };
 		0F814D7E7D88105145BE4FE7 /* ShortcutsController.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C463FB6A1E91D80E00F984D1 /* ShortcutsController.swift */; };
 		13B22E1D8BC932C5AE7AA1C9 /* FoundationExtensions.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C4C72B2F1E6359B8004E6BB0 /* FoundationExtensions.swift */; };
 		13B34ECA671FD8BC8CE0F168 /* AccountController.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C4C5CEBA1E744FF00089DC2F /* AccountController.swift */; };
@@ -15,7 +16,6 @@
 		1A8736907752E356259C1B3A /* ActionLogger.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C46E01291E7F40150092F57B /* ActionLogger.swift */; };
 		2183227EAC269D575FF9BF6B /* ActionTracking.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C4209FFE1E7E98A0005FCF87 /* ActionTracking.swift */; };
 		27D0E4B9B31D5EE519F67CB8 /* UserDefaults.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C4C72B311E635A8D004E6BB0 /* UserDefaults.swift */; };
-		2AD5C3F626B55728AF2DEF73 /* ModuleExports-GEFoundation.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C44538541E999B40009E68EB /* ModuleExports-GEFoundation.swift */; };
 		2F48ECC6805AAD7935052EDF /* ActionTags.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C420A0001E7E9A3B005FCF87 /* ActionTags.swift */; };
 		2F8C4E50A9F9B8F9D383FAE7 /* RequestErrorPresentation.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C4D7FC5E1E620FC200C40FE8 /* RequestErrorPresentation.swift */; };
 		36AAE74F6406BA12DA5AC188 /* AppDelegate.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C4F359421E5D139400F2B779 /* AppDelegate.swift */; };
@@ -26,16 +26,14 @@
 		5D0AF200567DA496858F686F /* RouteTableViewCell.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C4C5CEC21E7561DB0089DC2F /* RouteTableViewCell.swift */; };
 		5E034A0B37599627D742D2B0 /* MultifonRedirectFastlaneSnapshot.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C4C5CED41E758EFE0089DC2F /* MultifonRedirectFastlaneSnapshot.swift */; };
 		5EC69BEAE740F2FF3F5260E8 /* MultifonNumberTextField.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C47456631E64F71F003C7656 /* MultifonNumberTextField.swift */; };
-		6EB3C0E746B2406E6C90F3D9 /* ModuleExports-GEFoundation.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C44538541E999B40009E68EB /* ModuleExports-GEFoundation.swift */; };
-		784795B4037F501EB59FFAED /* ModuleExports-GEFoundation.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C44538541E999B40009E68EB /* ModuleExports-GEFoundation.swift */; };
-		7AEAC1F8EDBFC00B1C64E1BD /* ModuleExports-GETracing.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C44538521E999AB1009E68EB /* ModuleExports-GETracing.swift */; };
+		6B5A6462D06E0023EEC3BA31 /* Pods_MultifonRedirectToday.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80BFC521223AE018F25D33EC /* Pods_MultifonRedirectToday.framework */; };
 		7C8E9DBF06FE5819495EB0AF /* TodayViewController.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C45D86591E9C340300AD432F /* TodayViewController.swift */; };
 		848A30F980F025F3304DECC8 /* AccountPossessor.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C463FB6C1E91D9BD00F984D1 /* AccountPossessor.swift */; };
 		88BA1DF069F2066B1F22C681 /* Localized.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C45D86A61E9D7F0D00AD432F /* Localized.swift */; };
-		8D09BF4C847597FF71810F9B /* ModuleExports-GETracing.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C44538521E999AB1009E68EB /* ModuleExports-GETracing.swift */; };
 		9D13446D8B3279FE8FB17EFE /* AccountDetailsViewController.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C40909C11E6376F7006BBF04 /* AccountDetailsViewController.swift */; };
 		ADA5F5D75F681BBC0DD0431C /* UIKitExtensions.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C4C5CEBC1E7464020089DC2F /* UIKitExtensions.swift */; };
 		AF6228B722177B407E6A6479 /* Localized.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C4D7FC5A1E61EEB500C40FE8 /* Localized.swift */; };
+		B390404F4509CD01E89BC109 /* Pods_MultifonRedirectSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8519109D0910CC63929F2C69 /* Pods_MultifonRedirectSupport.framework */; };
 		B477A17F7799EF5805C52076 /* RoutingRequests.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C47E00A01E997EB600E5D521 /* RoutingRequests.swift */; };
 		B841F88D848765D6C197A631 /* ExternalDependencies.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C4D7FC5C1E61EF3B00C40FE8 /* ExternalDependencies.swift */; };
 		C40909BD1E63684D006BBF04 /* PhoneNumberKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C40909BC1E63684D006BBF04 /* PhoneNumberKit.framework */; };
@@ -57,11 +55,7 @@
 		C43F80A71E6B276100349011 /* Fabric.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43F80A61E6B276100349011 /* Fabric.swift */; };
 		C43F80AF1E6B3C1200349011 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C43F80AA1E6B286700349011 /* Fabric.framework */; };
 		C445384C1E999A44009E68EB /* GETracing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C445384B1E999A44009E68EB /* GETracing.framework */; };
-		C445384D1E999A44009E68EB /* GETracing.framework in Embed Frameworks As Necessary */ = {isa = PBXBuildFile; fileRef = C445384B1E999A44009E68EB /* GETracing.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C445384F1E999A49009E68EB /* GEFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C445384E1E999A49009E68EB /* GEFoundation.framework */; };
-		C44538501E999A49009E68EB /* GEFoundation.framework in Embed Frameworks As Necessary */ = {isa = PBXBuildFile; fileRef = C445384E1E999A49009E68EB /* GEFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C44538531E999AB1009E68EB /* ModuleExports-GETracing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44538521E999AB1009E68EB /* ModuleExports-GETracing.swift */; };
-		C44538551E999B40009E68EB /* ModuleExports-GEFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44538541E999B40009E68EB /* ModuleExports-GEFoundation.swift */; };
 		C44538581E9AD0DD009E68EB /* Shortcuts.strings in Resources */ = {isa = PBXBuildFile; fileRef = C445385A1E9AD0DD009E68EB /* Shortcuts.strings */; };
 		C45D86571E9C340300AD432F /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C45D86561E9C340300AD432F /* NotificationCenter.framework */; };
 		C45D865A1E9C340300AD432F /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D86591E9C340300AD432F /* TodayViewController.swift */; };
@@ -79,8 +73,6 @@
 		C45D86991E9C691D00AD432F /* GETracing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C445384B1E999A44009E68EB /* GETracing.framework */; };
 		C45D869A1E9C691D00AD432F /* GEFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C445384E1E999A49009E68EB /* GEFoundation.framework */; };
 		C45D869B1E9C692100AD432F /* PhoneNumberKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C40909BC1E63684D006BBF04 /* PhoneNumberKit.framework */; };
-		C45D869C1E9C695400AD432F /* ModuleExports-GETracing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44538521E999AB1009E68EB /* ModuleExports-GETracing.swift */; };
-		C45D869D1E9C695400AD432F /* ModuleExports-GEFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44538541E999B40009E68EB /* ModuleExports-GEFoundation.swift */; };
 		C45D869E1E9C6A0C00AD432F /* AccountPossessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463FB6C1E91D9BD00F984D1 /* AccountPossessor.swift */; };
 		C45D869F1E9C6A2700AD432F /* GlobalAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47E00A21E99906A00E5D521 /* GlobalAccountController.swift */; };
 		C45D86A01E9C6A5500AD432F /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C5CEBA1E744FF00089DC2F /* AccountController.swift */; };
@@ -89,8 +81,6 @@
 		C45D86A31E9C6ABB00AD432F /* ActionLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E01291E7F40150092F57B /* ActionLogger.swift */; };
 		C45D86A41E9C6ABB00AD432F /* ActionTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = C420A0001E7E9A3B005FCF87 /* ActionTags.swift */; };
 		C45D86A71E9D7F0D00AD432F /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45D86A61E9D7F0D00AD432F /* Localized.swift */; };
-		C45D86A81E9D811400AD432F /* ModuleExports-GETracing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44538521E999AB1009E68EB /* ModuleExports-GETracing.swift */; };
-		C45D86A91E9D811400AD432F /* ModuleExports-GEFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44538541E999B40009E68EB /* ModuleExports-GEFoundation.swift */; };
 		C4637A3F1E7601F000E5BD25 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4637A411E7601F000E5BD25 /* InfoPlist.strings */; };
 		C4637A431E7605EF00E5BD25 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C4637A421E7605EF00E5BD25 /* Settings.bundle */; };
 		C463FB6B1E91D80E00F984D1 /* ShortcutsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463FB6A1E91D80E00F984D1 /* ShortcutsController.swift */; };
@@ -100,6 +90,7 @@
 		C47456641E64F71F003C7656 /* MultifonNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47456631E64F71F003C7656 /* MultifonNumberTextField.swift */; };
 		C47E009D1E96C65E00E5D521 /* Undoable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47E009C1E96C65E00E5D521 /* Undoable.swift */; };
 		C47E009F1E98D5D600E5D521 /* AlternateAppIconController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47E009E1E98D5D600E5D521 /* AlternateAppIconController.swift */; };
+		C4B636462484725000914844 /* PhoneNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B636452484725000914844 /* PhoneNumberTextField.swift */; };
 		C4C5CEBD1E7464020089DC2F /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C5CEBC1E7464020089DC2F /* UIKitExtensions.swift */; };
 		C4C5CEC31E7561DB0089DC2F /* RouteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C5CEC21E7561DB0089DC2F /* RouteTableViewCell.swift */; };
 		C4C5CEC61E757B040089DC2F /* AccountDetails.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4C5CEC81E757B040089DC2F /* AccountDetails.strings */; };
@@ -119,10 +110,8 @@
 		C4F359481E5D139500F2B779 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4F359461E5D139500F2B779 /* Main.storyboard */; };
 		C4F3594A1E5D139500F2B779 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4F359491E5D139500F2B779 /* Assets.xcassets */; };
 		C4F3594D1E5D139500F2B779 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4F3594B1E5D139500F2B779 /* LaunchScreen.storyboard */; };
-		C4FB099C2097BB0400E765AE /* PhoneNumberKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C40909BC1E63684D006BBF04 /* PhoneNumberKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E1A2AB89E9B71F77250E576E /* RoutingViewController.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C4F359441E5D139400F2B779 /* RoutingViewController.swift */; };
 		E1EF069624385C952474B75E /* Fabric.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C43F80A61E6B276100349011 /* Fabric.swift */; };
-		E7191493BE10AD51D022A326 /* ModuleExports-GETracing.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C44538521E999AB1009E68EB /* ModuleExports-GETracing.swift */; };
 		EAEC95D7C82021407EA73B59 /* GlobalAccountController.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C47E00A21E99906A00E5D521 /* GlobalAccountController.swift */; };
 		FA9A7AF7431F75CDC0164C03 /* PhoneNumbers.swift in Embed Sources */ = {isa = PBXBuildFile; fileRef = C4C72B331E635ADC004E6BB0 /* PhoneNumbers.swift */; };
 /* End PBXBuildFile section */
@@ -201,14 +190,12 @@
 				5EC69BEAE740F2FF3F5260E8 /* MultifonNumberTextField.swift in Embed Sources */,
 				36AAE74F6406BA12DA5AC188 /* AppDelegate.swift in Embed Sources */,
 				5D0AF200567DA496858F686F /* RouteTableViewCell.swift in Embed Sources */,
-				8D09BF4C847597FF71810F9B /* ModuleExports-GETracing.swift in Embed Sources */,
 				B841F88D848765D6C197A631 /* ExternalDependencies.swift in Embed Sources */,
 				AF6228B722177B407E6A6479 /* Localized.swift in Embed Sources */,
 				0F814D7E7D88105145BE4FE7 /* ShortcutsController.swift in Embed Sources */,
 				E1EF069624385C952474B75E /* Fabric.swift in Embed Sources */,
 				3A6B0537411CEF5C3EBD4301 /* AlternateAppIconController.swift in Embed Sources */,
 				49CDABFEC00AB4B03F10B500 /* Globals.swift in Embed Sources */,
-				784795B4037F501EB59FFAED /* ModuleExports-GEFoundation.swift in Embed Sources */,
 				ADA5F5D75F681BBC0DD0431C /* UIKitExtensions.swift in Embed Sources */,
 				00FC70D9511D8DF6CD625333 /* Undoable.swift in Embed Sources */,
 			);
@@ -226,8 +213,6 @@
 				EAEC95D7C82021407EA73B59 /* GlobalAccountController.swift in Embed Sources */,
 				B477A17F7799EF5805C52076 /* RoutingRequests.swift in Embed Sources */,
 				2F48ECC6805AAD7935052EDF /* ActionTags.swift in Embed Sources */,
-				2AD5C3F626B55728AF2DEF73 /* ModuleExports-GEFoundation.swift in Embed Sources */,
-				E7191493BE10AD51D022A326 /* ModuleExports-GETracing.swift in Embed Sources */,
 				27D0E4B9B31D5EE519F67CB8 /* UserDefaults.swift in Embed Sources */,
 				13B34ECA671FD8BC8CE0F168 /* AccountController.swift in Embed Sources */,
 				2183227EAC269D575FF9BF6B /* ActionTracking.swift in Embed Sources */,
@@ -244,9 +229,7 @@
 			dstPath = "$(GE_EMBEDDED_FRAMEWORKS_FOLDER_PATH)";
 			dstSubfolderSpec = 16;
 			files = (
-				C44538501E999A49009E68EB /* GEFoundation.framework in Embed Frameworks As Necessary */,
 				C45D86871E9C664100AD432F /* MultifonRedirectSupport.framework in Embed Frameworks As Necessary */,
-				C445384D1E999A44009E68EB /* GETracing.framework in Embed Frameworks As Necessary */,
 			);
 			name = "Embed Frameworks As Necessary";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,7 +251,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C4FB099C2097BB0400E765AE /* PhoneNumberKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,10 +261,8 @@
 			dstPath = "Sources/$(TARGET_NAME)";
 			dstSubfolderSpec = 7;
 			files = (
-				6EB3C0E746B2406E6C90F3D9 /* ModuleExports-GEFoundation.swift in Embed Sources */,
 				7C8E9DBF06FE5819495EB0AF /* TodayViewController.swift in Embed Sources */,
 				88BA1DF069F2066B1F22C681 /* Localized.swift in Embed Sources */,
-				7AEAC1F8EDBFC00B1C64E1BD /* ModuleExports-GETracing.swift in Embed Sources */,
 			);
 			name = "Embed Sources";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,6 +270,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		45DD26517D362400222E863B /* Pods-MultifonRedirectToday.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultifonRedirectToday.debug.xcconfig"; path = "Target Support Files/Pods-MultifonRedirectToday/Pods-MultifonRedirectToday.debug.xcconfig"; sourceTree = "<group>"; };
+		757CA6B3BE50CFB1F8F2A3CC /* Pods-MultifonRedirect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultifonRedirect.release.xcconfig"; path = "Target Support Files/Pods-MultifonRedirect/Pods-MultifonRedirect.release.xcconfig"; sourceTree = "<group>"; };
+		80BFC521223AE018F25D33EC /* Pods_MultifonRedirectToday.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MultifonRedirectToday.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8519109D0910CC63929F2C69 /* Pods_MultifonRedirectSupport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MultifonRedirectSupport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C40909BC1E63684D006BBF04 /* PhoneNumberKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PhoneNumberKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C40909C11E6376F7006BBF04 /* AccountDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountDetailsViewController.swift; sourceTree = "<group>"; };
 		C4209FFE1E7E98A0005FCF87 /* ActionTracking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionTracking.swift; sourceTree = "<group>"; };
@@ -311,8 +295,6 @@
 		C43F80AE1E6B3B4400349011 /* MultifonRedirect-app.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "MultifonRedirect-app.xcconfig"; sourceTree = SOURCE_ROOT; };
 		C445384B1E999A44009E68EB /* GETracing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GETracing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C445384E1E999A49009E68EB /* GEFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GEFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C44538521E999AB1009E68EB /* ModuleExports-GETracing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ModuleExports-GETracing.swift"; path = "../../GETracing/GETracing/ModuleExports-GETracing.swift"; sourceTree = "<group>"; };
-		C44538541E999B40009E68EB /* ModuleExports-GEFoundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ModuleExports-GEFoundation.swift"; path = "../../GEFoundation/GEFoundation/ModuleExports-GEFoundation.swift"; sourceTree = "<group>"; };
 		C44538591E9AD0DD009E68EB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Shortcuts.strings; sourceTree = "<group>"; };
 		C45D86541E9C340300AD432F /* MultifonRedirectToday.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MultifonRedirectToday.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C45D86561E9C340300AD432F /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
@@ -342,6 +324,7 @@
 		C47E009E1E98D5D600E5D521 /* AlternateAppIconController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlternateAppIconController.swift; sourceTree = "<group>"; };
 		C47E00A01E997EB600E5D521 /* RoutingRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutingRequests.swift; sourceTree = "<group>"; };
 		C47E00A21E99906A00E5D521 /* GlobalAccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalAccountController.swift; sourceTree = "<group>"; };
+		C4B636452484725000914844 /* PhoneNumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberTextField.swift; sourceTree = "<group>"; };
 		C4C5CEBA1E744FF00089DC2F /* AccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
 		C4C5CEBC1E7464020089DC2F /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
 		C4C5CEC21E7561DB0089DC2F /* RouteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteTableViewCell.swift; sourceTree = "<group>"; };
@@ -373,6 +356,11 @@
 		C4F359491E5D139500F2B779 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C4F3594C1E5D139500F2B779 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C4F3594E1E5D139500F2B779 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E141FDF68E929B3B085772A6 /* Pods-MultifonRedirectSupport.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultifonRedirectSupport.release.xcconfig"; path = "Target Support Files/Pods-MultifonRedirectSupport/Pods-MultifonRedirectSupport.release.xcconfig"; sourceTree = "<group>"; };
+		E8F35C857B894376B0E3628C /* Pods_MultifonRedirect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MultifonRedirect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA54711944D211FBE33A63BC /* Pods-MultifonRedirectSupport.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultifonRedirectSupport.debug.xcconfig"; path = "Target Support Files/Pods-MultifonRedirectSupport/Pods-MultifonRedirectSupport.debug.xcconfig"; sourceTree = "<group>"; };
+		F4A08C089ADD35E8E35CBCE9 /* Pods-MultifonRedirectToday.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultifonRedirectToday.release.xcconfig"; path = "Target Support Files/Pods-MultifonRedirectToday/Pods-MultifonRedirectToday.release.xcconfig"; sourceTree = "<group>"; };
+		FFB5CDB547A63C2566DDDEBB /* Pods-MultifonRedirect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultifonRedirect.debug.xcconfig"; path = "Target Support Files/Pods-MultifonRedirect/Pods-MultifonRedirect.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -385,6 +373,7 @@
 				C41B5C721E9D880400351FD8 /* GETracing.framework in Frameworks */,
 				C41B5C731E9D880400351FD8 /* PhoneNumberKit.framework in Frameworks */,
 				C45D86571E9C340300AD432F /* NotificationCenter.framework in Frameworks */,
+				6B5A6462D06E0023EEC3BA31 /* Pods_MultifonRedirectToday.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +384,7 @@
 				C45D869B1E9C692100AD432F /* PhoneNumberKit.framework in Frameworks */,
 				C45D86991E9C691D00AD432F /* GETracing.framework in Frameworks */,
 				C45D869A1E9C691D00AD432F /* GEFoundation.framework in Frameworks */,
+				B390404F4509CD01E89BC109 /* Pods_MultifonRedirectSupport.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,12 +412,27 @@
 				C45D86861E9C664100AD432F /* MultifonRedirectSupport.framework in Frameworks */,
 				C43F80AF1E6B3C1200349011 /* Fabric.framework in Frameworks */,
 				C445384C1E999A44009E68EB /* GETracing.framework in Frameworks */,
+				045A5618D17C95E7D9E28286 /* Pods_MultifonRedirect.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13A0D61BFCE3C35AB9582D2C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FFB5CDB547A63C2566DDDEBB /* Pods-MultifonRedirect.debug.xcconfig */,
+				757CA6B3BE50CFB1F8F2A3CC /* Pods-MultifonRedirect.release.xcconfig */,
+				EA54711944D211FBE33A63BC /* Pods-MultifonRedirectSupport.debug.xcconfig */,
+				E141FDF68E929B3B085772A6 /* Pods-MultifonRedirectSupport.release.xcconfig */,
+				45DD26517D362400222E863B /* Pods-MultifonRedirectToday.debug.xcconfig */,
+				F4A08C089ADD35E8E35CBCE9 /* Pods-MultifonRedirectToday.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
+			sourceTree = "<group>";
+		};
 		C40909C01E636876006BBF04 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -460,6 +465,9 @@
 			isa = PBXGroup;
 			children = (
 				C45D86561E9C340300AD432F /* NotificationCenter.framework */,
+				E8F35C857B894376B0E3628C /* Pods_MultifonRedirect.framework */,
+				8519109D0910CC63929F2C69 /* Pods_MultifonRedirectSupport.framework */,
+				80BFC521223AE018F25D33EC /* Pods_MultifonRedirectToday.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -493,8 +501,6 @@
 				C4D7FC581E61C10200C40FE8 /* Data.swift */,
 				C4C72B331E635ADC004E6BB0 /* PhoneNumbers.swift */,
 				C4C72B2F1E6359B8004E6BB0 /* FoundationExtensions.swift */,
-				C44538521E999AB1009E68EB /* ModuleExports-GETracing.swift */,
-				C44538541E999B40009E68EB /* ModuleExports-GEFoundation.swift */,
 				C45D86741E9C664100AD432F /* Info.plist */,
 			);
 			path = MultifonRedirectSupport;
@@ -557,6 +563,7 @@
 				C45D867F1E9C664100AD432F /* MultifonRedirectSupportTests */,
 				C45D86551E9C340300AD432F /* Frameworks */,
 				C4F359401E5D139400F2B779 /* Products */,
+				13A0D61BFCE3C35AB9582D2C /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -580,6 +587,7 @@
 				C463FB6A1E91D80E00F984D1 /* ShortcutsController.swift */,
 				C43F80A61E6B276100349011 /* Fabric.swift */,
 				C4F359441E5D139400F2B779 /* RoutingViewController.swift */,
+				C4B636452484725000914844 /* PhoneNumberTextField.swift */,
 				C47E009E1E98D5D600E5D521 /* AlternateAppIconController.swift */,
 				C40909C11E6376F7006BBF04 /* AccountDetailsViewController.swift */,
 				C47E009C1E96C65E00E5D521 /* Undoable.swift */,
@@ -620,6 +628,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C45D86621E9C340300AD432F /* Build configuration list for PBXNativeTarget "MultifonRedirectToday" */;
 			buildPhases = (
+				2D24CA22A0A00E4D0A8AC56D /* [CP] Check Pods Manifest.lock */,
 				C45D86501E9C340300AD432F /* Sources */,
 				C45D86511E9C340300AD432F /* Frameworks */,
 				C45D86521E9C340300AD432F /* Resources */,
@@ -639,6 +648,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C45D86881E9C664100AD432F /* Build configuration list for PBXNativeTarget "MultifonRedirectSupport" */;
 			buildPhases = (
+				579BD9B12CA73428D9E9B3DB /* [CP] Check Pods Manifest.lock */,
 				C45D866C1E9C664100AD432F /* Sources */,
 				C45D866D1E9C664100AD432F /* Frameworks */,
 				C45D866E1E9C664100AD432F /* Headers */,
@@ -697,6 +707,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C4F359511E5D139500F2B779 /* Build configuration list for PBXNativeTarget "MultifonRedirect" */;
 			buildPhases = (
+				6DFB8CBA24CA8515C81E69C4 /* [CP] Check Pods Manifest.lock */,
 				C4F3593B1E5D139400F2B779 /* Sources */,
 				C4F3593C1E5D139400F2B779 /* Frameworks */,
 				C4F3593D1E5D139400F2B779 /* Resources */,
@@ -706,6 +717,8 @@
 				C43F80B11E6B3ED600349011 /* Integrate Fabric */,
 				C45D86651E9C340300AD432F /* Embed App Extensions */,
 				7F04F71206F208950B561637 /* Embed Sources */,
+				F8CBE0E87A00B5AD709FF4BA /* [CP] Embed Pods Frameworks */,
+				2F4F994F57655A0D7B7810F0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -772,8 +785,10 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = C4F359361E5D139400F2B779;
 			productRefGroup = C4F359401E5D139400F2B779 /* Products */;
@@ -855,6 +870,90 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2D24CA22A0A00E4D0A8AC56D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MultifonRedirectToday-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2F4F994F57655A0D7B7810F0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MultifonRedirect/Pods-MultifonRedirect-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MultifonRedirect/MultifonRedirect-Sources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MultifonRedirect-Sources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MultifonRedirect/Pods-MultifonRedirect-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		579BD9B12CA73428D9E9B3DB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MultifonRedirectSupport-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6DFB8CBA24CA8515C81E69C4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MultifonRedirect-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C43F80B11E6B3ED600349011 /* Integrate Fabric */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -898,6 +997,30 @@
 			shellPath = "/bin/sh -e";
 			shellScript = "\"${GE_XCODE_BUILD_PHASES:?}\"/EmbedSourceVersionIntoBundle\n";
 		};
+		F8CBE0E87A00B5AD709FF4BA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MultifonRedirect/Pods-MultifonRedirect-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GEFoundation/GEFoundation.framework",
+				"${BUILT_PRODUCTS_DIR}/GETracing/GETracing.framework",
+				"${BUILT_PRODUCTS_DIR}/PhoneNumberKit/PhoneNumberKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Then/Then.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GEFoundation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GETracing.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PhoneNumberKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Then.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MultifonRedirect/Pods-MultifonRedirect-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -905,10 +1028,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C45D86A91E9D811400AD432F /* ModuleExports-GEFoundation.swift in Sources */,
 				C45D865A1E9C340300AD432F /* TodayViewController.swift in Sources */,
 				C45D86A71E9D7F0D00AD432F /* Localized.swift in Sources */,
-				C45D86A81E9D811400AD432F /* ModuleExports-GETracing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -921,8 +1042,6 @@
 				C45D869F1E9C6A2700AD432F /* GlobalAccountController.swift in Sources */,
 				C45D86951E9C68F300AD432F /* RoutingRequests.swift in Sources */,
 				C45D86A41E9C6ABB00AD432F /* ActionTags.swift in Sources */,
-				C45D869D1E9C695400AD432F /* ModuleExports-GEFoundation.swift in Sources */,
-				C45D869C1E9C695400AD432F /* ModuleExports-GETracing.swift in Sources */,
 				C45D86A11E9C6A9100AD432F /* UserDefaults.swift in Sources */,
 				C45D86A01E9C6A5500AD432F /* AccountController.swift in Sources */,
 				C45D86A21E9C6ABB00AD432F /* ActionTracking.swift in Sources */,
@@ -959,14 +1078,13 @@
 				C47456641E64F71F003C7656 /* MultifonNumberTextField.swift in Sources */,
 				C4F359431E5D139400F2B779 /* AppDelegate.swift in Sources */,
 				C4C5CEC31E7561DB0089DC2F /* RouteTableViewCell.swift in Sources */,
-				C44538531E999AB1009E68EB /* ModuleExports-GETracing.swift in Sources */,
 				C4D7FC5D1E61EF3B00C40FE8 /* ExternalDependencies.swift in Sources */,
 				C4D7FC5B1E61EEB500C40FE8 /* Localized.swift in Sources */,
+				C4B636462484725000914844 /* PhoneNumberTextField.swift in Sources */,
 				C463FB6B1E91D80E00F984D1 /* ShortcutsController.swift in Sources */,
 				C43F80A71E6B276100349011 /* Fabric.swift in Sources */,
 				C47E009F1E98D5D600E5D521 /* AlternateAppIconController.swift in Sources */,
 				C4290F881EA313F100CAD5AE /* Globals.swift in Sources */,
-				C44538551E999B40009E68EB /* ModuleExports-GEFoundation.swift in Sources */,
 				C4C5CEBD1E7464020089DC2F /* UIKitExtensions.swift in Sources */,
 				C47E009D1E96C65E00E5D521 /* Undoable.swift in Sources */,
 			);
@@ -1139,6 +1257,7 @@
 /* Begin XCBuildConfiguration section */
 		C45D86631E9C340300AD432F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45DD26517D362400222E863B /* Pods-MultifonRedirectToday.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1189,13 +1308,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		C45D86641E9C340300AD432F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4A08C089ADD35E8E35CBCE9 /* Pods-MultifonRedirectToday.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1246,6 +1365,7 @@
 		};
 		C45D86891E9C664100AD432F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA54711944D211FBE33A63BC /* Pods-MultifonRedirectSupport.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -1273,6 +1393,7 @@
 		};
 		C45D868A1E9C664100AD432F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E141FDF68E929B3B085772A6 /* Pods-MultifonRedirectSupport.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -1393,7 +1514,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C43F80AC1E6B37D300349011 /* MultifonRedirect.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MultifonRedirect/MultifonRedirect.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1415,7 +1535,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C43F80AD1E6B37D300349011 /* MultifonRedirect.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MultifonRedirect/MultifonRedirect.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

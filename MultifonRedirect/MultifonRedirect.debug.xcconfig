@@ -6,5 +6,5 @@
 //  Copyright © 2017 Grigory Entin. All rights reserved.
 //
 
-#include "../Pods/Target Support Files/Pods-iOS/Pods-iOS.debug.xcconfig"
+#include "../Pods/Target Support Files/Pods-MultifonRedirect/Pods-MultifonRedirect.debug.xcconfig"
 #include "MultifonRedirect-app.xcconfig"
